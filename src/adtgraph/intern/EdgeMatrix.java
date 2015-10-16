@@ -1,14 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package adtgraph.intern;
 
-/**
- *
- * @author Rene
- */
+import adtgraph.extern.Vertex;
+import java.util.ArrayList;
+
 public class EdgeMatrix {
+
+    private ArrayList<Vertex> vertexlist;
     
+    private EdgeMatrix() {
+         vertexlist = new ArrayList<>();
+    }
+    
+    public ArrayList<Vertex> getIncident(Vertex vertex){
+        return null;                        
+    }
+    
+    public ArrayList<Vertex> getAdjacent(Vertex vertex){
+        return null;                        
+    }
+    
+    public Edge getEdge(Vertex source, Vertex target){
+        return null;
+    }
+    
+    public ArrayList<Vertex> getVertices(){
+        return null;
+    }
+    
+    public ArrayList<Vertex> getEdges(){
+        return null;
+    }
 }
