@@ -1,12 +1,14 @@
 package adtgraph.extern;
 
+import adtgraph.intern.Attribute;
 import java.util.ArrayList;
 
 public class Vertex {
     
     private String name;
+    private ArrayList<Attribute> attributeList = new ArrayList<>();
     
-    private static ArrayList<Vertex> vertexlist = new ArrayList<>();
+    private static ArrayList<Vertex> vertexList = new ArrayList<>();
     
     private Vertex(){
     
@@ -19,7 +21,7 @@ public class Vertex {
     public static Vertex createV(String name) {
         Vertex temp = null;
         boolean found = false;
-        for (Vertex v : vertexlist) {
+        for (Vertex v : vertexList) {
             if(v.name().equals(name)) {
                 temp = v;
                 found = true;
@@ -40,5 +42,20 @@ public class Vertex {
 
     public void name(String name) {
         this.name = name;
+    }
+
+    public ArrayList<Attribute> attribute() {
+        return attributeList;
+    }
+
+    public void attribute(Attribute attribute) {
+        boolean found = false;
+        for (Attribute a : attributeList){
+            if (a == attribute) {
+                found = true;
+                return;
+            }
+        }
+            this.attributeList.add(attribute);
     }
 }

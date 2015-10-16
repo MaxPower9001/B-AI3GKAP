@@ -1,11 +1,14 @@
 package adtgraph.intern;
 
 import adtgraph.extern.Vertex;
+import java.util.ArrayList;
 
 public class Edge {
     
     private Vertex source;
     private Vertex target;
+    
+    private ArrayList<Attribute> attributeList = new ArrayList<>();
     
     private Edge(){
         
@@ -30,6 +33,19 @@ public class Edge {
 
     public void target(Vertex target) {
         this.target = target;
+    }
+    
+    public ArrayList<Attribute> attribute() {
+        return attributeList;
+    }
+
+    public void attribute(Attribute attribute) {
+        for (Attribute a : attributeList){
+            if (a == attribute) {
+                return;
+            }
+        }
+            this.attributeList.add(attribute);
     }
     
 }
