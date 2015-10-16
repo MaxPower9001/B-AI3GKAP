@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package adthgraph.extern;
+package adtgraph.extern;
 
 /**
  *
  * @author Rene
  */
-public class Vertex {
+public class Graph {
     
 }

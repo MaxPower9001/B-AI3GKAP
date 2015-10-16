@@ -1,14 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package adtgraph.intern;
 
-/**
- *
- * @author Rene
- */
+import adtgraph.extern.Vertex;
+
 public class Edge {
+    
+    private Vertex source;
+    private Vertex target;
+    
+    private Edge(){
+        
+    }
+    
+    public Edge(Vertex source, Vertex target){
+        this.source = source;
+        this.target = target;
+    }
+
+    public Vertex source() {
+        return source;
+    }
+
+    public void source(Vertex source) {
+        this.source = source;
+    }
+
+    public Vertex target() {
+        return target;
+    }
+
+    public void target(Vertex target) {
+        this.target = target;
+    }
     
 }

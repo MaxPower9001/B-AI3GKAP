@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package adtgraph.intern;
 
 /**
@@ -11,4 +6,31 @@ package adtgraph.intern;
  */
 public class Attribute {
     
+    private String name;
+    private int value;
+    
+    private Attribute(){
+        
+    }
+    
+    public Attribute(String name, int value){
+        this.name = name;
+        this.value = value;
+    }    
+
+    public String name() {
+        return name;
+    }
+
+    public void name(String name) {
+        this.name = name;
+    }
+
+    public int value() {
+        return value;
+    }
+
+    public void value(int value) {
+        this.value = value;
+    }
 }
