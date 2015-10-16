@@ -6,24 +6,50 @@ import java.util.List;
 
 public class EdgeMatrix {
 
-    private ArrayList<Vertex> vertexlist = new ArrayList<>();
+    private final ArrayList<Vertex> vertexlist;
 
-    private List<List<Edge>> matrix = new ArrayList<>();
+    private final List<List<Edge>> matrix;
 
     public EdgeMatrix() {
-
+        this.matrix = new ArrayList<>();
+        this.vertexlist = new ArrayList<>();
     }
 
     public ArrayList<Vertex> getIncident(Vertex vertex) {
-        return null;
+        ArrayList<Vertex> tempT = getTarget(vertex);
+        ArrayList<Vertex> tempS = getSource(vertex);
+        ArrayList<Vertex> tempR = new ArrayList<>();        
+                
+        for(Vertex v : tempT){
+            tempR.add(vertex);
+            tempR.add(v);
+        }
+        
+        for(Vertex v : tempS){
+            tempR.add(v);
+            tempR.add(vertex);
+        }
+        
+        return tempR;       
     }
 
     public ArrayList<Vertex> getAdjacent(Vertex vertex) {
-        return null;
+        ArrayList<Vertex> temp = new ArrayList<>();
+        temp.addAll(getTarget(vertex));
+        temp.addAll(getSource(vertex));
+        
+        return temp;
     }
 
-    public Edge getEdge(Vertex source, Vertex target) {
-        return null;
+    public Edge getEdge(Vertex source, Vertex target) throws Exception {
+        for (int i = 0; i < vertexlist.size(); i++) {
+            for (int j = 0; j < vertexlist.size(); j++) {
+                if (matrix.get(i).get(j) != null && matrix.get(i).get(j).target() == target && matrix.get(i).get(j).source() == source) {
+                    return matrix.get(i).get(j);
+                }
+            }
+        }
+         throw new Exception("Name nicht vorhanden!");
     }
 
     public ArrayList<Vertex> getVertices() {
@@ -31,7 +57,18 @@ public class EdgeMatrix {
     }
 
     public ArrayList<Vertex> getEdges() {
-        return null;
+        ArrayList<Vertex> temp  = new ArrayList<>();
+        
+        for (int i = 0; i < vertexlist.size(); i++) {
+            for (int j = 0; j < vertexlist.size(); j++) {
+                if (matrix.get(i).get(j) != null) {
+                    temp.add(matrix.get(i).get(j).source());
+                    temp.add(matrix.get(i).get(j).target());                    
+                }
+            }
+        }
+        
+        return temp;
     }
 
     public void addVertex(Vertex vertex) {
@@ -71,7 +108,7 @@ public class EdgeMatrix {
 
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
-                if (matrix.get(i).get(j).source() == vertex) {
+                if (matrix.get(i).get(j) != null && matrix.get(i).get(j).source() == vertex) {
                     temp.add(matrix.get(i).get(j).target());
                 }
             }
@@ -84,7 +121,7 @@ public class EdgeMatrix {
 
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
-                if (matrix.get(i).get(j).target() == vertex) {
+                if (matrix.get(i).get(j) != null && matrix.get(i).get(j).target() == vertex) {
                     temp.add(matrix.get(i).get(j).source());
                 }
             }
@@ -95,7 +132,7 @@ public class EdgeMatrix {
     public int getValE(Vertex source, Vertex target, String name) throws Exception {
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
-                if (matrix.get(i).get(j).target() == target && matrix.get(i).get(j).source() == source) {
+                if (matrix.get(i).get(j) != null && matrix.get(i).get(j).target() == target && matrix.get(i).get(j).source() == source) {
                     for (Attribute a : matrix.get(i).get(j).attribute()) {
                         if (a.name().equals(name)) {
                             return a.value();

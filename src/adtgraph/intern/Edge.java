@@ -11,7 +11,6 @@ public class Edge {
     private ArrayList<Attribute> attributeList = new ArrayList<>();
     
     private Edge(){
-        
     }
     
     public Edge(Vertex source, Vertex target){

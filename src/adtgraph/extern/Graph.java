@@ -6,21 +6,16 @@ import java.util.ArrayList;
 
 public class Graph {
     
-    private final EdgeMatrix edgeMatrix = new EdgeMatrix();
-    
-    private Graph() {
+    private EdgeMatrix edgeMatrix;
         
-    }
-    
     public Graph(Vertex vertex){
-        Graph graph = new Graph();
-        graph.addVertex(vertex);
+        edgeMatrix = new EdgeMatrix();
+        this.addVertex(vertex);
     }
     
     public static Graph createG(Vertex vertex){
         return new Graph(vertex);
-    }
-    
+    }    
     
     public void addVertex(Vertex vertex){
         this.edgeMatrix.addVertex(vertex);

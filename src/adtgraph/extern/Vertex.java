@@ -8,32 +8,21 @@ public class Vertex {
     private String name;
     private ArrayList<Attribute> attributeList = new ArrayList<>();
     
-    private static ArrayList<Vertex> vertexList = new ArrayList<>();
-    
-    private Vertex(){
-    
-    }
-    
+    public static final ArrayList<Vertex> vertexList = new ArrayList<>();
+        
     public Vertex(String name){
         this.name = name;        
     }
     
     public static Vertex createV(String name) {
-        Vertex temp = null;
-        boolean found = false;
         for (Vertex v : vertexList) {
             if(v.name().equals(name)) {
-                temp = v;
-                found = true;
-                break;
+                return v;
             }
         }
-        
-        if(found){
-            return temp;            
-        }
-        else return new Vertex(name);
-        
+        Vertex temp = new Vertex(name);
+        vertexList.add(temp);
+        return temp;
     }
 
     public String name() {
@@ -57,5 +46,10 @@ public class Vertex {
             }
         }
             this.attributeList.add(attribute);
+    }
+    
+    @Override
+    public String toString(){
+        return this.name;
     }
 }
