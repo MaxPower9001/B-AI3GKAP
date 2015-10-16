@@ -11,4 +11,19 @@ package adtgraph.extern;
  */
 public class Graph {
     
+    public ArrayList<Vertex> getVertices() {
+        
+    }  
+    
+    public int getValE(Vertex vertex, Vertex target, String name) {
+        
+    }
+    
+    public int getValV(Vertex vertex, String name) {
+        
+    }
+    
+    public void exportG(String filename) {
+        
+    }
 }
