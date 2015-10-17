@@ -5,6 +5,7 @@
  */
 package VertexTests;
 
+import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
 import java.util.Random;
 import org.junit.After;
@@ -19,6 +20,8 @@ import static org.junit.Assert.*;
  * @author Rene
  */
 public class VertexTests {
+    
+    Random random = new Random();
 
     public VertexTests() {
     }
@@ -47,9 +50,9 @@ public class VertexTests {
     @Test
     public void CreateV() {
         char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-        StringBuilder sb = new StringBuilder();
-        Random random = new Random();
+        
         for (int i = 0; i < 12000; i++) {
+            StringBuilder sb = new StringBuilder();
             for (int j = 0; j < 20; j++) {
                 char c = chars[random.nextInt(chars.length)];
                 sb.append(c);
@@ -58,20 +61,22 @@ public class VertexTests {
             assertEquals(output, Vertex.createV(output).name());
         }
     }
-    
+
     @Test
     public void CreateG() {
-        char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-        StringBuilder sb = new StringBuilder();
-        Random random = new Random();
-        for (int i = 0; i < 2500; i++) {
-            for (int j = 0; j < 20; j++) {
-                char c = chars[random.nextInt(chars.length)];
-                sb.append(c);
-            }
-            String output = sb.toString();
-            Vertex.createV(output);
+        for(int i = 0; i < Vertex.vertexList.size()/2; i++){
+            Graph.createG(Vertex.vertexList.get(random.nextInt(Vertex.vertexList.size())));
+        }
+    }
+
+    @Test
+    public void addEdge() {
+        Graph testGraph = Graph.createG(Vertex.vertexList.get(random.nextInt(Vertex.vertexList.size())));
+        
+        for(int i = 0; i < Vertex.vertexList.size()/2; i++){
+            testGraph.addEdge(Vertex.vertexList.get(random.nextInt(Vertex.vertexList.size())),Vertex.vertexList.get(random.nextInt(Vertex.vertexList.size())));
         }
         
+        System.out.println(testGraph.getEdges());
     }
 }
