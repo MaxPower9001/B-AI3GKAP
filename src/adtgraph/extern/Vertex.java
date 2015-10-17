@@ -6,11 +6,12 @@ import java.util.ArrayList;
 public class Vertex {
     
     private String name;
-    private ArrayList<Attribute> attributeList = new ArrayList<>();
+    private final ArrayList<Attribute> attributeList;
     
     public static final ArrayList<Vertex> vertexList = new ArrayList<>();
         
     public Vertex(String name){
+        this.attributeList = new ArrayList<>();
         this.name = name;        
     }
     

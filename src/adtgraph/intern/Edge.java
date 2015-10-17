@@ -8,12 +8,14 @@ public class Edge {
     private Vertex source;
     private Vertex target;
     
-    private ArrayList<Attribute> attributeList = new ArrayList<>();
+    private final ArrayList<Attribute> attributeList;
     
     private Edge(){
+        this.attributeList = new ArrayList<>();
     }
     
     public Edge(Vertex source, Vertex target){
+        this.attributeList = new ArrayList<>();
         this.source = source;
         this.target = target;
     }

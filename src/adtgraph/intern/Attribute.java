@@ -1,9 +1,5 @@
 package adtgraph.intern;
 
-/**
- *
- * @author Rene
- */
 public class Attribute {
     
     private String name;

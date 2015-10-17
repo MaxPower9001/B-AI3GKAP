@@ -130,18 +130,27 @@ public class EdgeMatrix {
     }
 
     public int getValE(Vertex source, Vertex target, String name) throws Exception {
+        // Jedes Element in der Matrix wird durchlaufen
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
-                if (matrix.get(i).get(j) != null && matrix.get(i).get(j).target() == target && matrix.get(i).get(j).source() == source) {
+                
+                // Ecke vorhanden und target und source entsprechen den Eingabeparametern
+                if (matrix.get(i).get(j) != null && 
+                    matrix.get(i).get(j).target() == target &&
+                    matrix.get(i).get(j).source() == source) {
+                    
+                    // Alle Attribute der Ecke werden durchlaufen und nach dem String durchsucht
                     for (Attribute a : matrix.get(i).get(j).attribute()) {
                         if (a.name().equals(name)) {
+                            // Verlässt getValE Aufruf und gibt den entsprechenden value zurück
                             return a.value();
                         }
                     }
                 }
             }
         }
-         throw new Exception("Name nicht vorhanden!");
+        // Wenn kein Attribut gefunden
+        throw new Exception("Name nicht vorhanden!");
     }
 
     private void expandEdgeMatrix() {

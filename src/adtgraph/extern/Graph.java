@@ -4,9 +4,9 @@ import adtgraph.intern.Attribute;
 import adtgraph.intern.EdgeMatrix;
 import java.util.ArrayList;
 
-public class Graph {
+public final class Graph {
     
-    private EdgeMatrix edgeMatrix;
+    private final EdgeMatrix edgeMatrix;
         
     public Graph(Vertex vertex){
         edgeMatrix = new EdgeMatrix();
