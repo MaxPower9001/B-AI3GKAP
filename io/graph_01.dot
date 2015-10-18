@@ -1,0 +1,95 @@
+digraph graph_01
+{
+Augsburg
+München
+Stuttgart
+Berlin
+Dresden
+Hamburg
+Potsdam
+Bielefeld
+Dortmund
+Osnabrück
+Bonn
+Düsseldorf
+Mannheim
+Bremen
+Chemnitz
+Erfurt
+Magdeburg
+Nürnberg
+Flensburg
+Neumünster
+Hannover
+Lübeck
+Lüneburg
+Kassel
+Kaiserslautern
+Münster
+Karlsruhe
+Kiel
+Leipzig
+Wolfsburg
+Augsburg -> München [label="70"]
+Augsburg -> Stuttgart [label="161"]
+München -> Augsburg [label="70"]
+München -> Nürnberg [label="166"]
+Stuttgart -> Augsburg [label="161"]
+Stuttgart -> Karlsruhe [label="80"]
+Berlin -> Dresden [label="194"]
+Berlin -> Hamburg [label="289"]
+Berlin -> Potsdam [label="30"]
+Dresden -> Berlin [label="194"]
+Dresden -> Chemnitz [label="78"]
+Hamburg -> Berlin [label="289"]
+Hamburg -> Bremen [label="123"]
+Hamburg -> Neumünster [label="66"]
+Hamburg -> Hannover [label="157"]
+Hamburg -> Lübeck [label="66"]
+Hamburg -> Lüneburg [label="56"]
+Potsdam -> Berlin [label="30"]
+Potsdam -> Magdeburg [label="101"]
+Bielefeld -> Dortmund [label="116"]
+Bielefeld -> Osnabrück [label="53"]
+Dortmund -> Bielefeld [label="116"]
+Dortmund -> Düsseldorf [label="71"]
+Osnabrück -> Bielefeld [label="53"]
+Osnabrück -> Bremen [label="122"]
+Bonn -> Düsseldorf [label="72"]
+Bonn -> Mannheim [label="218"]
+Düsseldorf -> Dortmund [label="71"]
+Düsseldorf -> Bonn [label="72"]
+Mannheim -> Bonn [label="218"]
+Mannheim -> Karlsruhe [label="66"]
+Bremen -> Hamburg [label="123"]
+Bremen -> Osnabrück [label="122"]
+Chemnitz -> Dresden [label="78"]
+Chemnitz -> Erfurt [label="151"]
+Erfurt -> Chemnitz [label="151"]
+Erfurt -> Magdeburg [label="214"]
+Erfurt -> Nürnberg [label="228"]
+Magdeburg -> Potsdam [label="101"]
+Magdeburg -> Erfurt [label="214"]
+Magdeburg -> Leipzig [label="129"]
+Magdeburg -> Wolfsburg [label="88"]
+Nürnberg -> München [label="166"]
+Nürnberg -> Erfurt [label="228"]
+Flensburg -> Neumünster [label="97"]
+Neumünster -> Hamburg [label="66"]
+Neumünster -> Flensburg [label="97"]
+Neumünster -> Kiel [label="36"]
+Hannover -> Hamburg [label="157"]
+Hannover -> Kassel [label="164"]
+Lübeck -> Hamburg [label="66"]
+Lüneburg -> Hamburg [label="56"]
+Lüneburg -> Wolfsburg [label="111"]
+Kassel -> Hannover [label="164"]
+Kaiserslautern -> Münster [label="200"]
+Münster -> Kaiserslautern [label="200"]
+Karlsruhe -> Stuttgart [label="80"]
+Karlsruhe -> Mannheim [label="66"]
+Kiel -> Neumünster [label="36"]
+Leipzig -> Magdeburg [label="129"]
+Wolfsburg -> Magdeburg [label="88"]
+Wolfsburg -> Lüneburg [label="111"]
+}

@@ -79,4 +79,21 @@ public class VertexTests {
         
         System.out.println(testGraph.getEdges());
     }
+    
+    @Test
+    public void IO() throws Exception{
+        Graph.importG("io/graph_01.graph").exportG("io/graph_01.dot");
+        Graph.importG("io/graph_02.graph").exportG("io/graph_02.dot");
+        Graph.importG("io/graph_03.graph").exportG("io/graph_03.dot");
+        Graph.importG("io/graph_04.graph").exportG("io/graph_04.dot");
+        Graph.importG("io/graph_05.graph").exportG("io/graph_05.dot");
+        Graph.importG("io/graph_06.graph").exportG("io/graph_06.dot");
+        Graph.importG("io/graph_07.graph").exportG("io/graph_07.dot");
+        Graph.importG("io/graph_08.graph").exportG("io/graph_08.dot");
+        Graph.importG("io/graph_09.graph").exportG("io/graph_09.dot");
+        Graph.importG("io/graph_10.graph").exportG("io/graph_10.dot");
+        Graph.importG("io/graph_11.graph").exportG("io/graph_11.dot");
+        Graph.importG("io/graph_12.graph").exportG("io/graph_12.dot");
+    }
+    
 }
