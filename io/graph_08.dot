@@ -1,7 +1,7 @@
 digraph graph_08
 {
 Augsburg
-M�nchen
+München
 Berlin
 Dresden
 Hannover
@@ -10,61 +10,61 @@ Leipzig
 Bielefeld
 Dortmund
 Bremen
-Osnabr�ck
+Osnabrück
 Frankfurt
-K�ln
-N�rnberg
+Köln
+Nürnberg
 Mainz
 Mannheim
 Hamburg
 Kaiserslautern
 Karlsruhe
 Stuttgart
-Saarbr�cken
-L�beck
+Saarbrücken
+Lübeck
 Rostock
-Augsburg -> M�nchen [label="81"]
-Berlin -> Dresden [label="214"]
-Berlin -> Hannover [label="258"]
-Berlin -> Kassel [label="367"]
-Berlin -> Leipzig [label="188"]
-Dresden -> N�rnberg [label="325"]
-Hannover -> Kassel [label="238"]
-Hannover -> Leipzig [label="261"]
-Hannover -> Osnabr�ck [label="137"]
-Kassel -> Dresden [label="402"]
-Kassel -> Frankfurt [label="190"]
-Kassel -> K�ln [label="249"]
-Leipzig -> Dresden [label="116"]
-Leipzig -> Frankfurt [label="387"]
-Bielefeld -> Dortmund [label="116"]
-Dortmund -> Kassel [label="168"]
-Dortmund -> Frankfurt [label="223"]
-Dortmund -> K�ln [label="97"]
-Bremen -> Hannover [label="123"]
-Bremen -> Dortmund [label="237"]
-Bremen -> Osnabr�ck [label="124"]
-Osnabr�ck -> Bielefeld [label="53"]
-Osnabr�ck -> Dortmund [label="123"]
-Frankfurt -> N�rnberg [label="235"]
-Frankfurt -> Mainz [label="43"]
-Frankfurt -> Mannheim [label="106"]
-K�ln -> Mainz [label="179"]
-K�ln -> Saarbr�cken [label="283"]
-N�rnberg -> M�nchen [label="162"]
-N�rnberg -> Karlsruhe [label="253"]
-Mainz -> Mannheim [label="83"]
-Mainz -> Kaiserslautern [label="80"]
-Mannheim -> Karlsruhe [label="58"]
-Hamburg -> Berlin [label="289"]
-Hamburg -> Hannover [label="150"]
-Hamburg -> Bremen [label="123"]
-Kaiserslautern -> Mannheim [label="67"]
-Kaiserslautern -> Karlsruhe [label="96"]
-Karlsruhe -> Stuttgart [label="81"]
-Stuttgart -> Augsburg [label="149"]
-Saarbr�cken -> Kaiserslautern [label="72"]
-L�beck -> Hamburg [label="65"]
-Rostock -> Berlin [label="222"]
-Rostock -> L�beck [label="125"]
+Augsburg -> München [label=" 81  "]
+Berlin -> Dresden [label=" 214  "]
+Berlin -> Hannover [label=" 258  "]
+Berlin -> Kassel [label=" 367  "]
+Berlin -> Leipzig [label=" 188  "]
+Dresden -> Nürnberg [label=" 325  "]
+Hannover -> Kassel [label=" 238  "]
+Hannover -> Leipzig [label=" 261  "]
+Hannover -> Osnabrück [label=" 137  "]
+Kassel -> Dresden [label=" 402  "]
+Kassel -> Frankfurt [label=" 190  "]
+Kassel -> Köln [label=" 249  "]
+Leipzig -> Dresden [label=" 116  "]
+Leipzig -> Frankfurt [label=" 387  "]
+Bielefeld -> Dortmund [label=" 116  "]
+Dortmund -> Kassel [label=" 168  "]
+Dortmund -> Frankfurt [label=" 223  "]
+Dortmund -> Köln [label=" 97  "]
+Bremen -> Hannover [label=" 123  "]
+Bremen -> Dortmund [label=" 237  "]
+Bremen -> Osnabrück [label=" 124  "]
+Osnabrück -> Bielefeld [label=" 53  "]
+Osnabrück -> Dortmund [label=" 123  "]
+Frankfurt -> Nürnberg [label=" 235  "]
+Frankfurt -> Mainz [label=" 43  "]
+Frankfurt -> Mannheim [label=" 106  "]
+Köln -> Mainz [label=" 179  "]
+Köln -> Saarbrücken [label=" 283  "]
+Nürnberg -> München [label=" 162  "]
+Nürnberg -> Karlsruhe [label=" 253  "]
+Mainz -> Mannheim [label=" 83  "]
+Mainz -> Kaiserslautern [label=" 80  "]
+Mannheim -> Karlsruhe [label=" 58  "]
+Hamburg -> Berlin [label=" 289  "]
+Hamburg -> Hannover [label=" 150  "]
+Hamburg -> Bremen [label=" 123  "]
+Kaiserslautern -> Mannheim [label=" 67  "]
+Kaiserslautern -> Karlsruhe [label=" 96  "]
+Karlsruhe -> Stuttgart [label=" 81  "]
+Stuttgart -> Augsburg [label=" 149  "]
+Saarbrücken -> Kaiserslautern [label=" 72  "]
+Lübeck -> Hamburg [label=" 65  "]
+Rostock -> Berlin [label=" 222  "]
+Rostock -> Lübeck [label=" 125  "]
 }

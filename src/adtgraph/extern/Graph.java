@@ -118,9 +118,18 @@ public final class Graph {
                }
                else {
                    target = ve;
-                   int value = this.getValE(source, target, "");
-                   writer.write(target.name() + " [label=\"" + value + "\"]" + nl);
-//                   writer.write(target.name() + nl);
+                   
+                        writer.write(target.name() + " [label=\"");
+                        
+                        for(Attribute a : edgeMatrix.getEdge(source, target).attribute()){
+                            if(!a.name().equals("")){
+                                writer.write(a.name() + "=");
+                            }
+                            writer.write(" " + a.value() + "  ");
+                        }
+                        
+                        writer.write("\"]"+nl);
+                   
                }
                isOddPositionInList = !isOddPositionInList;
            }

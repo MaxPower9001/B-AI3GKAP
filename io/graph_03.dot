@@ -5,13 +5,13 @@ u
 x
 v
 y
-s -> u [label="10"]
-s -> x [label="5"]
-u -> x [label="2"]
-u -> v [label="1"]
-x -> u [label="3"]
-x -> y [label="2"]
-v -> y [label="4"]
-y -> s [label="7"]
-y -> v [label="6"]
+s -> u [label=" 10  "]
+s -> x [label=" 5  "]
+u -> x [label=" 2  "]
+u -> v [label=" 1  "]
+x -> u [label=" 3  "]
+x -> y [label=" 2  "]
+v -> y [label=" 4  "]
+y -> s [label=" 7  "]
+y -> v [label=" 6  "]
 }

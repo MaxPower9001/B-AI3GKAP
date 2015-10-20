@@ -7,6 +7,7 @@ package VertexTests;
 
 import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
+import java.util.ArrayList;
 import java.util.Random;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,7 +21,9 @@ import static org.junit.Assert.*;
  * @author Rene
  */
 public class VertexTests {
-    
+
+    ArrayList<Vertex> vertexlist = new ArrayList<>();
+
     Random random = new Random();
 
     public VertexTests() {
@@ -50,7 +53,7 @@ public class VertexTests {
     @Test
     public void CreateV() {
         char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-        
+
         for (int i = 0; i < 12000; i++) {
             StringBuilder sb = new StringBuilder();
             for (int j = 0; j < 20; j++) {
@@ -58,30 +61,33 @@ public class VertexTests {
                 sb.append(c);
             }
             String output = sb.toString();
-            assertEquals(output, Vertex.createV(output).name());
+            Vertex temp = Vertex.createV(output);
+            vertexlist.add(temp);
+            assertEquals(output, temp.name());
         }
     }
 
     @Test
     public void CreateG() {
-        for(int i = 0; i < Vertex.vertexList.size()/2; i++){
-            Graph.createG(Vertex.vertexList.get(random.nextInt(Vertex.vertexList.size())));
+        CreateV();
+        for (int i = 0; i < vertexlist.size() / 2; i++) {
+            Graph.createG(vertexlist.get(random.nextInt(vertexlist.size())));
         }
     }
 
     @Test
     public void addEdge() {
-        Graph testGraph = Graph.createG(Vertex.vertexList.get(random.nextInt(Vertex.vertexList.size())));
-        
-        for(int i = 0; i < Vertex.vertexList.size()/2; i++){
-            testGraph.addEdge(Vertex.vertexList.get(random.nextInt(Vertex.vertexList.size())),Vertex.vertexList.get(random.nextInt(Vertex.vertexList.size())));
+        CreateV();
+        Graph testGraph = Graph.createG(vertexlist.get(random.nextInt(  vertexlist.size())));
+
+        for (int i = 0; i < vertexlist.size() / 2; i++) {
+            testGraph.addEdge(vertexlist.get(random.nextInt(vertexlist.size())), vertexlist.get(random.nextInt(vertexlist.size())));
         }
-        
-        System.out.println(testGraph.getEdges());
     }
-    
+
     @Test
-    public void IO() throws Exception{
+    public void IO() throws Exception {
+
         Graph.importG("io/graph_01.graph").exportG("io/graph_01.dot");
         Graph.importG("io/graph_02.graph").exportG("io/graph_02.dot");
         Graph.importG("io/graph_03.graph").exportG("io/graph_03.dot");
@@ -94,6 +100,6 @@ public class VertexTests {
         Graph.importG("io/graph_10.graph").exportG("io/graph_10.dot");
         Graph.importG("io/graph_11.graph").exportG("io/graph_11.dot");
         Graph.importG("io/graph_12.graph").exportG("io/graph_12.dot");
+
     }
-    
 }

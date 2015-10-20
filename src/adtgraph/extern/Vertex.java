@@ -8,7 +8,7 @@ public class Vertex {
     private String name;
     private final ArrayList<Attribute> attributeList;
     
-    public static final ArrayList<Vertex> vertexList = new ArrayList<>();
+    private static final ArrayList<Vertex> vertexList = new ArrayList<>();
         
     public Vertex(String name){
         this.attributeList = new ArrayList<>();
