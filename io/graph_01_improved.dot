@@ -1,4 +1,4 @@
-digraph graph_01
+digraph graph_01_improved
 {
 Augsburg
 München
@@ -30,7 +30,7 @@ Karlsruhe
 Kiel
 Leipzig
 Wolfsburg
-Augsburg -> München [label="23  "]
+Augsburg -> München [label="23  Hans=2  "]
 Augsburg -> Stuttgart [label="161  "]
 München -> Augsburg [label="23  "]
 München -> Nürnberg [label="166  "]

@@ -29,16 +29,26 @@ public class EdgeMatrix {
             tempR.add(v);
             tempR.add(vertex);
         }
-        
-        return tempR;       
+        if(tempR.isEmpty()){
+            return null;
+        } else {
+            return tempR;
+        }
     }
 
     public ArrayList<Vertex> getAdjacent(Vertex vertex) {
         ArrayList<Vertex> temp = new ArrayList<>();
-        temp.addAll(getTarget(vertex));
-        temp.addAll(getSource(vertex));
         
-        return temp;
+        if(getTarget(vertex) != null && getSource(vertex) != null){
+            temp.addAll(getTarget(vertex));
+            temp.addAll(getSource(vertex));            
+        }
+        
+        if(temp.isEmpty()){
+            return null;
+        } else {
+            return temp;
+        }
     }
 
     public Edge getEdge(Vertex source, Vertex target) throws Exception {
@@ -86,11 +96,13 @@ public class EdgeMatrix {
     }
 
     public void deleteVertex(Vertex vertex) {
-        matrix.remove(vertexlist.indexOf((Vertex) vertex));
-        for (int i = 0; i < matrix.size(); i++) {
-            matrix.get(i).remove(vertexlist.indexOf((Vertex) vertex));
+        if(vertexlist.size() > 1){
+            matrix.remove(vertexlist.indexOf((Vertex) vertex));
+            for (int i = 0; i < matrix.size(); i++) {
+                matrix.get(i).remove(vertexlist.indexOf((Vertex) vertex));
+            }
+            vertexlist.remove((Vertex) vertex);
         }
-        vertexlist.remove((Vertex) vertex);
     }
 
     public void addEdge(Vertex source, Vertex target) {
@@ -113,7 +125,11 @@ public class EdgeMatrix {
                 }
             }
         }
-        return temp;
+        if(temp.isEmpty()){
+            return null;
+        } else {
+            return temp;
+        }
     }
 
     public ArrayList<Vertex> getSource(Vertex vertex) {
@@ -126,7 +142,11 @@ public class EdgeMatrix {
                 }
             }
         }
-        return temp;
+        if(temp.isEmpty()){
+            return null;
+        } else {
+            return temp;
+        }
     }
 
     public int getValE(Vertex source, Vertex target, String name) throws Exception {

@@ -44,6 +44,9 @@ public class Edge {
         for (Attribute a : attributeList){
             if (a == attribute) {
                 return;
+            }            
+            if (a.name().equals(attribute.name())){
+                a.value(attribute.value());
             }
         }
             this.attributeList.add(attribute);

@@ -125,7 +125,7 @@ public final class Graph {
                             if(!a.name().equals("")){
                                 writer.write(a.name() + "=");
                             }
-                            writer.write(" " + a.value() + "  ");
+                            writer.write(a.value() + "  ");
                         }
                         
                         writer.write("\"]"+nl);

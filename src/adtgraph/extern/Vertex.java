@@ -39,11 +39,12 @@ public class Vertex {
     }
 
     public void attribute(Attribute attribute) {
-        boolean found = false;
         for (Attribute a : attributeList){
             if (a == attribute) {
-                found = true;
                 return;
+            }
+            if (a.name().equals(attribute.name())){
+                a.value(attribute.value());
             }
         }
             this.attributeList.add(attribute);

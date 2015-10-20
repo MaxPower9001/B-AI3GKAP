@@ -4,11 +4,11 @@ v1
 v2
 v3
 v4
-v1 -> v2 [label=" 9  "]
-v1 -> v3 [label=" 4  "]
-v1 -> v4 [label=" -3  "]
-v2 -> v3 [label=" 5  "]
-v3 -> v2 [label=" -6  "]
-v4 -> v1 [label=" 5  "]
-v4 -> v3 [label=" 8  "]
+v1 -> v2 [label="9  "]
+v1 -> v3 [label="4  "]
+v1 -> v4 [label="-3  "]
+v2 -> v3 [label="5  "]
+v3 -> v2 [label="-6  "]
+v4 -> v1 [label="5  "]
+v4 -> v3 [label="8  "]
 }
