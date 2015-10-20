@@ -22,7 +22,7 @@ import static org.junit.Assert.*;
  *
  * @author Rene
  */
-public class VertexTests {
+public class VertexJUnitTests {
 
     ArrayList<Vertex> vertexlist = new ArrayList<>();
 
@@ -31,7 +31,7 @@ public class VertexTests {
 
     Random random = new Random();
 
-    public VertexTests() {
+    public VertexJUnitTests() {
     }
 
     @BeforeClass
@@ -59,7 +59,7 @@ public class VertexTests {
     public void CreateV() {
         char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 
-        for (int i = 0; i < 12000; i++) {
+        for (int i = 0; i < 1200; i++) {
             StringBuilder sb = new StringBuilder();
             for (int j = 0; j < 20; j++) {
                 char c = chars[random.nextInt(chars.length)];
@@ -137,21 +137,7 @@ public class VertexTests {
 
     @Test
     public void getIncident() {
-        addVertex();
         
-        testgraph.addEdge(vertexlist.get(56), vertexlist.get(938));
-        testgraph.addEdge(vertexlist.get(938), vertexlist.get(65));
-        testgraph.addEdge(vertexlist.get(938), vertexlist.get(938));
-        testgraph.addEdge(vertexlist.get(38), vertexlist.get(101));
-        
-        ArrayList<Vertex> test = new ArrayList<>();
-        test.add(vertexlist.get(56));
-        test.add(vertexlist.get(938));
-        test.add(vertexlist.get(938));
-        test.add(vertexlist.get(65));
-        
-        
-        assertEquals(test, testgraph.getIncident(vertexlist.get(938)));
         
     }
 
