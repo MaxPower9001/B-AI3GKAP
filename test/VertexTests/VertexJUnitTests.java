@@ -1,12 +1,5 @@
 package VertexTests;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
 import java.util.ArrayList;
@@ -18,10 +11,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Rene
- */
 public class VertexJUnitTests {
 
     ArrayList<Vertex> vertexlist = new ArrayList<>();
@@ -136,28 +125,92 @@ public class VertexJUnitTests {
     }
 
     @Test
-    public void getIncident() {
+    public void getIncident() {        
+        Graph incidentG = Graph.createG(Vertex.createV("Hans"));
+        incidentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
+        incidentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
+        incidentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
+        incidentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
         
+        ArrayList<Vertex> testList = new ArrayList<>();
+        testList.add(Vertex.createV("Hans"));
+        testList.add(Vertex.createV("Peter"));
+        testList.add(Vertex.createV("Hans"));
+        testList.add(Vertex.createV("Franz"));
+        testList.add(Vertex.createV("Anna"));
+        testList.add(Vertex.createV("Hans"));
         
+        assertEquals(testList, incidentG.getIncident(Vertex.createV("Hans")));        
     }
 
     @Test
     public void getAdjacent() {
+        Graph adjacentG = Graph.createG(Vertex.createV("Hans"));
+        adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
+        adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
+        adjacentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
+        adjacentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
+        
+        ArrayList<Vertex> testList = new ArrayList<>();
+        testList.add(Vertex.createV("Peter"));
+        testList.add(Vertex.createV("Franz"));
+        testList.add(Vertex.createV("Anna"));
+        
+        assertEquals(testList, adjacentG.getAdjacent(Vertex.createV("Hans")));
 
     }
 
     @Test
     public void getTarget() {
+        
+        Graph adjacentG = Graph.createG(Vertex.createV("Hans"));
+        adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
+        adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
+        adjacentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
+        adjacentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
+        
+        ArrayList<Vertex> testList = new ArrayList<>();
+        testList.add(Vertex.createV("Peter"));
+        testList.add(Vertex.createV("Franz"));
+        
+        assertEquals(testList, adjacentG.getTarget(Vertex.createV("Hans")));
 
     }
 
     @Test
     public void getSource() {
-
+        Graph adjacentG = Graph.createG(Vertex.createV("Hans"));
+        adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
+        adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
+        adjacentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
+        adjacentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
+        
+        ArrayList<Vertex> testList = new ArrayList<>();
+        testList.add(Vertex.createV("Anna"));
+        
+        assertEquals(testList, adjacentG.getSource(Vertex.createV("Hans")));
     }
 
     @Test
     public void getEdges() {
+        
+        Graph adjacentG = Graph.createG(Vertex.createV("Hans"));
+        adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
+        adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
+        adjacentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
+        adjacentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
+        
+        ArrayList<Vertex> testList = new ArrayList<>();
+        testList.add(Vertex.createV("Hans"));
+        testList.add(Vertex.createV("Peter"));
+        testList.add(Vertex.createV("Hans"));
+        testList.add(Vertex.createV("Franz"));
+        testList.add(Vertex.createV("Peter"));
+        testList.add(Vertex.createV("Franz"));
+        testList.add(Vertex.createV("Anna"));
+        testList.add(Vertex.createV("Hans"));
+        
+        assertEquals(testList, adjacentG.getEdges());
 
     }
 
