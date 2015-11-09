@@ -14,11 +14,11 @@ public class Attribute {
         this.value = value;
     }    
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
-    public void name(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -28,5 +28,20 @@ public class Attribute {
 
     public void value(int value) {
         this.value = value;
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        if(this == o){
+            return true;
+        } else if(this.getClass() == o.getClass()){
+            Attribute that = (Attribute) o;
+            
+            if(this.name == that.name && this.value == that.value){
+                return true;
+            }
+        }
+        
+        return false;
     }
 }

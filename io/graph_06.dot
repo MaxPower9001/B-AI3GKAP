@@ -9,14 +9,14 @@ v5
 v6
 v7
 v9
-v1 -> v2 [label="1  "]
-v1 -> v3 [label="10  "]
-v1 -> v4 [label="10  "]
-v2 -> v8 [label="1  "]
-v3 -> v5 [label="10  "]
-v4 -> v6 [label="10  "]
-v8 -> v9 [label="10  "]
-v5 -> v8 [label="-100  "]
-v6 -> v7 [label="10  "]
-v7 -> v8 [label="-200  "]
+v1 -> v2 [label="cost=1  "]
+v1 -> v3 [label="cost=10  "]
+v1 -> v4 [label="cost=10  "]
+v2 -> v8 [label="cost=1  "]
+v3 -> v5 [label="cost=10  "]
+v4 -> v6 [label="cost=10  "]
+v8 -> v9 [label="cost=10  "]
+v5 -> v8 [label="cost=-100  "]
+v6 -> v7 [label="cost=10  "]
+v7 -> v8 [label="cost=-200  "]
 }

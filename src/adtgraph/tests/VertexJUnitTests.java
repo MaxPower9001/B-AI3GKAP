@@ -1,7 +1,13 @@
-package VertexTests;
+package adtgraph.tests;
 
 import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
+
+//import adtgraph.Attribute;
+//import adtgraph.Edge;
+//import adtgraph.EdgeMatrix;
+//import adtgraph.Graph;
+//import adtgraph.Vertex;
 import java.util.ArrayList;
 import java.util.Random;
 import org.junit.After;
@@ -67,6 +73,14 @@ public class VertexJUnitTests {
         for (int i = 0; i < vertexlist.size() / 2; i++) {
             Graph.createG(vertexlist.get(random.nextInt(vertexlist.size())));
         }
+        
+        
+        ArrayList<Vertex> testList = new ArrayList<>();
+        testList.add(Vertex.createV("Hans"));
+        
+        Graph testGraph = Graph.createG(testList.get(0));
+        
+        assertEquals(testList,testGraph.getVertices());
     }
 
     @Test
@@ -77,19 +91,35 @@ public class VertexJUnitTests {
         for (int i = 0; i < vertexlist.size() / 2; i++) {
             testgraph.addEdge(vertexlist.get(random.nextInt(vertexlist.size())), vertexlist.get(random.nextInt(vertexlist.size())));
         }
+        
+        ArrayList<Vertex> testList = new ArrayList<>();
+        testList.add(Vertex.createV("Hans"));
+        testList.add(Vertex.createV("Peter"));
+        
+        Graph testGraph = Graph.createG(testList.get(0));
+        testGraph.addEdge(testList.get(0), testList.get(1));
+        
+        
+        assertEquals(testList,testGraph.getEdges());
     }
 
     @Test
     public void addVertex() {
         CreateV();
-        testgraph = Graph.createG(Vertex.createV("TestVertex"));
-        for (int i = 0; i < vertexlist.size() / 2; i++) {
-            testgraph.addVertex(vertexlist.get(random.nextInt(vertexlist.size())));
-        }
+        Graph testgraph = Graph.createG(Vertex.createV("TestVertex"));
+        ArrayList<Vertex> testList = new ArrayList<>();
+        
+        testList.add(Vertex.createV("TestVertex"));
+        
+        testgraph.addVertex(Vertex.createV("Hans"));
+        testList.add(Vertex.createV("Hans"));
+        
+        assertEquals(testList, testgraph.getVertices());
     }
 
     @Test
     public void deleteVertex() {
+        
         testgraph.addEdge(Vertex.createV("Augsburg"), Vertex.createV("Hameln"));
         testgraph.addEdge(Vertex.createV("Augsburg"), Vertex.createV("Barmbek"));
         testgraph.addEdge(Vertex.createV("Augsburg"), Vertex.createV("Salzwedel"));
@@ -97,8 +127,10 @@ public class VertexJUnitTests {
         tempgraph2.deleteVertex(Vertex.createV("Augsburg"));
         testgraph.deleteVertex(Vertex.createV("Augsburg"));
 
-//        assertEquals(null, tempgraph2.getAdjacent(Vertex.createV("Augsburg")));
-//        assertEquals(null, testgraph.getAdjacent(Vertex.createV("Augsburg")));
+        ArrayList<Vertex> nullList = new ArrayList<>();
+        
+        assertEquals(nullList, tempgraph2.getAdjacent(Vertex.createV("Augsburg")));
+        assertEquals(nullList, testgraph.getAdjacent(Vertex.createV("Augsburg")));
 
     }
 
@@ -111,22 +143,22 @@ public class VertexJUnitTests {
     }
 
     @Test
-    public void setAtE() throws Exception {
+    public void setAtE() {
         addEdge();
         testgraph.setAtE(testgraph.getEdges().get(0), testgraph.getEdges().get(1), "Test", 15);
-        assertEquals(15, testgraph.getValE(testgraph.getEdges().get(0), testgraph.getEdges().get(1), "Test"));
+        assertEquals((int) 15, (int) testgraph.getValE(testgraph.getEdges().get(0), testgraph.getEdges().get(1), "Test"));
     }
 
     @Test
-    public void setAtV() throws Exception {
+    public void setAtV() {
         addVertex();
-        testgraph.setAtV(testgraph.getVertices().get(42), "Testkrams", 5654);
-        assertEquals(5654, testgraph.getValV(testgraph.getVertices().get(42), "Testkrams"));
+        testgraph.setAtV(testgraph.getVertices().get(1), "Testkrams", 5654);
+        assertEquals((int) 5654, (int) testgraph.getValV(testgraph.getVertices().get(1), "Testkrams"));
     }
 
     @Test
     public void getIncident() {        
-        Graph incidentG = Graph.createG(Vertex.createV("Hans"));
+       Graph incidentG = Graph.createG(Vertex.createV("Hans"));
         incidentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
         incidentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
         incidentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
@@ -227,12 +259,6 @@ public class VertexJUnitTests {
         assertEquals(verticeTest.getVertices(), vertexlist);
     }
 
-    @Test(expected = Exception.class)
-    public void getValEException() throws Exception {
-        addEdge();
-        testgraph.getValE(Vertex.createV(vertexlist.get(7).getName()), Vertex.createV(""), "");
-    }
-    
     @Test
     public void IO() throws Exception {
 
@@ -257,10 +283,8 @@ public class VertexJUnitTests {
     
     @Test
     public void bellf() {
-        Graph bellfTest = Graph.importG("io/graph_03.graph");
-        bellfTest.addEdge(Vertex.createV("u"), Vertex.createV("s"));
-        bellfTest.setAtE(Vertex.createV("u"), Vertex.createV("s"), "cost", -8);
-        ArrayList<Vertex> shortestRoute = bellfTest.bellf(Vertex.createV("s"), Vertex.createV("v"));
+        Graph bellfTest = Graph.importG("io/graph_01.graph");
+        bellfTest.bellf(Vertex.createV("Augsburg"), Vertex.createV("Wolfsburg"));
         System.out.println("Test");
     }
 }

@@ -17,7 +17,7 @@ public class Vertex {
     
     public static Vertex createV(String name) {
         for (Vertex v : vertexList) {
-            if(v.name().equals(name)) {
+            if(v.getName().equals(name)) {
                 return v;
             }
         }
@@ -26,7 +26,7 @@ public class Vertex {
         return temp;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
@@ -43,7 +43,7 @@ public class Vertex {
             if (a == attribute) {
                 return;
             }
-            if (a.name().equals(attribute.name())){
+            if (a.getName().equals(attribute.getName())){
                 a.value(attribute.value());
             }
         }
@@ -53,5 +53,23 @@ public class Vertex {
     @Override
     public String toString(){
         return this.name;
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        if (this == o){
+            return true;
+        } else if(this.getClass() == o.getClass()) {
+            Vertex that = (Vertex) o;
+            
+            if(that.getName().equals(this.getName()) && this.attributeList.equals(that.attributeList)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        
+        
+        return false;
     }
 }

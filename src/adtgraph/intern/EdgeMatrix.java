@@ -29,11 +29,7 @@ public class EdgeMatrix {
             tempR.add(v);
             tempR.add(vertex);
         }
-        if(tempR.isEmpty()){
-            return null;
-        } else {
-            return tempR;
-        }
+        return tempR;
     }
 
     public ArrayList<Vertex> getAdjacent(Vertex vertex) {
@@ -42,16 +38,12 @@ public class EdgeMatrix {
         if(getTarget(vertex) != null && getSource(vertex) != null){
             temp.addAll(getTarget(vertex));
             temp.addAll(getSource(vertex));            
-        }
+        } 
+        return temp;
         
-        if(temp.isEmpty()){
-            return null;
-        } else {
-            return temp;
-        }
     }
 
-    public Edge getEdge(Vertex source, Vertex target) throws Exception {
+    public Edge getEdge(Vertex source, Vertex target) {
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
                 if (matrix.get(i).get(j) != null && matrix.get(i).get(j).target() == target && matrix.get(i).get(j).source() == source) {
@@ -59,7 +51,7 @@ public class EdgeMatrix {
                 }
             }
         }
-         throw new Exception("Name nicht vorhanden!");
+         return null;
     }
 
     public ArrayList<Vertex> getVertices() {
@@ -96,12 +88,14 @@ public class EdgeMatrix {
     }
 
     public void deleteVertex(Vertex vertex) {
-        if(vertexlist.size() > 1){
-            matrix.remove(vertexlist.indexOf((Vertex) vertex));
-            for (int i = 0; i < matrix.size(); i++) {
-                matrix.get(i).remove(vertexlist.indexOf((Vertex) vertex));
+        if(vertexlist.indexOf((Vertex) vertex) != -1){
+            if(vertexlist.size() > 1){
+                matrix.remove(vertexlist.indexOf((Vertex) vertex));
+                for (int i = 0; i < matrix.size(); i++) {
+                    matrix.get(i).remove(vertexlist.indexOf((Vertex) vertex));
+                }
+                vertexlist.remove((Vertex) vertex);
             }
-            vertexlist.remove((Vertex) vertex);
         }
     }
 
@@ -149,7 +143,7 @@ public class EdgeMatrix {
         }
     }
 
-    public int getValE(Vertex source, Vertex target, String name) throws Exception {
+    public int getValE(Vertex source, Vertex target, String name) {
         // Jedes Element in der Matrix wird durchlaufen
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
@@ -161,7 +155,7 @@ public class EdgeMatrix {
                     
                     // Alle Attribute der Ecke werden durchlaufen und nach dem String durchsucht
                     for (Attribute a : matrix.get(i).get(j).attribute()) {
-                        if (a.name().equals(name)) {
+                        if (a.getName().equals(name)) {
                             // Verlässt getValE Aufruf und gibt den entsprechenden value zurück
                             return a.value();
                         }
@@ -170,12 +164,12 @@ public class EdgeMatrix {
             }
         }
         // Wenn kein Attribut gefunden
-        throw new Exception("Name nicht vorhanden!");
+        return (Integer) null;
     }
 
     private void expandEdgeMatrix() {
         // Der Matrix wird eine weitere Spalte hinzugefügt
-        matrix.add(new ArrayList<>());
+        matrix.add(new ArrayList<Edge>());
 
         // Die neue Spalte wird anhand der Größe der vertexlist mit null initialisiert
         for (Vertex v : vertexlist) {
