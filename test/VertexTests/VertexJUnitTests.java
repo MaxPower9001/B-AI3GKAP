@@ -260,7 +260,7 @@ public class VertexJUnitTests {
         Graph bellfTest = Graph.importG("io/graph_03.graph");
         bellfTest.addEdge(Vertex.createV("u"), Vertex.createV("s"));
         bellfTest.setAtE(Vertex.createV("u"), Vertex.createV("s"), "cost", -8);
-        ArrayList<Vertex> shortestRoute = bellfTest.bellf(Vertex.createV("s"), Vertex.createV("v"));
+        ArrayList<Vertex> shortestRoute = bellfTest.bellfRuntime(Vertex.createV("s"), Vertex.createV("v"));
         System.out.println("Test");
     }
 }

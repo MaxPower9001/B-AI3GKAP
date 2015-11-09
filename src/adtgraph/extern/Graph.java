@@ -14,6 +14,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.lang.String;
+import java.time.Instant;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -279,11 +280,11 @@ public final class Graph {
 
         ArrayList<Vertex> shortestRoute = new ArrayList<>();
 
-        long currentTime = System.currentTimeMillis();
+        long currentTime = Instant.now().toEpochMilli();
 
         shortestRoute = bellf(start, goal);
 
-        long measuredTime = System.currentTimeMillis() - currentTime;
+        long measuredTime = Instant.now().toEpochMilli() - currentTime;
         args.add(String.valueOf(measuredTime));
         if (shortestRoute == null) {
             args.add("1");
