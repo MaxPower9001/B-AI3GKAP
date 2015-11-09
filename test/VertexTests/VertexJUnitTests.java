@@ -257,10 +257,10 @@ public class VertexJUnitTests {
     
     @Test
     public void bellf() {
-        Graph bellfTest = Graph.importG("io/graph_03.graph");
-        bellfTest.addEdge(Vertex.createV("u"), Vertex.createV("s"));
-        bellfTest.setAtE(Vertex.createV("u"), Vertex.createV("s"), "cost", -8);
-        ArrayList<Vertex> shortestRoute = bellfTest.bellfRuntime("Test 1",Vertex.createV("s"), Vertex.createV("v"));
+        Graph bellfTest = Graph.importG("io/graph_02.graph");
+        for(int i = 0; i < 20; i++){
+            ArrayList<Vertex> shortestRoute = bellfTest.bellfRuntime("Petertest","Test 1",Vertex.createV("Augsburg"), Vertex.createV("Bielefeld"));
+        }
         System.out.println("Test");
     }
 }

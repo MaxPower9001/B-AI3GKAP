@@ -271,7 +271,7 @@ public final class Graph {
         return shortestRoute;
     }
 
-    public ArrayList<Vertex> bellfRuntime(String testname, Vertex start, Vertex goal) {
+    public ArrayList<Vertex> bellfRuntime(String filename, String testname, Vertex start, Vertex goal) {
         ArrayList<String> args = new ArrayList<>();
         args.add(testname);
         args.add("Bellmann Ford");
@@ -291,7 +291,7 @@ public final class Graph {
         } else {
             args.add("0");
         }
-        outputToCSV(args);
+        outputToCSV(filename,args);
 
         return shortestRoute;
     }
@@ -330,9 +330,9 @@ public final class Graph {
         return shortestRoute;
     }
 
-    public ArrayList<Vertex> floydwRuntime(Vertex start, Vertex goal) {
+    public ArrayList<Vertex> floydwRuntime(String filename, String testname, Vertex start, Vertex goal) {
         ArrayList<String> args = new ArrayList<>();
-        args.add("Laufzeit-Test");
+        args.add(testname);
         args.add("Floyd Warshall");
         args.add("0");
         args.add("0");
@@ -350,7 +350,7 @@ public final class Graph {
         } else {
             args.add("0");
         }
-        outputToCSV(args);
+        outputToCSV(filename, args);
 
         return shortestRoute;
     }
