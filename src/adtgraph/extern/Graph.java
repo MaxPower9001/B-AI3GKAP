@@ -297,8 +297,36 @@ public final class Graph {
     }
 
     public ArrayList<Vertex> floydw(Vertex start, Vertex goal) {
+        if (start == goal) {
+            return new ArrayList();
+        }
         ArrayList<Vertex> shortestRoute = new ArrayList<>();
-
+        
+         // cache all vertices from current graph
+        ArrayList<Vertex> vertices = this.getVertices();
+        
+        // initialize predecessorMap and costMap
+        Map<Vertex, Map<Vertex,Vertex>> predecessorMap = new HashMap<>();
+        Map<Vertex, Map<Vertex,Integer>> costMap = new HashMap<>();
+        
+        for(int i = 0; i < vertices.size(); i++){
+            for(int j = 0; j < vertices.size(); j++){
+                if(i == j){
+                    predecessorMap.put(vertices.get(i), new HashMap<Vertex,Vertex>(vertices.get(j),null));
+                    costMap.put(vertices.get(i), new HashMap<Vertex,Integer>(vertices.get(j),0));
+                }
+            }
+            
+        }        
+        
+        for(int j = 0; j < vertices.size(); j++){
+            for(int i = 0; i < vertices.size() && i != j; i++){
+                for(int k = 0; k < vertices.size() && k != j; k++){
+                    
+                }
+            }
+        }
+        
         return shortestRoute;
     }
 
