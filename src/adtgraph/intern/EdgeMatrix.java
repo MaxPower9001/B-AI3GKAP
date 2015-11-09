@@ -143,7 +143,7 @@ public class EdgeMatrix {
         }
     }
 
-    public int getValE(Vertex source, Vertex target, String name) {
+    public Integer getValE(Vertex source, Vertex target, String name) {
         // Jedes Element in der Matrix wird durchlaufen
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
@@ -164,7 +164,7 @@ public class EdgeMatrix {
             }
         }
         // Wenn kein Attribut gefunden
-        return (Integer) null;
+        return null;
     }
 
     private void expandEdgeMatrix() {

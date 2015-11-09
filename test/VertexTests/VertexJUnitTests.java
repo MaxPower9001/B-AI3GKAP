@@ -3,6 +3,8 @@ package VertexTests;
 import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -257,10 +259,19 @@ public class VertexJUnitTests {
     
     @Test
     public void bellf() {
-        Graph bellfTest = Graph.importG("io/graph_02.graph");
-        for(int i = 0; i < 20; i++){
-            ArrayList<Vertex> shortestRoute = bellfTest.bellfRuntime("Petertest","Test 1",Vertex.createV("Augsburg"), Vertex.createV("Bielefeld"));
-        }
-        System.out.println("Test");
+        Graph bellfTest = Graph.importG("io/graph_01.graph");
+        ArrayList<Vertex> shortestRouteFloyd = bellfTest.floydwRuntime("Petertest","Test 1",Vertex.createV("Augsburg"), Vertex.createV("Hannover"));
+        ArrayList<Vertex> shortestRouteBellF = bellfTest.bellfRuntime("Petertest","Test 1",Vertex.createV("Augsburg"), Vertex.createV("Hannover"));
+        Collection<Vertex> listeEins = shortestRouteBellF;
+        Collection<Vertex> listeZwei = shortestRouteFloyd;
+        
+        List<Vertex> src = new ArrayList<>(listeEins);
+        List<Vertex> dst = new ArrayList<>(listeZwei);
+        
+        src.removeAll(listeZwei);
+        dst.removeAll(listeEins);
+        
+        System.out.println(src);
+        System.out.println(dst);
     }
 }

@@ -291,7 +291,7 @@ public final class Graph {
         } else {
             args.add("0");
         }
-        outputToCSV(filename,args);
+        outputToCSV(filename, args);
 
         return shortestRoute;
     }
@@ -301,33 +301,86 @@ public final class Graph {
             return new ArrayList();
         }
         ArrayList<Vertex> shortestRoute = new ArrayList<>();
-        
-         // cache all vertices from current graph
+
+        // cache all vertices from current graph
         ArrayList<Vertex> vertices = this.getVertices();
-        
+
         // initialize predecessorMap and costMap
-        Map<Vertex, Map<Vertex,Vertex>> predecessorMap = new HashMap<>();
-        Map<Vertex, Map<Vertex,Integer>> costMap = new HashMap<>();
-        
-        for(int i = 0; i < vertices.size(); i++){
-            for(int j = 0; j < vertices.size(); j++){
-                if(i == j){
-                    predecessorMap.put(vertices.get(i), new HashMap<Vertex,Vertex>(vertices.get(j),null));
-                    costMap.put(vertices.get(i), new HashMap<Vertex,Integer>(vertices.get(j),0));
+        Map<Vertex, Map<Vertex, Vertex>> predecessorMap = new HashMap<>();
+        Map<Vertex, Map<Vertex, Integer>> costMap = new HashMap<>();
+
+        for (int i = 0; i < vertices.size(); i++) {
+            Map<Vertex, Integer> tempCost = new HashMap<>();
+            Map<Vertex, Vertex> tempPred = new HashMap<>();
+            for (int j = 0; j < vertices.size(); j++) {
+                if (i == j) {
+                    tempCost.put(vertices.get(j), 0);
+                    tempPred.put(vertices.get(j), null);
+                } else {
+                    tempCost.put(vertices.get(j), edgeMatrix.getValE(vertices.get(i), vertices.get(j), "cost"));
+                    tempPred.put(vertices.get(j), null);
                 }
+
             }
-            
-        }        
-        
-        for(int j = 0; j < vertices.size(); j++){
-            for(int i = 0; i < vertices.size() && i != j; i++){
-                for(int k = 0; k < vertices.size() && k != j; k++){
-                    
+            costMap.put(vertices.get(i), tempCost);
+            predecessorMap.put(vertices.get(i), tempPred);
+        }
+
+        for (int j = 0; j < vertices.size(); j++) {
+            for (int i = 0; i < vertices.size(); i++) {
+                for (int k = 0; k < vertices.size(); k++) {
+                    if (i != j && j != k) {
+                        Integer dik = costMap.get(vertices.get(i)).get(vertices.get(k));
+                        Integer dij = costMap.get(vertices.get(i)).get(vertices.get(j));
+                        Integer djk = costMap.get(vertices.get(j)).get(vertices.get(k));
+                        
+                        if (dij != null && djk != null && minValue(dik, dij + djk) != dik) {
+                            costMap.get(vertices.get(i)).replace(vertices.get(k), dij + djk);
+                            predecessorMap.get(vertices.get(i)).replace(vertices.get(k), vertices.get(j));
+                        }
+                    }
+                }
+                Integer dii = costMap.get(vertices.get(i)).get(i);
+                if (dii != null && dii < 0) {
+                    return null;
                 }
             }
         }
-        
+        shortestRoute.add(start);
+
+        Vertex interim = predecessorMap.get(start).get(goal);
+
+        if (interim != null) {
+
+            pathfinder(predecessorMap, start, goal, shortestRoute);
+
+        } else {
+            shortestRoute.add(interim);
+        }
         return shortestRoute;
+    }
+ 
+    public ArrayList<Vertex> pathfinder(Map<Vertex, Map<Vertex, Vertex>> predecessorMap, Vertex start, Vertex target, ArrayList<Vertex> list) {
+        Vertex interim = predecessorMap.get(start).get(target);
+        if (interim != null) {
+            pathfinder(predecessorMap, start, interim, list);
+            pathfinder(predecessorMap, interim, target, list);
+        } else {
+            list.add(target);
+        }
+        return list;
+    }
+
+    public Integer minValue(Integer valueA, Integer valueB) {
+        if (valueA == null) {
+            return valueB;
+        } else if (valueB == null) {
+            return valueA;
+        } else if (valueB > valueA) {
+            return valueA;
+        } else {
+            return valueB;
+        }
     }
 
     public ArrayList<Vertex> floydwRuntime(String filename, String testname, Vertex start, Vertex goal) {
@@ -339,11 +392,11 @@ public final class Graph {
 
         ArrayList<Vertex> shortestRoute = new ArrayList<>();
 
-        long currentTime = System.currentTimeMillis();
+        long currentTime = Instant.now().toEpochMilli();
 
         shortestRoute = floydw(start, goal);
 
-        long measuredTime = System.currentTimeMillis() - currentTime;
+        long measuredTime = Instant.now().toEpochMilli() - currentTime;
         args.add(String.valueOf(measuredTime));
         if (shortestRoute == null) {
             args.add("1");
