@@ -271,9 +271,9 @@ public final class Graph {
         return shortestRoute;
     }
 
-    public ArrayList<Vertex> bellfRuntime(Vertex start, Vertex goal) {
+    public ArrayList<Vertex> bellfRuntime(String testname, Vertex start, Vertex goal) {
         ArrayList<String> args = new ArrayList<>();
-        args.add("Laufzeit-Test");
+        args.add(testname);
         args.add("Bellmann Ford");
         args.add("0");
         args.add("0");
