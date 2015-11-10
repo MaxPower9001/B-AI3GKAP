@@ -422,6 +422,131 @@ public class VertexJUnitTests {
             assertEquals(true, dst.equals(src));
         }
         
+        /**
+         * GRAPH 8
+         */
+        graph = "graph_08";
+        start = "Rostock";
+        goal = "München";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
+        
+        /**
+         * GRAPH 9
+         */
+        graph = "graph_09";
+        start = "Quelle";
+        goal = "Senke";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
+        
+        /**
+         * GRAPH 10
+         */
+        graph = "graph_10";
+        start = "v5";
+        goal  = "v1";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
+        
+        /**
+         * GRAPH 11
+         */
+        graph = "graph_11";
+        start = "v5";
+        goal  = "v1";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
+        
+        /**
+         * GRAPH 12
+         */
+        graph = "graph_12";
+        start = "go";
+        goal  = "s";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
+        
 //        /**
 //         * GRAPH selfmade
 //         */

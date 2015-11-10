@@ -64,21 +64,14 @@ public final class floydw {
             }
         }
         shortestRoute.add(start);
-
-        Vertex interim = predecessorMap.get(start).get(goal);
-
-        if (interim != null) {
-
-            pathfinder(predecessorMap, start, goal, shortestRoute);
-
-        } else {
-            shortestRoute.add(interim);
-        }
-        if (shortestRoute.get(1) == null) {
+        
+        pathfinder(predecessorMap, start, goal, shortestRoute);
+        
+        if(shortestRoute.get(0) == start && shortestRoute.get(1) == goal && graph.getEdgeMatrix().getEdge(start, goal) == null){
             return null;
-        }
-
-        return shortestRoute;
+        } else {
+            return shortestRoute;
+        }        
     }
 
     public static ArrayList<Vertex> pathfinder(Map<Vertex, Map<Vertex, Vertex>> predecessorMap, Vertex start, Vertex target, ArrayList<Vertex> list) {

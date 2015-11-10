@@ -1,0 +1,2 @@
+graph_12 Test,Floyd Warshall,0,0,0,0,->go->b->s
+graph_12 Test,Bellmann Ford,0,0,0,0,->go->b->s

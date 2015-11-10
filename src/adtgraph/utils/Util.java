@@ -17,7 +17,12 @@ public class Util {
             
             // print line
             for (int i = 0; i < args.size(); i++) {
-                writer.write(args.get(i) + ",");
+                if(i != args.size()-1){
+                    writer.write(args.get(i) + ",");
+                } else {
+                    writer.write(args.get(i));
+                }
+                
             }
             writer.write(nl);
 
