@@ -103,7 +103,6 @@ public class VertexJUnitTests {
 
 //        assertEquals(null, tempgraph2.getAdjacent(Vertex.createV("Augsburg")));
 //        assertEquals(null, testgraph.getAdjacent(Vertex.createV("Augsburg")));
-
     }
 
     @Test
@@ -129,13 +128,13 @@ public class VertexJUnitTests {
     }
 
     @Test
-    public void getIncident() {        
+    public void getIncident() {
         Graph incidentG = Graph.createG(Vertex.createV("Hans"));
         incidentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
         incidentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
         incidentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
         incidentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
-        
+
         ArrayList<Vertex> testList = new ArrayList<>();
         testList.add(Vertex.createV("Hans"));
         testList.add(Vertex.createV("Peter"));
@@ -143,8 +142,8 @@ public class VertexJUnitTests {
         testList.add(Vertex.createV("Franz"));
         testList.add(Vertex.createV("Anna"));
         testList.add(Vertex.createV("Hans"));
-        
-        assertEquals(testList, incidentG.getIncident(Vertex.createV("Hans")));        
+
+        assertEquals(testList, incidentG.getIncident(Vertex.createV("Hans")));
     }
 
     @Test
@@ -154,29 +153,29 @@ public class VertexJUnitTests {
         adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
         adjacentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
         adjacentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
-        
+
         ArrayList<Vertex> testList = new ArrayList<>();
         testList.add(Vertex.createV("Peter"));
         testList.add(Vertex.createV("Franz"));
         testList.add(Vertex.createV("Anna"));
-        
+
         assertEquals(testList, adjacentG.getAdjacent(Vertex.createV("Hans")));
 
     }
 
     @Test
     public void getTarget() {
-        
+
         Graph adjacentG = Graph.createG(Vertex.createV("Hans"));
         adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
         adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
         adjacentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
         adjacentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
-        
+
         ArrayList<Vertex> testList = new ArrayList<>();
         testList.add(Vertex.createV("Peter"));
         testList.add(Vertex.createV("Franz"));
-        
+
         assertEquals(testList, adjacentG.getTarget(Vertex.createV("Hans")));
 
     }
@@ -188,22 +187,22 @@ public class VertexJUnitTests {
         adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
         adjacentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
         adjacentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
-        
+
         ArrayList<Vertex> testList = new ArrayList<>();
         testList.add(Vertex.createV("Anna"));
-        
+
         assertEquals(testList, adjacentG.getSource(Vertex.createV("Hans")));
     }
 
     @Test
     public void getEdges() {
-        
+
         Graph adjacentG = Graph.createG(Vertex.createV("Hans"));
         adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Peter"));
         adjacentG.addEdge(Vertex.createV("Hans"), Vertex.createV("Franz"));
         adjacentG.addEdge(Vertex.createV("Peter"), Vertex.createV("Franz"));
         adjacentG.addEdge(Vertex.createV("Anna"), Vertex.createV("Hans"));
-        
+
         ArrayList<Vertex> testList = new ArrayList<>();
         testList.add(Vertex.createV("Hans"));
         testList.add(Vertex.createV("Peter"));
@@ -213,7 +212,7 @@ public class VertexJUnitTests {
         testList.add(Vertex.createV("Franz"));
         testList.add(Vertex.createV("Anna"));
         testList.add(Vertex.createV("Hans"));
-        
+
         assertEquals(testList, adjacentG.getEdges());
 
     }
@@ -236,7 +235,7 @@ public class VertexJUnitTests {
         addEdge();
         testgraph.getValE(Vertex.createV(vertexlist.get(7).getName()), Vertex.createV(""), "");
     }
-    
+
     @Test
     public void IO() throws Exception {
 
@@ -258,22 +257,168 @@ public class VertexJUnitTests {
         Graph.importG("io/graph_12.graph").exportG("io/graph_12.dot");
 
     }
-    
+
     @Test
-    public void bellf() {
-        Graph bellfTest = Graph.importG("io/graph_01.graph");
-        ArrayList<Vertex> shortestRouteFloyd = floydw.floydwRuntime("Petertest","Test 1",bellfTest,Vertex.createV("Augsburg"), Vertex.createV("Hannover"));
-        ArrayList<Vertex> shortestRouteBellF = bellf.bellfRuntime("Petertest","Test 1",bellfTest,Vertex.createV("Augsburg"), Vertex.createV("Hannover"));
+    public void compareFloydwBellfShortestRoute() {
+        /**
+         * GRAPH 1
+         */
+        String graph = "graph_01";
+        String start = "Augsburg";
+        String goal = "Hannover";
+
+        Graph testGraph = Graph.importG("io/" + graph + ".graph");
+        ArrayList<Vertex> shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        ArrayList<Vertex> shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
         Collection<Vertex> listeEins = shortestRouteBellF;
         Collection<Vertex> listeZwei = shortestRouteFloyd;
-        
+
         List<Vertex> src = new ArrayList<>(listeEins);
         List<Vertex> dst = new ArrayList<>(listeZwei);
-        
+
         src.removeAll(listeZwei);
         dst.removeAll(listeEins);
+
+        assertEquals(true, dst.equals(src));
+
+        /**
+         * GRAPH 2
+         */
+        graph = "graph_02";
+        start = "Augsburg";
+        goal = "Hannover";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        src = new ArrayList<>(listeEins);
+        dst = new ArrayList<>(listeZwei);
+
+        src.removeAll(listeZwei);
+        dst.removeAll(listeEins);
+
+        assertEquals(true, dst.equals(src));
+
+        /**
+         * GRAPH 3
+         */
+        graph = "graph_03";
+        start = "s";
+        goal = "v";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        src = new ArrayList<>(listeEins);
+        dst = new ArrayList<>(listeZwei);
+
+        src.removeAll(listeZwei);
+        dst.removeAll(listeEins);
+
+        assertEquals(true, dst.equals(src));
+
+        /**
+         * GRAPH 4
+         */
+        graph = "graph_04";
+        start = "v1";
+        goal  = "v4";
         
-        System.out.println(src);
-        System.out.println(dst);
+        testGraph = Graph.importG("io/"+ graph +".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph,graph + " Test",testGraph,Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph,graph + " Test",testGraph,Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+        
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
+        /**
+         * GRAPH 5
+         */
+        graph = "graph_05";
+        start = "v1";
+        goal  = "v11";
+        
+        testGraph = Graph.importG("io/"+ graph +".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph,graph + " Test",testGraph,Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph,graph + " Test",testGraph,Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+        
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
+        /**
+         * GRAPH 6
+         */
+        graph = "graph_06";
+        start = "v9";
+        goal = "v1";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
+        
+        /**
+         * GRAPH 7
+         */
+        graph = "graph_07";
+        start = "v1";
+        goal = "v3";
+
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        listeEins = shortestRouteBellF;
+        listeZwei = shortestRouteFloyd;
+
+        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+            assertTrue(true);
+        } else {
+            src = new ArrayList<>(listeEins);
+            dst = new ArrayList<>(listeZwei);
+
+            src.removeAll(listeZwei);
+            dst.removeAll(listeEins);
+
+            assertEquals(true, dst.equals(src));
+        }
     }
 }

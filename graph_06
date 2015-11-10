@@ -1,0 +1,6 @@
+graph_06 Test,Floyd Warshall,0,0,1,1,,
+graph_06 Test,Bellmann Ford,0,0,0,1,,
+graph_06 Test,Floyd Warshall,0,0,88,1,,
+graph_06 Test,Bellmann Ford,0,0,0,1,,
+graph_06 Test,Floyd Warshall,0,0,0,1,,
+graph_06 Test,Bellmann Ford,0,0,0,1,,

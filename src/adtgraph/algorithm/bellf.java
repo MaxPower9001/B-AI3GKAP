@@ -100,6 +100,14 @@ public final class bellf {
         } else {
             args.add("0");
         }
+        String shortestRouteString = "";
+        if (shortestRoute != null) {
+            for (Vertex v : shortestRoute) {
+                shortestRouteString = shortestRouteString + "->" + v.getName();
+            }
+        }
+        args.add(shortestRouteString);
+        
         outputToCSV(filename, args);
 
         return shortestRoute;

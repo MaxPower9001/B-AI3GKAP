@@ -9,10 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class floydw {
+
     private floydw() {
-        
+
     }
-    
+
     public static ArrayList<Vertex> floydw(Graph graph, Vertex start, Vertex goal) {
         if (start == goal) {
             return new ArrayList();
@@ -50,14 +51,13 @@ public final class floydw {
                         Integer dik = costMap.get(vertices.get(i)).get(vertices.get(k));
                         Integer dij = costMap.get(vertices.get(i)).get(vertices.get(j));
                         Integer djk = costMap.get(vertices.get(j)).get(vertices.get(k));
-                        
                         if (dij != null && djk != null && minValue(dik, dij + djk) != dik) {
                             costMap.get(vertices.get(i)).replace(vertices.get(k), dij + djk);
                             predecessorMap.get(vertices.get(i)).replace(vertices.get(k), vertices.get(j));
                         }
                     }
                 }
-                Integer dii = costMap.get(vertices.get(i)).get(i);
+                Integer dii = costMap.get(vertices.get(i)).get(vertices.get(i));
                 if (dii != null && dii < 0) {
                     return null;
                 }
@@ -74,9 +74,13 @@ public final class floydw {
         } else {
             shortestRoute.add(interim);
         }
+        if (shortestRoute.get(1) == null) {
+            return null;
+        }
+
         return shortestRoute;
     }
- 
+
     public static ArrayList<Vertex> pathfinder(Map<Vertex, Map<Vertex, Vertex>> predecessorMap, Vertex start, Vertex target, ArrayList<Vertex> list) {
         Vertex interim = predecessorMap.get(start).get(target);
         if (interim != null) {
@@ -87,8 +91,9 @@ public final class floydw {
         }
         return list;
     }
+
     /**
-     * 
+     *
      * @param valueA as Integer
      * @param valueB as Integer
      * @return Returns lowest value, where null equals infinity
@@ -105,7 +110,7 @@ public final class floydw {
         }
     }
 
-    public static ArrayList<Vertex> floydwRuntime(String filename, String testname,Graph graph, Vertex start, Vertex goal) {
+    public static ArrayList<Vertex> floydwRuntime(String filename, String testname, Graph graph, Vertex start, Vertex goal) {
         ArrayList<String> args = new ArrayList<>();
         args.add(testname);
         args.add("Floyd Warshall");
@@ -116,7 +121,7 @@ public final class floydw {
 
         long currentTime = Instant.now().toEpochMilli();
 
-        shortestRoute = floydw(graph,start, goal);
+        shortestRoute = floydw(graph, start, goal);
 
         long measuredTime = Instant.now().toEpochMilli() - currentTime;
         args.add(String.valueOf(measuredTime));
@@ -125,6 +130,15 @@ public final class floydw {
         } else {
             args.add("0");
         }
+        String shortestRouteString = "";
+
+        if (shortestRoute != null) {
+            for (Vertex v : shortestRoute) {
+                shortestRouteString = shortestRouteString + "->" + v.getName();
+            }
+        }
+        args.add(shortestRouteString);
+
         outputToCSV(filename, args);
 
         return shortestRoute;
