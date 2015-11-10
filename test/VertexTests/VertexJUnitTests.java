@@ -255,6 +255,7 @@ public class VertexJUnitTests {
         Graph.importG("io/graph_10.graph").exportG("io/graph_10.dot");
         Graph.importG("io/graph_11.graph").exportG("io/graph_11.dot");
         Graph.importG("io/graph_12.graph").exportG("io/graph_12.dot");
+        Graph.importG("io/selfgraph.graph").exportG("io/selfgraph.dot");
 
     }
 
@@ -420,5 +421,30 @@ public class VertexJUnitTests {
 
             assertEquals(true, dst.equals(src));
         }
+        
+//        /**
+//         * GRAPH selfmade
+//         */
+//        graph = "selfgraph";
+//        start = "e842";
+//        goal  = "6a91";
+//
+//        testGraph = Graph.importG("io/" + graph + ".graph");
+//        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+//        shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+//        listeEins = shortestRouteBellF;
+//        listeZwei = shortestRouteFloyd;
+//
+//        if (shortestRouteBellF == null && shortestRouteFloyd == null) {
+//            assertTrue(true);
+//        } else {
+//            src = new ArrayList<>(listeEins);
+//            dst = new ArrayList<>(listeZwei);
+//
+//            src.removeAll(listeZwei);
+//            dst.removeAll(listeEins);
+//
+//            assertEquals(true, dst.equals(src));
+//        }
     }
 }
