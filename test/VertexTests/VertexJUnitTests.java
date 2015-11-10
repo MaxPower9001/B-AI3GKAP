@@ -260,7 +260,7 @@ public class VertexJUnitTests {
     }
 
     @Test
-    public void compareFloydwBellfShortestRoute() {
+    public void compareFloydwBellfShortestRouteWithRuntime() {
         /**
          * GRAPH 1
          */
@@ -551,8 +551,8 @@ public class VertexJUnitTests {
 //         * GRAPH selfmade
 //         */
 //        graph = "selfgraph";
-//        start = "e842";
-//        goal  = "6a91";
+//        start = "278";
+//        goal  = "30";
 //
 //        testGraph = Graph.importG("io/" + graph + ".graph");
 //        shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
@@ -571,5 +571,19 @@ public class VertexJUnitTests {
 //
 //            assertEquals(true, dst.equals(src));
 //        }
+    }
+    
+    @Test
+    public void IOTests(){
+        /**
+         * GRAPH 1
+         */
+        String graph = "graph_01";
+        String start = "Augsburg";
+        String goal = "Hannover";
+
+        Graph testGraph = Graph.importG("io/" + graph + ".graph");
+        ArrayList<Vertex> shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        ArrayList<Vertex> shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
     }
 }

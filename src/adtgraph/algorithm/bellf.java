@@ -117,8 +117,10 @@ public final class bellf {
         ArrayList<String> args = new ArrayList<>();
         args.add(testname);
         args.add("Bellmann Ford");
-        int writes = 0;
-        int reads  = 0;
+        int algowrites = 0;
+        int algoreads  = 0;
+        int graphwrites = 0;
+        int graphreads  = 0;
                 
         /**
          * ALGORITHM START
@@ -130,9 +132,13 @@ public final class bellf {
 
         // cache all vertices from current graph
         ArrayList<Vertex> vertices = graph.getVertices();
+        algowrites++;
+        graphreads++;
 
         // cache all edges from current graph
         ArrayList<Vertex> edges = graph.getEdges();
+        algowrites++;
+        graphreads++;
 
         // initialize predecessorMap and costMap
         Map<Vertex, Vertex> predecessorMap = new HashMap<>();
@@ -141,46 +147,71 @@ public final class bellf {
         // prefill predecessorMap and costMap with start vertex and null for all other vertices
         for (int i = 0; i < vertices.size(); i++) {
             Vertex currentVertex = vertices.get(i);
+            algoreads++;
+            algoreads++;
             if (currentVertex == start) {
                 predecessorMap.put(currentVertex, currentVertex);
                 costMap.put(currentVertex, 0);
+                algowrites++;
+                algowrites++;
             } else {
                 predecessorMap.put(currentVertex, null);
                 costMap.put(currentVertex, null);
+                algowrites++;
+                algowrites++;
             }
         }
         // repeat |vertices| - 1 times
         for (int i = 0; i < vertices.size() - 1; i++) {
+            algoreads++;
             for (int j = 0; j < edges.size(); j = j + 2) {
+                algoreads++;
                 if (costMap.get(edges.get(j)) != null) {
+                    algoreads++;
                     if (costMap.get(edges.get(j + 1)) == null || costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
+                        algoreads=algoreads+8;
+                        graphreads=graphreads+2;
                         costMap.replace(edges.get(j + 1), costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost"));
                         predecessorMap.replace(edges.get(j + 1), edges.get(j));
+                        graphreads=graphreads+2;
+                        algoreads=algoreads+7;
+                        algowrites++;
+                        algowrites++;
                     }
                 }
             }
         }
         // check for negative cycle
         for (int j = 0; j < edges.size(); j = j + 2) {
+            algoreads++;
             if (costMap.get(edges.get(j)) != null) {
+                algoreads++;
+                algoreads++;
                 if (costMap.get(edges.get(j + 1)) != null && costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
+                    algoreads=algoreads+8;
+                    graphreads=graphreads+2;
                     return null;
                 }
             }
         }
 
         shortestRoute.add(goal);
+        algowrites++;
         Vertex predecessor = predecessorMap.get(goal);
+        algoreads++;
         if (predecessor == null) {
             return null;
         }
-        shortestRoute.add(predecessor);
+        shortestRoute.add(predecessor);        
+        algowrites++;
         while (predecessor != start) {
             if (predecessor == null) {
                 return null;
             }
             predecessor = predecessorMap.get(predecessor);
+            algoreads++;
             shortestRoute.add(predecessor);
+            algowrites++;
         }
 
         Collections.reverse(shortestRoute);
@@ -190,14 +221,23 @@ public final class bellf {
          * -------------
          * Post-proccessing
          */
-        args.add(String.valueOf(reads));
-        args.add(String.valueOf(writes));
+        args.add(String.valueOf(algoreads));
+        args.add(String.valueOf(algowrites));
+        args.add(String.valueOf(graphreads));
+        args.add(String.valueOf(graphwrites));
         args.add("0");
         if (shortestRoute == null) {
             args.add("1");
         } else {
             args.add("0");
         }
+        String shortestRouteString = "";
+        if (shortestRoute != null) {
+            for (Vertex v : shortestRoute) {
+                shortestRouteString = shortestRouteString + "->" + v.getName();
+            }
+        }
+        args.add(shortestRouteString);
         outputToCSV(filename, args);
         return shortestRoute;
     }

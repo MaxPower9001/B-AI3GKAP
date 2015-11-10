@@ -1,2 +1,2 @@
-graph_08 Test,Floyd Warshall,0,0,4,0,->Rostock->Berlin->Dresden->Nürnberg->München
+graph_08 Test,Floyd Warshall,0,0,5,0,->Rostock->Berlin->Dresden->Nürnberg->München
 graph_08 Test,Bellmann Ford,0,0,1,0,->Rostock->Berlin->Dresden->Nürnberg->München
