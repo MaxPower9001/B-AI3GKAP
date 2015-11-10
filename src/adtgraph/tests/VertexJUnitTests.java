@@ -280,11 +280,5 @@ public class VertexJUnitTests {
         Graph.importG("io/graph_12.graph").exportG("io/graph_12.dot");
 
     }
-    
-    @Test
-    public void bellf() {
-        Graph bellfTest = Graph.importG("io/graph_01.graph");
-        bellfTest.bellf(Vertex.createV("Augsburg"), Vertex.createV("Wolfsburg"));
-        System.out.println("Test");
-    }
+
 }

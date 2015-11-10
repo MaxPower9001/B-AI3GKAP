@@ -1,5 +1,7 @@
 package VertexTests;
 
+import adtgraph.algorithm.bellf;
+import adtgraph.algorithm.floydw;
 import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
 import java.util.ArrayList;
@@ -260,8 +262,8 @@ public class VertexJUnitTests {
     @Test
     public void bellf() {
         Graph bellfTest = Graph.importG("io/graph_01.graph");
-        ArrayList<Vertex> shortestRouteFloyd = bellfTest.floydwRuntime("Petertest","Test 1",Vertex.createV("Augsburg"), Vertex.createV("Hannover"));
-        ArrayList<Vertex> shortestRouteBellF = bellfTest.bellfRuntime("Petertest","Test 1",Vertex.createV("Augsburg"), Vertex.createV("Hannover"));
+        ArrayList<Vertex> shortestRouteFloyd = floydw.floydwRuntime("Petertest","Test 1",bellfTest,Vertex.createV("Augsburg"), Vertex.createV("Hannover"));
+        ArrayList<Vertex> shortestRouteBellF = bellf.bellfRuntime("Petertest","Test 1",bellfTest,Vertex.createV("Augsburg"), Vertex.createV("Hannover"));
         Collection<Vertex> listeEins = shortestRouteBellF;
         Collection<Vertex> listeZwei = shortestRouteFloyd;
         
