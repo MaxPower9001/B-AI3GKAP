@@ -1,4 +1,0 @@
-graph_01 Test,Floyd Warshall,346034,3922,873,0,0,0,->Augsburg->München->Nürnberg->Erfurt->Magdeburg->Wolfsburg->Lüneburg->Hamburg->Hannover
-graph_01 Test,Bellmann Ford,4131,129,118,0,0,0,->Augsburg->München->Nürnberg->Erfurt->Magdeburg->Wolfsburg->Lüneburg->Hamburg->Hannover
-graph_01 Test,Floyd Warshall,0,0,16,0,->Augsburg->München->Nürnberg->Erfurt->Magdeburg->Wolfsburg->Lüneburg->Hamburg->Hannover
-graph_01 Test,Bellmann Ford,0,0,1,0,->Augsburg->München->Nürnberg->Erfurt->Magdeburg->Wolfsburg->Lüneburg->Hamburg->Hannover

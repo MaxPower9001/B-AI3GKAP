@@ -580,10 +580,119 @@ public class VertexJUnitTests {
          */
         String graph = "graph_01";
         String start = "Augsburg";
-        String goal = "Hannover";
-
+        String goal = "Hannover";        
         Graph testGraph = Graph.importG("io/" + graph + ".graph");
         ArrayList<Vertex> shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
         ArrayList<Vertex> shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+                
+        /**
+         * GRAPH 2
+         */
+        graph = "graph_02";
+        start = "Augsburg";
+        goal = "Hannover";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 3
+         */
+        graph = "graph_03";
+        start = "s";
+        goal = "v";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 4
+         */
+        graph = "graph_04";
+        start = "v1";
+        goal  = "v4";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 5
+         */
+        graph = "graph_05";
+        start = "v1";
+        goal  = "v11";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+          
+        /**
+         * GRAPH 6
+         */
+        graph = "graph_06";
+        start = "v9";
+        goal = "v1";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 7
+         */
+        graph = "graph_07";
+        start = "v1";
+        goal = "v3";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 8
+         */
+        graph = "graph_08";
+        start = "Rostock";
+        goal = "München";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 9
+         */
+        graph = "graph_09";
+        start = "Quelle";
+        goal = "Senke";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 10
+         */
+        graph = "graph_10";
+        start = "v5";
+        goal  = "v1";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 11
+         */
+        graph = "graph_11";
+        start = "v5";
+        goal  = "v1";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        
+        /**
+         * GRAPH 12
+         */
+        graph = "graph_12";
+        start = "go";
+        goal  = "s";
+        testGraph = Graph.importG("io/" + graph + ".graph");
+        shortestRouteFloyd = floydw.floydwIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
+        shortestRouteBellF = bellf.bellfIO(graph, graph + " Test", testGraph, Vertex.createV(start), Vertex.createV(goal));
     }
 }
