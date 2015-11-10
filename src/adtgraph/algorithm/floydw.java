@@ -260,6 +260,8 @@ public final class floydw {
         args.add("Floyd Warshall");
         args.add("0");
         args.add("0");
+        args.add("0");
+        args.add("0");
 
         ArrayList<Vertex> shortestRoute = new ArrayList<>();
 

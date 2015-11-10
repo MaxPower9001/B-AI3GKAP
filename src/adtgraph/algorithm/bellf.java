@@ -86,6 +86,8 @@ public final class bellf {
         args.add("Bellmann Ford");
         args.add("0");
         args.add("0");
+        args.add("0");
+        args.add("0");
 
         ArrayList<Vertex> shortestRoute = new ArrayList<>();
 

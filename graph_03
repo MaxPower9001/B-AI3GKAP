@@ -1,0 +1,4 @@
+graph_03 Test,Floyd Warshall,1447,90,23,0,0,0,->s->x->u->v
+graph_03 Test,Bellmann Ford,206,28,26,0,0,0,->s->x->u->v
+graph_03 Test,Floyd Warshall,0,0,0,0,->s->x->u->v
+graph_03 Test,Bellmann Ford,0,0,0,0,->s->x->u->v

@@ -1,0 +1,4 @@
+graph_02 Test,Floyd Warshall,156299,2594,509,0,0,0,->Augsburg->Stuttgart->Karlsruhe->Mannheim->Frankfurt->Kassel->Hannover
+graph_02 Test,Bellmann Ford,4909,161,214,0,0,0,->Augsburg->Stuttgart->Karlsruhe->Mannheim->Frankfurt->Kassel->Hannover
+graph_02 Test,Floyd Warshall,0,0,4,0,->Augsburg->Stuttgart->Karlsruhe->Mannheim->Frankfurt->Kassel->Hannover
+graph_02 Test,Bellmann Ford,0,0,2,0,->Augsburg->Stuttgart->Karlsruhe->Mannheim->Frankfurt->Kassel->Hannover
