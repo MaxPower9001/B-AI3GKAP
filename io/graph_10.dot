@@ -1,28 +1,27 @@
-digraph graph_10
-{
-v1
-v2
-v3
-v4
-v5
-v1 -> v2 [label="cost=5  "]
-v1 -> v3 [label="cost=10  "]
-v1 -> v4 [label="cost=15  "]
-v1 -> v5 [label="cost=20  "]
-v2 -> v1 [label="cost=5  "]
-v2 -> v3 [label="cost=35  "]
-v2 -> v4 [label="cost=40  "]
-v2 -> v5 [label="cost=45  "]
-v3 -> v1 [label="cost=10  "]
-v3 -> v2 [label="cost=35  "]
-v3 -> v4 [label="cost=25  "]
-v3 -> v5 [label="cost=30  "]
-v4 -> v1 [label="cost=15  "]
-v4 -> v2 [label="cost=40  "]
-v4 -> v3 [label="cost=25  "]
-v4 -> v5 [label="cost=50  "]
-v5 -> v1 [label="cost=20  "]
-v5 -> v2 [label="cost=45  "]
-v5 -> v3 [label="cost=30  "]
-v5 -> v4 [label="cost=50  "]
+digraph G {
+	v1 -> v2 [label="cost: 5"];
+	v1 -> v3 [label="cost: 10"];
+	v1 -> v4 [label="cost: 15"];
+	v1 -> v5 [label="cost: 20"];
+	v2 -> v1 [label="cost: 5"];
+	v2 -> v3 [label="cost: 35"];
+	v2 -> v4 [label="cost: 40"];
+	v2 -> v5 [label="cost: 45"];
+	v3 -> v1 [label="cost: 10"];
+	v3 -> v2 [label="cost: 35"];
+	v3 -> v4 [label="cost: 25"];
+	v3 -> v5 [label="cost: 30"];
+	v4 -> v1 [label="cost: 15"];
+	v4 -> v2 [label="cost: 40"];
+	v4 -> v3 [label="cost: 25"];
+	v4 -> v5 [label="cost: 50"];
+	v5 -> v1 [label="cost: 20"];
+	v5 -> v2 [label="cost: 45"];
+	v5 -> v3 [label="cost: 30"];
+	v5 -> v4 [label="cost: 50"];
+	v1 [label="v1"];
+	v2 [label="v2"];
+	v3 [label="v3"];
+	v4 [label="v4"];
+	v5 [label="v5"];
 }

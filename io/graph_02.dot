@@ -1,114 +1,113 @@
-digraph graph_02
-{
-Augsburg
-MÃ¼nchen
-Stuttgart
-Berlin
-Dresden
-Hamburg
-Hannover
-Kassel
-Leipzig
-Rostock
-Bielefeld
-Dortmund
-OsnabrÃ¼ck
-Bremen
-Frankfurt
-KÃ¶ln
-NÃ¼rnberg
-Mainz
-Mannheim
-LÃ¼beck
-Kaiserslautern
-Karlsruhe
-SaarbrÃ¼cken
-Augsburg -> MÃ¼nchen [label="cost=81  "]
-Augsburg -> Stuttgart [label="cost=149  "]
-MÃ¼nchen -> Augsburg [label="cost=81  "]
-MÃ¼nchen -> NÃ¼rnberg [label="cost=162  "]
-Stuttgart -> Augsburg [label="cost=149  "]
-Stuttgart -> Karlsruhe [label="cost=81  "]
-Berlin -> Dresden [label="cost=214  "]
-Berlin -> Hamburg [label="cost=289  "]
-Berlin -> Hannover [label="cost=258  "]
-Berlin -> Kassel [label="cost=367  "]
-Berlin -> Leipzig [label="cost=188  "]
-Berlin -> Rostock [label="cost=222  "]
-Dresden -> Berlin [label="cost=214  "]
-Dresden -> Kassel [label="cost=402  "]
-Dresden -> Leipzig [label="cost=116  "]
-Dresden -> NÃ¼rnberg [label="cost=325  "]
-Hamburg -> Berlin [label="cost=289  "]
-Hamburg -> Hannover [label="cost=150  "]
-Hamburg -> Bremen [label="cost=123  "]
-Hamburg -> LÃ¼beck [label="cost=65  "]
-Hannover -> Berlin [label="cost=258  "]
-Hannover -> Hamburg [label="cost=150  "]
-Hannover -> Kassel [label="cost=238  "]
-Hannover -> Leipzig [label="cost=261  "]
-Hannover -> OsnabrÃ¼ck [label="cost=137  "]
-Hannover -> Bremen [label="cost=123  "]
-Kassel -> Berlin [label="cost=367  "]
-Kassel -> Dresden [label="cost=402  "]
-Kassel -> Hannover [label="cost=238  "]
-Kassel -> Dortmund [label="cost=168  "]
-Kassel -> Frankfurt [label="cost=190  "]
-Kassel -> KÃ¶ln [label="cost=249  "]
-Leipzig -> Berlin [label="cost=188  "]
-Leipzig -> Dresden [label="cost=116  "]
-Leipzig -> Hannover [label="cost=261  "]
-Leipzig -> Frankfurt [label="cost=387  "]
-Rostock -> Berlin [label="cost=222  "]
-Rostock -> LÃ¼beck [label="cost=125  "]
-Bielefeld -> Dortmund [label="cost=116  "]
-Bielefeld -> OsnabrÃ¼ck [label="cost=53  "]
-Dortmund -> Kassel [label="cost=168  "]
-Dortmund -> Bielefeld [label="cost=116  "]
-Dortmund -> OsnabrÃ¼ck [label="cost=123  "]
-Dortmund -> Bremen [label="cost=237  "]
-Dortmund -> Frankfurt [label="cost=223  "]
-Dortmund -> KÃ¶ln [label="cost=97  "]
-OsnabrÃ¼ck -> Hannover [label="cost=137  "]
-OsnabrÃ¼ck -> Bielefeld [label="cost=53  "]
-OsnabrÃ¼ck -> Dortmund [label="cost=123  "]
-OsnabrÃ¼ck -> Bremen [label="cost=124  "]
-Bremen -> Hamburg [label="cost=123  "]
-Bremen -> Hannover [label="cost=123  "]
-Bremen -> Dortmund [label="cost=237  "]
-Bremen -> OsnabrÃ¼ck [label="cost=124  "]
-Frankfurt -> Kassel [label="cost=190  "]
-Frankfurt -> Leipzig [label="cost=387  "]
-Frankfurt -> Dortmund [label="cost=223  "]
-Frankfurt -> NÃ¼rnberg [label="cost=235  "]
-Frankfurt -> Mainz [label="cost=43  "]
-Frankfurt -> Mannheim [label="cost=106  "]
-KÃ¶ln -> Kassel [label="cost=249  "]
-KÃ¶ln -> Dortmund [label="cost=97  "]
-KÃ¶ln -> Mainz [label="cost=179  "]
-KÃ¶ln -> SaarbrÃ¼cken [label="cost=283  "]
-NÃ¼rnberg -> MÃ¼nchen [label="cost=162  "]
-NÃ¼rnberg -> Dresden [label="cost=325  "]
-NÃ¼rnberg -> Frankfurt [label="cost=235  "]
-NÃ¼rnberg -> Karlsruhe [label="cost=253  "]
-Mainz -> Frankfurt [label="cost=43  "]
-Mainz -> KÃ¶ln [label="cost=179  "]
-Mainz -> Mannheim [label="cost=83  "]
-Mainz -> Kaiserslautern [label="cost=80  "]
-Mannheim -> Frankfurt [label="cost=106  "]
-Mannheim -> Mainz [label="cost=83  "]
-Mannheim -> Kaiserslautern [label="cost=67  "]
-Mannheim -> Karlsruhe [label="cost=58  "]
-LÃ¼beck -> Hamburg [label="cost=65  "]
-LÃ¼beck -> Rostock [label="cost=125  "]
-Kaiserslautern -> Mainz [label="cost=80  "]
-Kaiserslautern -> Mannheim [label="cost=67  "]
-Kaiserslautern -> Karlsruhe [label="cost=96  "]
-Kaiserslautern -> SaarbrÃ¼cken [label="cost=72  "]
-Karlsruhe -> Stuttgart [label="cost=81  "]
-Karlsruhe -> NÃ¼rnberg [label="cost=253  "]
-Karlsruhe -> Mannheim [label="cost=58  "]
-Karlsruhe -> Kaiserslautern [label="cost=96  "]
-SaarbrÃ¼cken -> KÃ¶ln [label="cost=283  "]
-SaarbrÃ¼cken -> Kaiserslautern [label="cost=72  "]
+digraph G {
+	Frankfurt -> Kassel [label="cost: 190"];
+	Frankfurt -> Leipzig [label="cost: 387"];
+	Frankfurt -> Dortmund [label="cost: 223"];
+	Frankfurt -> Mainz [label="cost: 43"];
+	Frankfurt -> Nürnberg [label="cost: 235"];
+	Frankfurt -> Mannheim [label="cost: 106"];
+	Augsburg -> Stuttgart [label="cost: 149"];
+	Augsburg -> München [label="cost: 81"];
+	Dresden -> Berlin [label="cost: 214"];
+	Dresden -> Nürnberg [label="cost: 325"];
+	Dresden -> Kassel [label="cost: 402"];
+	Dresden -> Leipzig [label="cost: 116"];
+	Hannover -> Berlin [label="cost: 258"];
+	Hannover -> Hamburg [label="cost: 150"];
+	Hannover -> Osnabrück [label="cost: 137"];
+	Hannover -> Bremen [label="cost: 123"];
+	Hannover -> Kassel [label="cost: 238"];
+	Hannover -> Leipzig [label="cost: 261"];
+	Stuttgart -> Augsburg [label="cost: 149"];
+	Stuttgart -> Karlsruhe [label="cost: 81"];
+	Berlin -> Dresden [label="cost: 214"];
+	Berlin -> Hannover [label="cost: 258"];
+	Berlin -> Hamburg [label="cost: 289"];
+	Berlin -> Rostock [label="cost: 222"];
+	Berlin -> Kassel [label="cost: 367"];
+	Berlin -> Leipzig [label="cost: 188"];
+	Kaiserslautern -> Karlsruhe [label="cost: 96"];
+	Kaiserslautern -> Saarbrücken [label="cost: 72"];
+	Kaiserslautern -> Mainz [label="cost: 80"];
+	Kaiserslautern -> Mannheim [label="cost: 67"];
+	Hamburg -> Hannover [label="cost: 150"];
+	Hamburg -> Berlin [label="cost: 289"];
+	Hamburg -> Lübeck [label="cost: 65"];
+	Hamburg -> Bremen [label="cost: 123"];
+	Dortmund -> Frankfurt [label="cost: 223"];
+	Dortmund -> Osnabrück [label="cost: 123"];
+	Dortmund -> Bielefeld [label="cost: 116"];
+	Dortmund -> Bremen [label="cost: 237"];
+	Dortmund -> Kassel [label="cost: 168"];
+	Dortmund -> Köln [label="cost: 97"];
+	Saarbrücken -> Kaiserslautern [label="cost: 72"];
+	Saarbrücken -> Köln [label="cost: 283"];
+	Rostock -> Berlin [label="cost: 222"];
+	Rostock -> Lübeck [label="cost: 125"];
+	Osnabrück -> Hannover [label="cost: 137"];
+	Osnabrück -> Dortmund [label="cost: 123"];
+	Osnabrück -> Bielefeld [label="cost: 53"];
+	Osnabrück -> Bremen [label="cost: 124"];
+	Mainz -> Frankfurt [label="cost: 43"];
+	Mainz -> Kaiserslautern [label="cost: 80"];
+	Mainz -> Köln [label="cost: 179"];
+	Mainz -> Mannheim [label="cost: 83"];
+	Nürnberg -> Frankfurt [label="cost: 235"];
+	Nürnberg -> München [label="cost: 162"];
+	Nürnberg -> Dresden [label="cost: 325"];
+	Nürnberg -> Karlsruhe [label="cost: 253"];
+	Bielefeld -> Dortmund [label="cost: 116"];
+	Bielefeld -> Osnabrück [label="cost: 53"];
+	Lübeck -> Hamburg [label="cost: 65"];
+	Lübeck -> Rostock [label="cost: 125"];
+	München -> Augsburg [label="cost: 81"];
+	München -> Nürnberg [label="cost: 162"];
+	Bremen -> Hannover [label="cost: 123"];
+	Bremen -> Dortmund [label="cost: 237"];
+	Bremen -> Hamburg [label="cost: 123"];
+	Bremen -> Osnabrück [label="cost: 124"];
+	Kassel -> Frankfurt [label="cost: 190"];
+	Kassel -> Dresden [label="cost: 402"];
+	Kassel -> Hannover [label="cost: 238"];
+	Kassel -> Berlin [label="cost: 367"];
+	Kassel -> Dortmund [label="cost: 168"];
+	Kassel -> Köln [label="cost: 249"];
+	Leipzig -> Frankfurt [label="cost: 387"];
+	Leipzig -> Dresden [label="cost: 116"];
+	Leipzig -> Hannover [label="cost: 261"];
+	Leipzig -> Berlin [label="cost: 188"];
+	Karlsruhe -> Stuttgart [label="cost: 81"];
+	Karlsruhe -> Kaiserslautern [label="cost: 96"];
+	Karlsruhe -> Nürnberg [label="cost: 253"];
+	Karlsruhe -> Mannheim [label="cost: 58"];
+	Köln -> Kassel [label="cost: 249"];
+	Köln -> Dortmund [label="cost: 97"];
+	Köln -> Saarbrücken [label="cost: 283"];
+	Köln -> Mainz [label="cost: 179"];
+	Mannheim -> Frankfurt [label="cost: 106"];
+	Mannheim -> Kaiserslautern [label="cost: 67"];
+	Mannheim -> Karlsruhe [label="cost: 58"];
+	Mannheim -> Mainz [label="cost: 83"];
+	Frankfurt [label="Frankfurt"];
+	Augsburg [label="Augsburg"];
+	Dresden [label="Dresden"];
+	Hannover [label="Hannover"];
+	Stuttgart [label="Stuttgart"];
+	Berlin [label="Berlin"];
+	Kaiserslautern [label="Kaiserslautern"];
+	Hamburg [label="Hamburg"];
+	Dortmund [label="Dortmund"];
+	Saarbrücken [label="Saarbrücken"];
+	Rostock [label="Rostock"];
+	Osnabrück [label="Osnabrück"];
+	Mainz [label="Mainz"];
+	Nürnberg [label="Nürnberg"];
+	Bielefeld [label="Bielefeld"];
+	Lübeck [label="Lübeck"];
+	München [label="München"];
+	Bremen [label="Bremen"];
+	Kassel [label="Kassel"];
+	Leipzig [label="Leipzig"];
+	Karlsruhe [label="Karlsruhe"];
+	Köln [label="Köln"];
+	Mannheim [label="Mannheim"];
 }

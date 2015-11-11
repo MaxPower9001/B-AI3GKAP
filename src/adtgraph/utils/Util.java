@@ -1,6 +1,7 @@
 package adtgraph.utils;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -8,21 +9,25 @@ import java.io.Writer;
 import java.util.ArrayList;
 
 public class Util {
-    public static void outputToCSV(String filename,ArrayList<String> args){
 
-        String nl = System.lineSeparator();
+    public static void outputToCSV(String filename, ArrayList<String> args) {
+
+        String nl = System.lineSeparator();        
+        File f = new File(filename);
+        
+        
 
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(filename,true), "utf-8"))) {
-            
+                new FileOutputStream(filename + ".csv", true), "utf-8"))) {
+
             // print line
             for (int i = 0; i < args.size(); i++) {
-                if(i != args.size()-1){
+                if (i != args.size() - 1) {
                     writer.write(args.get(i) + ",");
                 } else {
                     writer.write(args.get(i));
                 }
-                
+
             }
             writer.write(nl);
 

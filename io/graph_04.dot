@@ -1,42 +1,41 @@
-digraph graph_04
-{
-v1
-v2
-v6
-v7
-v3
-v4
-v9
-v5
-v8
-v1 -> v2 [label="cost=2  "]
-v1 -> v6 [label="cost=9  "]
-v1 -> v7 [label="cost=15  "]
-v2 -> v1 [label="cost=2  "]
-v2 -> v7 [label="cost=-6  "]
-v2 -> v3 [label="cost=-4  "]
-v6 -> v1 [label="cost=9  "]
-v6 -> v5 [label="cost=6  "]
-v6 -> v8 [label="cost=11  "]
-v7 -> v1 [label="cost=15  "]
-v7 -> v2 [label="cost=-6  "]
-v7 -> v9 [label="cost=2  "]
-v7 -> v8 [label="cost=15  "]
-v3 -> v2 [label="cost=-4  "]
-v3 -> v4 [label="cost=2  "]
-v3 -> v9 [label="cost=15  "]
-v4 -> v3 [label="cost=2  "]
-v4 -> v9 [label="cost=1  "]
-v4 -> v5 [label="cost=1  "]
-v9 -> v7 [label="cost=2  "]
-v9 -> v3 [label="cost=15  "]
-v9 -> v4 [label="cost=1  "]
-v9 -> v8 [label="cost=4  "]
-v5 -> v6 [label="cost=6  "]
-v5 -> v4 [label="cost=1  "]
-v5 -> v8 [label="cost=3  "]
-v8 -> v6 [label="cost=11  "]
-v8 -> v7 [label="cost=15  "]
-v8 -> v9 [label="cost=4  "]
-v8 -> v5 [label="cost=3  "]
+digraph G {
+	v6 -> v8 [label="cost: 11"];
+	v6 -> v1 [label="cost: 9"];
+	v6 -> v5 [label="cost: 6"];
+	v7 -> v8 [label="cost: 15"];
+	v7 -> v9 [label="cost: 2"];
+	v7 -> v1 [label="cost: 15"];
+	v7 -> v2 [label="cost: -6"];
+	v8 -> v6 [label="cost: 11"];
+	v8 -> v7 [label="cost: 15"];
+	v8 -> v9 [label="cost: 4"];
+	v8 -> v5 [label="cost: 3"];
+	v9 -> v7 [label="cost: 2"];
+	v9 -> v8 [label="cost: 4"];
+	v9 -> v3 [label="cost: 15"];
+	v9 -> v4 [label="cost: 1"];
+	v1 -> v6 [label="cost: 9"];
+	v1 -> v7 [label="cost: 15"];
+	v1 -> v2 [label="cost: 2"];
+	v2 -> v7 [label="cost: -6"];
+	v2 -> v1 [label="cost: 2"];
+	v2 -> v3 [label="cost: -4"];
+	v3 -> v9 [label="cost: 15"];
+	v3 -> v2 [label="cost: -4"];
+	v3 -> v4 [label="cost: 2"];
+	v4 -> v9 [label="cost: 1"];
+	v4 -> v3 [label="cost: 2"];
+	v4 -> v5 [label="cost: 1"];
+	v5 -> v6 [label="cost: 6"];
+	v5 -> v8 [label="cost: 3"];
+	v5 -> v4 [label="cost: 1"];
+	v6 [label="v6"];
+	v7 [label="v7"];
+	v8 [label="v8"];
+	v9 [label="v9"];
+	v1 [label="v1"];
+	v2 [label="v2"];
+	v3 [label="v3"];
+	v4 [label="v4"];
+	v5 [label="v5"];
 }

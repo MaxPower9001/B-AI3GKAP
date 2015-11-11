@@ -1,17 +1,16 @@
-digraph graph_03
-{
-s
-u
-x
-v
-y
-s -> u [label="cost=10  "]
-s -> x [label="cost=5  "]
-u -> x [label="cost=2  "]
-u -> v [label="cost=1  "]
-x -> u [label="cost=3  "]
-x -> y [label="cost=2  "]
-v -> y [label="cost=4  "]
-y -> s [label="cost=7  "]
-y -> v [label="cost=6  "]
+digraph G {
+	s -> u [label="cost: 10"];
+	s -> x [label="cost: 5"];
+	u -> v [label="cost: 1"];
+	u -> x [label="cost: 2"];
+	v -> y [label="cost: 4"];
+	x -> u [label="cost: 3"];
+	x -> y [label="cost: 2"];
+	y -> s [label="cost: 7"];
+	y -> v [label="cost: 6"];
+	s [label="s"];
+	u [label="u"];
+	v [label="v"];
+	x [label="x"];
+	y [label="y"];
 }

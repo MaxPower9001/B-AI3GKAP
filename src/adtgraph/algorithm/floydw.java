@@ -1,7 +1,7 @@
 package adtgraph.algorithm;
 
-import adtgraph.extern.Graph;
-import adtgraph.extern.Vertex;
+import adtgraph.Graph;
+import adtgraph.Vertex;
 import static adtgraph.utils.Util.outputToCSV;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -20,13 +20,16 @@ public final class floydw {
     }
 
     public static ArrayList<Vertex> floydw(Graph graph, Vertex start, Vertex goal) {
-        if (start == goal) {
+        if (start.getName().equals(goal.getName())) {
             return new ArrayList();
         }
         ArrayList<Vertex> shortestRoute = new ArrayList<>();
 
         // cache all vertices from current graph
         ArrayList<Vertex> vertices = graph.getVertices();
+        
+        // cache all edges from current graph
+        ArrayList<Vertex> edges = graph.getEdges();
 
         // initialize predecessorMap and costMap
         Map<Vertex, Map<Vertex, Vertex>> predecessorMap = new HashMap<>();
@@ -40,7 +43,7 @@ public final class floydw {
                     tempCost.put(vertices.get(j), 0);
                     tempPred.put(vertices.get(j), null);
                 } else {
-                    tempCost.put(vertices.get(j), graph.getEdgeMatrix().getValE(vertices.get(i), vertices.get(j), "cost"));
+                    tempCost.put(vertices.get(j), graph.getValE(vertices.get(i), vertices.get(j), "cost"));
                     tempPred.put(vertices.get(j), null);
                 }
 
@@ -71,8 +74,14 @@ public final class floydw {
         shortestRoute.add(start);
 
         pathfinder(predecessorMap, start, goal, shortestRoute);
-
-        if (shortestRoute.get(0) == start && shortestRoute.get(1) == goal && graph.getEdgeMatrix().getEdge(start, goal) == null) {
+        boolean startgoaledge = false;
+        for(int i = 0; i < edges.size(); i=i+2){
+            if(edges.get(i).getName().equals(start.getName()) && edges.get(i+1).getName().equals(goal.getName())){
+                startgoaledge=true;
+            }
+        }
+        
+        if (shortestRoute.get(0).getName().equals(start.getName()) && shortestRoute.get(1).getName().equals(goal.getName()) && !startgoaledge) {
             return null;
         } else {
             return shortestRoute;
@@ -92,13 +101,18 @@ public final class floydw {
         /**
          * ALGORITHM START
          */
-        if (start == goal) {
+        if (start.getName().equals(goal.getName())) {
             return new ArrayList();
         }
         ArrayList<Vertex> shortestRoute = new ArrayList<>();
 
         // cache all vertices from current graph
         ArrayList<Vertex> vertices = graph.getVertices();
+        algowrites++;
+        graphreads++;
+        
+        // cache all edges from current graph
+        ArrayList<Vertex> edges = graph.getEdges();
         algowrites++;
         graphreads++;
 
@@ -122,7 +136,7 @@ public final class floydw {
                     algoreads++;
                     algoreads++;
                 } else {
-                    tempCost.put(vertices.get(j), graph.getEdgeMatrix().getValE(vertices.get(i), vertices.get(j), "cost"));
+                    tempCost.put(vertices.get(j), graph.getValE(vertices.get(i), vertices.get(j), "cost"));
                     tempPred.put(vertices.get(j), null);
                     graphreads++;
                     algowrites++;
@@ -176,8 +190,15 @@ public final class floydw {
         algowrites++;
 
         pathfinderIO(predecessorMap, start, goal, shortestRoute);
-
-        if (shortestRoute.get(0) == start && shortestRoute.get(1) == goal && graph.getEdgeMatrix().getEdge(start, goal) == null) {
+        
+        boolean startgoaledge = false;
+        for(int i = 0; i < edges.size(); i=i+2){
+            if(edges.get(i).getName().equals(start.getName()) && edges.get(i+1).getName().equals(goal.getName())){
+                startgoaledge=true;
+            }
+        }
+        
+        if (shortestRoute.get(0).getName().equals(start.getName()) && shortestRoute.get(1).getName().equals(goal.getName()) && !startgoaledge) {
             return null;
         } else {
             algoreads++;

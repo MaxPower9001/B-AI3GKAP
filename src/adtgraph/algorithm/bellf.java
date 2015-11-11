@@ -1,7 +1,7 @@
 package adtgraph.algorithm;
 
-import adtgraph.extern.Graph;
-import adtgraph.extern.Vertex;
+import adtgraph.Graph;
+import adtgraph.Vertex;
 import static adtgraph.utils.Util.outputToCSV;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public final class bellf {
         // prefill predecessorMap and costMap with start vertex and null for all other vertices
         for (int i = 0; i < vertices.size(); i++) {
             Vertex currentVertex = vertices.get(i);
-            if (currentVertex == start) {
+            if (currentVertex.getName().equals(start.getName())) {
                 predecessorMap.put(currentVertex, currentVertex);
                 costMap.put(currentVertex, 0);
             } else {
@@ -45,8 +45,8 @@ public final class bellf {
         for (int i = 0; i < vertices.size() - 1; i++) {
             for (int j = 0; j < edges.size(); j = j + 2) {
                 if (costMap.get(edges.get(j)) != null) {
-                    if (costMap.get(edges.get(j + 1)) == null || costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
-                        costMap.replace(edges.get(j + 1), costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost"));
+                    if (costMap.get(edges.get(j + 1)) == null || costMap.get(edges.get(j)) + graph.getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
+                        costMap.replace(edges.get(j + 1), costMap.get(edges.get(j)) + graph.getValE(edges.get(j), edges.get(j + 1), "cost"));
                         predecessorMap.replace(edges.get(j + 1), edges.get(j));
                     }
                 }
@@ -55,7 +55,7 @@ public final class bellf {
         // check for negative cycle
         for (int j = 0; j < edges.size(); j = j + 2) {
             if (costMap.get(edges.get(j)) != null) {
-                if (costMap.get(edges.get(j + 1)) != null && costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
+                if (costMap.get(edges.get(j + 1)) != null && costMap.get(edges.get(j)) + graph.getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
                     return null;
                 }
             }
@@ -67,7 +67,7 @@ public final class bellf {
             return null;
         }
         shortestRoute.add(predecessor);
-        while (predecessor != start) {
+        while (!predecessor.getName().equals(start.getName())) {
             if (predecessor == null) {
                 return null;
             }
@@ -76,7 +76,7 @@ public final class bellf {
         }
 
         Collections.reverse(shortestRoute);
-
+        
         return shortestRoute;
     }
 
@@ -151,7 +151,7 @@ public final class bellf {
             Vertex currentVertex = vertices.get(i);
             algoreads++;
             algoreads++;
-            if (currentVertex == start) {
+            if (currentVertex.getName().equals(start.getName())) {
                 predecessorMap.put(currentVertex, currentVertex);
                 costMap.put(currentVertex, 0);
                 algowrites++;
@@ -170,10 +170,10 @@ public final class bellf {
                 algoreads++;
                 if (costMap.get(edges.get(j)) != null) {
                     algoreads++;
-                    if (costMap.get(edges.get(j + 1)) == null || costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
+                    if (costMap.get(edges.get(j + 1)) == null || costMap.get(edges.get(j)) + graph.getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
                         algoreads=algoreads+8;
                         graphreads=graphreads+2;
-                        costMap.replace(edges.get(j + 1), costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost"));
+                        costMap.replace(edges.get(j + 1), costMap.get(edges.get(j)) + graph.getValE(edges.get(j), edges.get(j + 1), "cost"));
                         predecessorMap.replace(edges.get(j + 1), edges.get(j));
                         graphreads=graphreads+2;
                         algoreads=algoreads+7;
@@ -189,7 +189,7 @@ public final class bellf {
             if (costMap.get(edges.get(j)) != null) {
                 algoreads++;
                 algoreads++;
-                if (costMap.get(edges.get(j + 1)) != null && costMap.get(edges.get(j)) + graph.getEdgeMatrix().getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
+                if (costMap.get(edges.get(j + 1)) != null && costMap.get(edges.get(j)) + graph.getValE(edges.get(j), edges.get(j + 1), "cost") < costMap.get(edges.get(j + 1))) {
                     algoreads=algoreads+8;
                     graphreads=graphreads+2;
                     return null;
@@ -206,7 +206,7 @@ public final class bellf {
         }
         shortestRoute.add(predecessor);        
         algowrites++;
-        while (predecessor != start) {
+        while (!predecessor.getName().equals(start.getName())) {
             if (predecessor == null) {
                 return null;
             }

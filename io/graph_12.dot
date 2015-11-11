@@ -1,39 +1,38 @@
-digraph graph_12
-{
-go
-gr
-b
-s
-ge
-r
-go -> gr [label="cost=11  "]
-go -> b [label="cost=10  "]
-go -> s [label="cost=15  "]
-go -> ge [label="cost=5  "]
-go -> r [label="cost=15  "]
-gr -> go [label="cost=11  "]
-gr -> b [label="cost=6  "]
-gr -> s [label="cost=20  "]
-gr -> ge [label="cost=19  "]
-gr -> r [label="cost=18  "]
-b -> go [label="cost=10  "]
-b -> gr [label="cost=6  "]
-b -> s [label="cost=3  "]
-b -> ge [label="cost=12  "]
-b -> r [label="cost=10  "]
-s -> go [label="cost=15  "]
-s -> gr [label="cost=20  "]
-s -> b [label="cost=3  "]
-s -> ge [label="cost=17  "]
-s -> r [label="cost=15  "]
-ge -> go [label="cost=5  "]
-ge -> gr [label="cost=19  "]
-ge -> b [label="cost=12  "]
-ge -> s [label="cost=17  "]
-ge -> r [label="cost=5  "]
-r -> go [label="cost=15  "]
-r -> gr [label="cost=18  "]
-r -> b [label="cost=10  "]
-r -> s [label="cost=15  "]
-r -> ge [label="cost=5  "]
+digraph G {
+	b -> r [label="cost: 10"];
+	b -> s [label="cost: 3"];
+	b -> go [label="cost: 10"];
+	b -> gr [label="cost: 6"];
+	b -> ge [label="cost: 12"];
+	r -> b [label="cost: 10"];
+	r -> s [label="cost: 15"];
+	r -> go [label="cost: 15"];
+	r -> gr [label="cost: 18"];
+	r -> ge [label="cost: 5"];
+	s -> r [label="cost: 15"];
+	s -> b [label="cost: 3"];
+	s -> go [label="cost: 15"];
+	s -> gr [label="cost: 20"];
+	s -> ge [label="cost: 17"];
+	go -> b [label="cost: 10"];
+	go -> r [label="cost: 15"];
+	go -> s [label="cost: 15"];
+	go -> gr [label="cost: 11"];
+	go -> ge [label="cost: 5"];
+	gr -> b [label="cost: 6"];
+	gr -> r [label="cost: 18"];
+	gr -> s [label="cost: 20"];
+	gr -> go [label="cost: 11"];
+	gr -> ge [label="cost: 19"];
+	ge -> r [label="cost: 5"];
+	ge -> b [label="cost: 12"];
+	ge -> s [label="cost: 17"];
+	ge -> go [label="cost: 5"];
+	ge -> gr [label="cost: 19"];
+	b [label="b"];
+	r [label="r"];
+	s [label="s"];
+	go [label="go"];
+	gr [label="gr"];
+	ge [label="ge"];
 }

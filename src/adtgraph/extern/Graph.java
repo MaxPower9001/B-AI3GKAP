@@ -2,6 +2,7 @@ package adtgraph.extern;
 
 import adtgraph.intern.Attribute;
 import adtgraph.extern.Vertex;
+import adtgraph.intern.Edge;
 import adtgraph.intern.EdgeMatrix;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -28,29 +29,33 @@ public final class Graph {
     }
 
     public Graph addVertex(Vertex vertex) {
-        this.getEdgeMatrix().addVertex(vertex);
+        this.edgeMatrix.addVertex(vertex);
         return this;
     }
 
     public Graph setAtE(Vertex source, Vertex target, String name, int value) {
-        this.getEdgeMatrix().setAtE(source, target, name, value);
+        this.edgeMatrix.setAtE(source, target, name, value);
         return this;
     }
 
     public Graph deleteVertex(Vertex vertex) {
-        this.getEdgeMatrix().deleteVertex(vertex);
+        this.edgeMatrix.deleteVertex(vertex);
         return this;
     }
 
     public Graph addEdge(Vertex source, Vertex target) {
-        this.getEdgeMatrix().addEdge(source, target);
+        this.edgeMatrix.addEdge(source, target);
         return this;
     }
 
     public Graph deleteEdge(Vertex source, Vertex target) {
-        this.getEdgeMatrix().deleteEdge(source, target);
+        this.edgeMatrix.deleteEdge(source, target);
         return this;
     }
+    
+//    public Edge getEdge(Vertex source, Vertex target) {
+//        return this.edgeMatrix.getEdge(source, target);
+//    }
 
     public Graph setAtV(Vertex vertex, String name, int value) {
         vertex.attribute(new Attribute(name, value));
@@ -58,31 +63,31 @@ public final class Graph {
     }
 
     public ArrayList<Vertex> getIncident(Vertex vertex) {
-        return this.getEdgeMatrix().getIncident(vertex);
+        return this.edgeMatrix.getIncident(vertex);
     }
 
     public ArrayList<Vertex> getAdjacent(Vertex vertex) {
-        return this.getEdgeMatrix().getAdjacent(vertex);
+        return this.edgeMatrix.getAdjacent(vertex);
     }
 
     public ArrayList<Vertex> getTarget(Vertex vertex) {
-        return this.getEdgeMatrix().getTarget(vertex);
+        return this.edgeMatrix.getTarget(vertex);
     }
 
     public ArrayList<Vertex> getSource(Vertex vertex) {
-        return this.getEdgeMatrix().getSource(vertex);
+        return this.edgeMatrix.getSource(vertex);
     }
 
     public ArrayList<Vertex> getEdges() {
-        return this.getEdgeMatrix().getEdges();
+        return this.edgeMatrix.getEdges();
     }
 
     public ArrayList<Vertex> getVertices() {
-        return this.getEdgeMatrix().getVertices();
+        return this.edgeMatrix.getVertices();
     }
 
-    public int getValE(Vertex vertex, Vertex target, String name) {
-        return this.getEdgeMatrix().getValE(vertex, target, name);
+    public Integer getValE(Vertex vertex, Vertex target, String name) {
+        return this.edgeMatrix.getValE(vertex, target, name);
     }
 
     public int getValV(Vertex vertex, String name) {
@@ -126,7 +131,7 @@ public final class Graph {
 
                     writer.write(target.getName() + " [label=\"");
 
-                    for (Attribute a : getEdgeMatrix().getEdge(source, target).attribute()) {
+                    for (Attribute a : this.edgeMatrix.getEdge(source, target).attribute()) {
                         if (!a.getName().equals("")) {
                             writer.write(a.getName() + "=");
                         }
@@ -197,9 +202,5 @@ public final class Graph {
             e.printStackTrace();
         }
         return graph;
-    }
-
-    public EdgeMatrix getEdgeMatrix() {
-        return edgeMatrix;
     }
 }
