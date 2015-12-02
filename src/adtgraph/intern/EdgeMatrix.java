@@ -18,29 +18,33 @@ public class EdgeMatrix {
     public ArrayList<Vertex> getIncident(Vertex vertex) {
         ArrayList<Vertex> tempT = getTarget(vertex);
         ArrayList<Vertex> tempS = getSource(vertex);
-        ArrayList<Vertex> tempR = new ArrayList<>();        
-                
-        for(Vertex v : tempT){
-            tempR.add(vertex);
-            tempR.add(v);
+        ArrayList<Vertex> tempR = new ArrayList<>();
+
+        if (tempT != null) {
+            for (Vertex v : tempT) {
+                tempR.add(vertex);
+                tempR.add(v);
+            }
         }
-        
-        for(Vertex v : tempS){
-            tempR.add(v);
-            tempR.add(vertex);
+
+        if (tempS != null) {
+            for (Vertex v : tempS) {
+                tempR.add(v);
+                tempR.add(vertex);
+            }
         }
         return tempR;
     }
 
     public ArrayList<Vertex> getAdjacent(Vertex vertex) {
         ArrayList<Vertex> temp = new ArrayList<>();
-        
-        if(getTarget(vertex) != null && getSource(vertex) != null){
+
+        if (getTarget(vertex) != null && getSource(vertex) != null) {
             temp.addAll(getTarget(vertex));
-            temp.addAll(getSource(vertex));            
-        } 
+            temp.addAll(getSource(vertex));
+        }
         return temp;
-        
+
     }
 
     public Edge getEdge(Vertex source, Vertex target) {
@@ -51,7 +55,7 @@ public class EdgeMatrix {
                 }
             }
         }
-         return null;
+        return null;
     }
 
     public ArrayList<Vertex> getVertices() {
@@ -59,17 +63,17 @@ public class EdgeMatrix {
     }
 
     public ArrayList<Vertex> getEdges() {
-        ArrayList<Vertex> temp  = new ArrayList<>();
-        
+        ArrayList<Vertex> temp = new ArrayList<>();
+
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
                 if (matrix.get(i).get(j) != null) {
                     temp.add(matrix.get(i).get(j).source());
-                    temp.add(matrix.get(i).get(j).target());                    
+                    temp.add(matrix.get(i).get(j).target());
                 }
             }
         }
-        
+
         return temp;
     }
 
@@ -88,8 +92,8 @@ public class EdgeMatrix {
     }
 
     public void deleteVertex(Vertex vertex) {
-        if(vertexlist.indexOf((Vertex) vertex) != -1){
-            if(vertexlist.size() > 1){
+        if (vertexlist.indexOf((Vertex) vertex) != -1) {
+            if (vertexlist.size() > 1) {
                 matrix.remove(vertexlist.indexOf((Vertex) vertex));
                 for (int i = 0; i < matrix.size(); i++) {
                     matrix.get(i).remove(vertexlist.indexOf((Vertex) vertex));
@@ -119,7 +123,7 @@ public class EdgeMatrix {
                 }
             }
         }
-        if(temp.isEmpty()){
+        if (temp.isEmpty()) {
             return null;
         } else {
             return temp;
@@ -136,7 +140,7 @@ public class EdgeMatrix {
                 }
             }
         }
-        if(temp.isEmpty()){
+        if (temp.isEmpty()) {
             return null;
         } else {
             return temp;
@@ -147,12 +151,12 @@ public class EdgeMatrix {
         // Jedes Element in der Matrix wird durchlaufen
         for (int i = 0; i < vertexlist.size(); i++) {
             for (int j = 0; j < vertexlist.size(); j++) {
-                
+
                 // Ecke vorhanden und target und source entsprechen den Eingabeparametern
-                if (matrix.get(i).get(j) != null && 
-                    matrix.get(i).get(j).target() == target &&
-                    matrix.get(i).get(j).source() == source) {
-                    
+                if (matrix.get(i).get(j) != null
+                        && matrix.get(i).get(j).target() == target
+                        && matrix.get(i).get(j).source() == source) {
+
                     // Alle Attribute der Ecke werden durchlaufen und nach dem String durchsucht
                     for (Attribute a : matrix.get(i).get(j).attribute()) {
                         if (a.getName().equals(name)) {

@@ -188,11 +188,13 @@ public final class Graph {
                     graph.addVertex(Vertex.createV(graphOpts[1]));
                     graph.addEdge(Vertex.createV(graphOpts[0]), Vertex.createV(graphOpts[1]));
 
-                    graph.setAtE(Vertex.createV(graphOpts[0]), Vertex.createV(graphOpts[1]), "cost", Integer.parseInt(graphOpts[2]));
+                    graph.setAtE(Vertex.createV(graphOpts[0]), Vertex.createV(graphOpts[1]), "max", Integer.parseInt(graphOpts[2]));
+                    graph.setAtE(Vertex.createV(graphOpts[0]), Vertex.createV(graphOpts[1]), "flow", 0);
 
                     if (isGerichtet == false) {
                         graph.addEdge(Vertex.createV(graphOpts[1]), Vertex.createV(graphOpts[0]));
-                        graph.setAtE(Vertex.createV(graphOpts[1]), Vertex.createV(graphOpts[0]), "cost", Integer.parseInt(graphOpts[2]));
+                        graph.setAtE(Vertex.createV(graphOpts[1]), Vertex.createV(graphOpts[0]), "max", Integer.parseInt(graphOpts[2]));
+                        graph.setAtE(Vertex.createV(graphOpts[0]), Vertex.createV(graphOpts[1]), "flow", 0);
                     }
                 }
 

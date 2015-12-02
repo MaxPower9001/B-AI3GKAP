@@ -1,7 +1,7 @@
 package adtgraph.algorithm;
 
-import adtgraph.Graph;
-import adtgraph.Vertex;
+import adtgraph.extern.Graph;
+import adtgraph.extern.Vertex;
 import static adtgraph.utils.Util.outputToCSV;
 import java.time.Instant;
 import java.util.ArrayList;

@@ -1,9 +1,10 @@
 package VertexTests;
 
+import adtgraph.algorithm.Aufgabe_3;
 import adtgraph.algorithm.bellf;
 import adtgraph.algorithm.floydw;
-import adtgraph.Graph;
-import adtgraph.Vertex;
+import adtgraph.extern.Graph;
+import adtgraph.extern.Vertex;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -701,5 +702,14 @@ public class VertexJUnitTests {
             shortestRouteFloyd = floydw.floydwRuntime(graph, graph + " Test Nr " + i, testGraph, Vertex.createV(start), Vertex.createV(goal));
             shortestRouteBellF = bellf.bellfRuntime(graph, graph + " Test Nr " + i, testGraph, Vertex.createV(start), Vertex.createV(goal));
         }
+    }
+    @Test
+    public void flussTest()
+    {
+        Graph flussGraph = Graph.importG("io/graph_vorl.graph");
+        
+        ArrayList<Vertex> ergebnis = Aufgabe_3.fordf(flussGraph, Vertex.createV("q"), Vertex.createV("s"));
+        
+        System.out.println(ergebnis);
     }
 }
