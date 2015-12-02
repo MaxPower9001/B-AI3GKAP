@@ -1,0 +1,18 @@
+digraph bittebittebittebittebitte
+{
+q
+v2
+v4
+v3
+s
+v5
+q -> v2 [label="max=3  flow=2  "]
+q -> v4 [label="max=2  flow=2  "]
+v2 -> v3 [label="max=2  flow=2  "]
+v4 -> v2 [label="max=2  flow=0  "]
+v4 -> v5 [label="max=2  flow=2  "]
+v3 -> v4 [label="max=1  flow=0  "]
+v3 -> s [label="max=2  flow=2  "]
+v5 -> v3 [label="max=1  flow=0  "]
+v5 -> s [label="max=4  flow=2  "]
+}

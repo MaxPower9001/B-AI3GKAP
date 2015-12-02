@@ -47,9 +47,10 @@ public class Edge {
             }
             if (a.getName().equals(attribute.getName())) {
                 a.value(attribute.value());
+                return;
             }
         }
-        this.attributeList.add(attribute);
+        this.attributeList.add(attribute);        
     }
 
     @Override
