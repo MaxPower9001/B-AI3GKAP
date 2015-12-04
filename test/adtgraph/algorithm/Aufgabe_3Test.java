@@ -48,27 +48,27 @@ public class Aufgabe_3Test {
 //        System.out.println(result);
 //        graph.exportG("bittebittebittebittebitte.dot");
 //        
-        System.out.println("------------Graph 08 -----------------");
-        graph = Graph.importG("io/graph_08.graph");
-        source = Vertex.createV("Rostock");
-        sink = Vertex.createV("Muenchen");
-        ArrayList<Vertex> result = Aufgabe_3.edmondsk(graph, source, sink);
-        System.out.println(result);
-        graph.exportG("graph08_e.dot");
-        
-//        System.out.println("------------Graph 09 -----------------");
-//        graph = Graph.importG("io/graph_09.graph");
-//        source = Vertex.createV("Quelle");
-//        sink = Vertex.createV("Senke");
-//        ArrayList<Vertex> result = Aufgabe_3.fordf(graph, source, sink);
+//        System.out.println("------------Graph 08 -----------------");
+//        graph = Graph.importG("io/graph_08.graph");
+//        source = Vertex.createV("Rostock");
+//        sink = Vertex.createV("Muenchen");
+//        ArrayList<Vertex> result = Aufgabe_3.edmondsk(graph, source, sink);
 //        System.out.println(result);
-//        
+//        graph.exportG("graph08_e.dot");
+        
+        System.out.println("------------Graph 09 -----------------");
+        graph = Graph.importG("io/graph_09.graph");
+        source = Vertex.createV("Quelle");
+        sink = Vertex.createV("Senke");
+        ArrayList<Vertex> result = Aufgabe_3.fordf(graph, source, sink);
+        System.out.println(result);
+        
     }
 
     /**
      * Test of edmondsk method, of class Aufgabe_3.
      */
-    @Test
+//    @Test
     public void testEdmondsk() throws Exception {
         System.out.println("edmondsk");
         Graph graph = Graph.importG("io/graph_vorl.graph");

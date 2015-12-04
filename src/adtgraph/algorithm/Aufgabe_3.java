@@ -176,11 +176,14 @@ public class Aufgabe_3 {
                         int predecessorAdditionalFlow   = Integer.MAX_VALUE;
                         if(predecessor != null)
                         {
-                             predecessorAdditionalFlow = Math.abs((Integer) workingList.get(predecessor)[1]);
+                            int predecessorCurrentRouteFlow = graph.getValE(predecessor, currentVertex, "max") -
+                                                              graph.getValE(predecessor, currentVertex, "flow");
+                            predecessorAdditionalFlow = Math.min(predecessorCurrentRouteFlow, Math.abs((Integer) workingList.get(predecessor)[1]));
                         }
                         int realAdditionalFlow = Math.min(currentAdditionalFlow, predecessorAdditionalFlow);
                         
                         workingList.put(tempTarget, createTriplet(currentVertex, realAdditionalFlow, 1));
+                        printWorkingList(workingList);
                     }
                     else
                     {
@@ -188,7 +191,8 @@ public class Aufgabe_3 {
                         int predecessorAdditionalFlow   = Integer.MAX_VALUE;
                         if(predecessor != null)
                         {
-                             predecessorAdditionalFlow = Math.abs((Integer) workingList.get(predecessor)[1]);
+                             int predecessorCurrentRouteFlow = graph.getValE(predecessor, currentVertex, "flow");
+                             predecessorAdditionalFlow = Math.min(predecessorCurrentRouteFlow,Math.abs((Integer) workingList.get(predecessor)[1]));
                         }
                         int realAdditionalFlow = Math.min(graph.getValE(tempSource, tempTarget , "flow"), predecessorAdditionalFlow);
                         
@@ -499,6 +503,14 @@ public class Aufgabe_3 {
             }
         }
         return null;
+    }
+
+    private static void printWorkingList(HashMap<Vertex, Object[]> workingList) {
+        for(Vertex v : workingList.keySet()){
+            System.out.print("Vertex: " + v.getName() + "[");
+            System.out.print(workingList.get(v)[0] + "|" + workingList.get(v)[1] + "|" + workingList.get(v)[2]);
+            System.out.println("]");
+        }
     }
 
 }

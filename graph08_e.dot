@@ -24,15 +24,15 @@ Saarbruecken
 Luebeck
 Rostock
 Augsburg -> Muenchen [label="max=81  flow=81  "]
-Berlin -> Dresden [label="max=214  flow=222  "]
+Berlin -> Dresden [label="max=214  flow=214  "]
 Berlin -> Hannover [label="max=258  flow=0  "]
-Berlin -> Kassel [label="max=367  flow=21  "]
+Berlin -> Kassel [label="max=367  flow=29  "]
 Berlin -> Leipzig [label="max=188  flow=0  "]
 Dresden -> Nuernberg [label="max=325  flow=243  "]
 Hannover -> Kassel [label="max=238  flow=0  "]
 Hannover -> Leipzig [label="max=261  flow=0  "]
 Hannover -> Osnabrueck [label="max=137  flow=0  "]
-Kassel -> Dresden [label="max=402  flow=21  "]
+Kassel -> Dresden [label="max=402  flow=29  "]
 Kassel -> Frankfurt [label="max=190  flow=0  "]
 Kassel -> Koeln [label="max=249  flow=0  "]
 Leipzig -> Dresden [label="max=116  flow=0  "]
