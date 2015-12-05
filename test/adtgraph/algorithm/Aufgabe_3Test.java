@@ -62,6 +62,7 @@ public class Aufgabe_3Test {
         sink = Vertex.createV("Senke");
         ArrayList<Vertex> result = Aufgabe_3.fordf(graph, source, sink);
         System.out.println(result);
+        graph.exportG("graph09_e.dot");
         
     }
 

@@ -81,7 +81,8 @@ public class Aufgabe_3 {
         workingList.put(source, createTriplet(null, Integer.MAX_VALUE, 1));
         // Der Sub-Liste wird der erste markierte Vertex hinzugefügt
         subList.add(source);
-
+        
+        int minimalAdditionalFlow = Integer.MAX_VALUE;
         boolean moreVerticesToInspect = true;
         // Schritt 2 - Wähle den nächsten schon markierten und nicht inspizierten Vertex anhand
         // des Auswahl-Schemas zur Bearbeitung aus, beginne die Schleife
@@ -95,6 +96,8 @@ public class Aufgabe_3 {
             // Schritt 3 - Markiere alle Nachbarn, die noch nicht markiert sind und für die gilt:
             // Vorwärtskanten: Fluss < Kapazität
             // Rückwärtskanten: Fluss > 0
+            // Schritt 4 - Trage die Vorgänger und den zusätzlichen minimalen Fluss
+            // in die workingList für alle relevanten Nachbarn ein
             List<Vertex> currentVertexIncidents = new ArrayList<>();
             currentVertexIncidents = graph.getIncident(currentVertex);
 
@@ -111,29 +114,17 @@ public class Aufgabe_3 {
                             && graph.getValE(tempSource, tempTarget, "max")
                             > graph.getValE(tempSource, tempTarget, "flow")) {
                         subList.add(tempTarget);
-                        workingList.get(tempTarget)[2] = 1;
+                        int additionalFlow = Math.min(getAdditionalFlow(tempSource, tempTarget, graph),minimalAdditionalFlow);
+                        minimalAdditionalFlow = additionalFlow;
+                        workingList.put(tempTarget, createTriplet(tempSource, additionalFlow, 1));
                     } // Bei einer Rückwärtskante muss flow > 0 sein
                     else if (tempTarget == currentVertex
                             && graph.getValE(tempSource, tempTarget, "flow") > 0) {
                         subList.add(tempSource);
-                        workingList.get(tempSource)[2] = 1;
-                    } // Entferne alle nicht relevanten Kanten für die folgende Untersuchung
-                    // der Kanten auf Anpassungen
-                    else {
-                        currentVertexIncidents.remove(i + 1);
-                        currentVertexIncidents.remove(i);
-                        i = i - 2;
+                        int additionalFlow = Math.min(graph.getValE(tempSource, tempTarget, "flow"),minimalAdditionalFlow);
+                        minimalAdditionalFlow = additionalFlow;
+                        workingList.put(tempSource, createTriplet(tempTarget, -additionalFlow, 1));
                     }
-                } // Wenn Kante schon inspiziert dann zähle den "inspizierte Kanten"-Zähler hoch
-                else if (currentVertex != tempSource && (Integer) workingList.get(tempSource)[2] == 2
-                        || currentVertex != tempTarget && (Integer) workingList.get(tempTarget)[2] == 2) {
-                    currentVertexIncidents.remove(i + 1);
-                    currentVertexIncidents.remove(i);
-                    i = i - 2;
-                } else {
-                    currentVertexIncidents.remove(i + 1);
-                    currentVertexIncidents.remove(i);
-                    i = i - 2;
                 }
             }
             for (int i = 0; i < workingList.size(); i++) {
@@ -143,60 +134,24 @@ public class Aufgabe_3 {
             }
             moreVerticesToInspect = workingList.size() > howManyVerticesAreInspected;
             if (moreVerticesToInspect) {
-                // Schritt 4 - Trage die Vorgänger und den zusätzlichen minimalen Fluss
-                // in die workingList für alle relevanten Nachbarn ein
-                for (int i = 0; i < currentVertexIncidents.size(); i = i + 2) {
-                    Vertex tempSource = currentVertexIncidents.get(i);
-                    Vertex tempTarget = currentVertexIncidents.get(i + 1);
-                    if (tempSource == currentVertex) {
-                        int currentAdditionalFlow = graph.getValE(tempSource, tempTarget, "max") - graph.getValE(tempSource, tempTarget, "flow");
-                        Vertex predecessor = (Vertex) workingList.get(currentVertex)[0];
-                        int predecessorAdditionalFlow = Integer.MAX_VALUE;
-                        if (predecessor != null) {
-                            predecessorAdditionalFlow = (Integer) workingList.get(predecessor)[1];
-                        }
-                        int realAdditionalFlow = Math.min(currentAdditionalFlow, predecessorAdditionalFlow);
-
-                        workingList.put(tempTarget, createTriplet(currentVertex, realAdditionalFlow, 1));
-                    } else {
-                        Vertex predecessor = (Vertex) workingList.get(currentVertex)[0];
-                        int predecessorAdditionalFlow = Integer.MAX_VALUE;
-                        if (predecessor != null) {
-                            predecessorAdditionalFlow = Math.abs((Integer) workingList.get(predecessor)[1]);
-                        }
-                        int realAdditionalFlow = Math.min(graph.getValE(tempSource, tempTarget, "flow"), predecessorAdditionalFlow);
-
-                        workingList.put(tempSource, createTriplet(currentVertex, -realAdditionalFlow, 1));
-//                        printWorkingList(workingList);
-                    }
-                }
                 // Schritt 5 - Setze die Markierung des aktuellen Vertex auf inspiziert
                 // Somit verschwindet dieser auch von der WorkingList
-                int currentAdditionalFlow = (Integer) workingList.get(currentVertex)[1];
-                Vertex currentVertexPredecessor = (Vertex) workingList.get(currentVertex)[0];
-                workingList.put(currentVertex, createTriplet(currentVertexPredecessor, currentAdditionalFlow, 2));
+                workingList.get(currentVertex)[2] = 2;
                 subList.remove(currentVertex);
 
                 // Schritt 6 & 7
                 if ((Integer) workingList.get(sink)[2] == 2) {
                     Vertex currentlyModified = sink;
-                    int additionalFlow = (Integer) workingList.get(sink)[1];
                     while ((Vertex) workingList.get(currentlyModified)[0] != null) {
-                        int currentFlowAtEdge = 0;
                         if ((Vertex) workingList.get(currentlyModified)[0] != null && (Integer) workingList.get(currentlyModified)[1] > 0) {
-                            currentFlowAtEdge = graph.getValE((Vertex) workingList.get(currentlyModified)[0], currentlyModified, "flow");
-                            graph.setAtE((Vertex) workingList.get(currentlyModified)[0], currentlyModified, "flow", currentFlowAtEdge + additionalFlow);
-                            graph.exportG("zwischenausgabe.dot");
+                            int currentFlowAtEdge = graph.getValE((Vertex) workingList.get(currentlyModified)[0], currentlyModified, "flow");
+                            graph.setAtE((Vertex) workingList.get(currentlyModified)[0], currentlyModified, "flow", currentFlowAtEdge + minimalAdditionalFlow);
                         } else if ((Vertex) workingList.get(currentlyModified)[0] != null && (Integer) workingList.get(currentlyModified)[1] < 0) {
-                            printWorkingList(workingList);
-                            System.out.println("Aktuell: " + currentlyModified.getName());
-                            System.out.println("Vorgänger: " + ((Vertex) workingList.get(currentlyModified)[0]).getName());
-                            currentFlowAtEdge = graph.getValE(currentlyModified,(Vertex) workingList.get(currentlyModified)[0],  "flow");
-                            graph.setAtE(currentlyModified,(Vertex) workingList.get(currentlyModified)[0], "flow", currentFlowAtEdge + additionalFlow);
-                            graph.exportG("zwischenausgabe.dot");
+                            int currentFlowAtEdge = graph.getValE(currentlyModified, (Vertex) workingList.get(currentlyModified)[0], "flow");
+                            graph.setAtE(currentlyModified, (Vertex) workingList.get(currentlyModified)[0], "flow", currentFlowAtEdge - minimalAdditionalFlow);
                         }
 
-                        System.out.println("Vergrößernder Weg:Vertex '" + currentlyModified.getName() + "' Vorgänger '" + ((Vertex) workingList.get(currentlyModified)[0]).getName() + "' [" + additionalFlow + "]");
+                        System.out.println("Vergrößernder Weg:Vertex '" + currentlyModified.getName() + "' Vorgänger '" + ((Vertex) workingList.get(currentlyModified)[0]).getName() + "' [" + minimalAdditionalFlow + "]");
                         currentlyModified = (Vertex) workingList.get(currentlyModified)[0];
                     }
                     System.out.println("-----------------------------");
@@ -242,13 +197,11 @@ public class Aufgabe_3 {
         //                    return temp;
         //                }
         //            }
-        {
-            if (!subList.isEmpty()) {
+         if (!subList.isEmpty()) {
                 return subList.get(0);
             } else {
                 return null;
             }
-        }
     }
 
     /**
@@ -439,6 +392,10 @@ public class Aufgabe_3 {
             System.out.print(workingList.get(v)[0] + "|" + workingList.get(v)[1] + "|" + workingList.get(v)[2]);
             System.out.println("]");
         }
+    }
+
+    private static int getAdditionalFlow(Vertex tempSource, Vertex tempTarget, Graph graph) {
+        return graph.getValE(tempSource, tempTarget, "max") - graph.getValE(tempSource, tempTarget, "flow");
     }
 
 }
