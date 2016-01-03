@@ -704,7 +704,7 @@ public class VertexJUnitTests {
         }
     }
     @Test
-    public void flussTest()
+    public void flussTest() throws Exception
     {
         Graph flussGraph = Graph.importG("io/graph_vorl.graph");
         
