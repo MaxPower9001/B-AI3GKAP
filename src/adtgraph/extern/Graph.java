@@ -117,7 +117,7 @@ public final class Graph {
 
             // Print Vertices
             for (Vertex vv : this.getVertices()) {
-                writer.write(vv.getName() + nl);
+                writer.write("\"" + vv.getName() + "\"" + nl);
             }
 
             // Print Edges
@@ -125,11 +125,11 @@ public final class Graph {
 
                 if (isOddPositionInList) {
                     source = ve;
-                    writer.write(source.getName() + " -> ");
+                    writer.write("\"" + source.getName() + "\"" + " -> ");
                 } else {
                     target = ve;
 
-                    writer.write(target.getName() + " [label=\"");
+                    writer.write("\"" + target.getName() + "\"" + " [label=\"");
 
                     for (Attribute a : this.edgeMatrix.getEdge(source, target).attribute()) {
                         if (!a.getName().equals("")) {

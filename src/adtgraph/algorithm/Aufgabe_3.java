@@ -142,6 +142,8 @@ public class Aufgabe_3 {
                 // Schritt 6 & 7
                 if ((Integer) workingList.get(sink)[2] == 2) {
                     Vertex currentlyModified = sink;
+                    System.out.println("Vergrößernder Weg mit einem Inkrement von " + minimalAdditionalFlow +":");
+                    System.out.print("" + currentlyModified.getName());
                     while ((Vertex) workingList.get(currentlyModified)[0] != null) {
                         if ((Vertex) workingList.get(currentlyModified)[0] != null && (Integer) workingList.get(currentlyModified)[1] > 0) {
                             int currentFlowAtEdge = graph.getValE((Vertex) workingList.get(currentlyModified)[0], currentlyModified, "flow");
@@ -151,10 +153,10 @@ public class Aufgabe_3 {
                             graph.setAtE(currentlyModified, (Vertex) workingList.get(currentlyModified)[0], "flow", currentFlowAtEdge - minimalAdditionalFlow);
                         }
 
-                        System.out.println("Vergrößernder Weg:Vertex '" + currentlyModified.getName() + "' Vorgänger '" + ((Vertex) workingList.get(currentlyModified)[0]).getName() + "' [" + minimalAdditionalFlow + "]");
+                        System.out.print(" -> " + ((Vertex) workingList.get(currentlyModified)[0]).getName());
                         currentlyModified = (Vertex) workingList.get(currentlyModified)[0];
                     }
-                    System.out.println("-----------------------------");
+                    System.out.println("");
                     graph.exportG("zwischenausgabe.dot");
                     // WorkingList wird reinitialisiert für den nächsten Durchgang
                     for (Vertex v : verticesList) {
@@ -362,7 +364,7 @@ public class Aufgabe_3 {
                             graph.setAtE(currentlyModified, (Vertex) workingList.get(currentlyModified)[0], "flow", currentFlowAtEdge + additionalFlow);
                         }
 
-                        System.out.println("Vergrößernder Weg:Vertex '" + currentlyModified.getName() + "' Vorgänger '" + ((Vertex) workingList.get(currentlyModified)[0]).getName() + "' [" + additionalFlow + "]");
+                        System.out.println("" + currentlyModified.getName() + "\t" + ((Vertex) workingList.get(currentlyModified)[0]).getName() + "\t" + additionalFlow);
                         currentlyModified = (Vertex) workingList.get(currentlyModified)[0];
                     }
                     System.out.println("-----------------------------");
