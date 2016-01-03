@@ -5,8 +5,9 @@
  */
 package adtgraph.algorithm;
 
+import adtgraph.algorithm.afgb3.Aufgabe_3;
 import adtgraph.extern.Graph;
-import static adtgraph.algorithm.Aufgabe_3.*;
+import static adtgraph.algorithm.afgb3.Aufgabe_3.*;
 import adtgraph.extern.Vertex;
 import java.util.ArrayList;
 import org.junit.After;

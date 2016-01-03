@@ -1,8 +1,8 @@
 package VertexTests;
 
-import adtgraph.algorithm.Aufgabe_3;
-import adtgraph.algorithm.bellf;
-import adtgraph.algorithm.floydw;
+import adtgraph.algorithm.afgb3.Aufgabe_3;
+import adtgraph.algorithm.afgb3.bellf;
+import adtgraph.algorithm.afgb3.floydw;
 import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
 import java.util.ArrayList;

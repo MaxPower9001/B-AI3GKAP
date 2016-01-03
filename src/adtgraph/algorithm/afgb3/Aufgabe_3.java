@@ -1,4 +1,4 @@
-package adtgraph.algorithm;
+package adtgraph.algorithm.afgb3;
 
 import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
