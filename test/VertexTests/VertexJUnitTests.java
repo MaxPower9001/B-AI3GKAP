@@ -1,5 +1,6 @@
 package VertexTests;
 
+import adtgraph.algorithm.Aufgabe_3;
 import adtgraph.algorithm.bellf;
 import adtgraph.algorithm.floydw;
 import adtgraph.extern.Graph;
