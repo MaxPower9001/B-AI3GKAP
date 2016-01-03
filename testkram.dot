@@ -1,0 +1,114 @@
+digraph testkram
+{
+"Augsburg"
+"MÃ¼nchen"
+"Stuttgart"
+"Berlin"
+"Dresden"
+"Hamburg"
+"Hannover"
+"Kassel"
+"Leipzig"
+"Rostock"
+"Bielefeld"
+"Dortmund"
+"OsnabrÃ¼ck"
+"Bremen"
+"Frankfurt"
+"KÃ¶ln"
+"NÃ¼rnberg"
+"Mainz"
+"Mannheim"
+"LÃ¼beck"
+"Kaiserslautern"
+"Karlsruhe"
+"SaarbrÃ¼cken"
+"Augsburg" -> "MÃ¼nchen" [label="done=0  "]
+"Augsburg" -> "Stuttgart" [label="done=0  "]
+"MÃ¼nchen" -> "Augsburg" [label=""]
+"MÃ¼nchen" -> "NÃ¼rnberg" [label="done=0  "]
+"Stuttgart" -> "Augsburg" [label=""]
+"Stuttgart" -> "Karlsruhe" [label=""]
+"Berlin" -> "Dresden" [label="done=0  "]
+"Berlin" -> "Hamburg" [label="done=0  "]
+"Berlin" -> "Hannover" [label="done=0  "]
+"Berlin" -> "Kassel" [label="done=0  "]
+"Berlin" -> "Leipzig" [label="done=0  "]
+"Berlin" -> "Rostock" [label="done=0  "]
+"Dresden" -> "Berlin" [label=""]
+"Dresden" -> "Kassel" [label="done=0  "]
+"Dresden" -> "Leipzig" [label="done=0  "]
+"Dresden" -> "NÃ¼rnberg" [label="done=0  "]
+"Hamburg" -> "Berlin" [label=""]
+"Hamburg" -> "Hannover" [label="done=0  "]
+"Hamburg" -> "Bremen" [label=""]
+"Hamburg" -> "LÃ¼beck" [label="done=0  "]
+"Hannover" -> "Berlin" [label=""]
+"Hannover" -> "Hamburg" [label=""]
+"Hannover" -> "Kassel" [label="done=0  "]
+"Hannover" -> "Leipzig" [label="done=0  "]
+"Hannover" -> "OsnabrÃ¼ck" [label="done=0  "]
+"Hannover" -> "Bremen" [label=""]
+"Kassel" -> "Berlin" [label=""]
+"Kassel" -> "Dresden" [label=""]
+"Kassel" -> "Hannover" [label=""]
+"Kassel" -> "Dortmund" [label=""]
+"Kassel" -> "Frankfurt" [label=""]
+"Kassel" -> "KÃ¶ln" [label="done=0  "]
+"Leipzig" -> "Berlin" [label=""]
+"Leipzig" -> "Dresden" [label=""]
+"Leipzig" -> "Hannover" [label=""]
+"Leipzig" -> "Frankfurt" [label=""]
+"Rostock" -> "Berlin" [label=""]
+"Rostock" -> "LÃ¼beck" [label=""]
+"Bielefeld" -> "Dortmund" [label="done=0  "]
+"Bielefeld" -> "OsnabrÃ¼ck" [label="done=0  "]
+"Dortmund" -> "Kassel" [label="done=0  "]
+"Dortmund" -> "Bielefeld" [label=""]
+"Dortmund" -> "OsnabrÃ¼ck" [label="done=0  "]
+"Dortmund" -> "Bremen" [label=""]
+"Dortmund" -> "Frankfurt" [label="done=0  "]
+"Dortmund" -> "KÃ¶ln" [label="done=0  "]
+"OsnabrÃ¼ck" -> "Hannover" [label=""]
+"OsnabrÃ¼ck" -> "Bielefeld" [label=""]
+"OsnabrÃ¼ck" -> "Dortmund" [label=""]
+"OsnabrÃ¼ck" -> "Bremen" [label=""]
+"Bremen" -> "Hamburg" [label="done=0  "]
+"Bremen" -> "Hannover" [label="done=0  "]
+"Bremen" -> "Dortmund" [label="done=0  "]
+"Bremen" -> "OsnabrÃ¼ck" [label="done=0  "]
+"Frankfurt" -> "Kassel" [label="done=0  "]
+"Frankfurt" -> "Leipzig" [label="done=0  "]
+"Frankfurt" -> "Dortmund" [label=""]
+"Frankfurt" -> "NÃ¼rnberg" [label="done=0  "]
+"Frankfurt" -> "Mainz" [label="done=0  "]
+"Frankfurt" -> "Mannheim" [label="done=0  "]
+"KÃ¶ln" -> "Kassel" [label=""]
+"KÃ¶ln" -> "Dortmund" [label=""]
+"KÃ¶ln" -> "Mainz" [label="done=0  "]
+"KÃ¶ln" -> "SaarbrÃ¼cken" [label="done=0  "]
+"NÃ¼rnberg" -> "MÃ¼nchen" [label=""]
+"NÃ¼rnberg" -> "Dresden" [label=""]
+"NÃ¼rnberg" -> "Frankfurt" [label=""]
+"NÃ¼rnberg" -> "Karlsruhe" [label=""]
+"Mainz" -> "Frankfurt" [label=""]
+"Mainz" -> "KÃ¶ln" [label=""]
+"Mainz" -> "Mannheim" [label="done=0  "]
+"Mainz" -> "Kaiserslautern" [label=""]
+"Mannheim" -> "Frankfurt" [label=""]
+"Mannheim" -> "Mainz" [label=""]
+"Mannheim" -> "Kaiserslautern" [label=""]
+"Mannheim" -> "Karlsruhe" [label=""]
+"LÃ¼beck" -> "Hamburg" [label=""]
+"LÃ¼beck" -> "Rostock" [label="done=0  "]
+"Kaiserslautern" -> "Mainz" [label="done=0  "]
+"Kaiserslautern" -> "Mannheim" [label="done=0  "]
+"Kaiserslautern" -> "Karlsruhe" [label="done=0  "]
+"Kaiserslautern" -> "SaarbrÃ¼cken" [label="done=0  "]
+"Karlsruhe" -> "Stuttgart" [label="done=0  "]
+"Karlsruhe" -> "NÃ¼rnberg" [label="done=0  "]
+"Karlsruhe" -> "Mannheim" [label="done=0  "]
+"Karlsruhe" -> "Kaiserslautern" [label=""]
+"SaarbrÃ¼cken" -> "KÃ¶ln" [label=""]
+"SaarbrÃ¼cken" -> "Kaiserslautern" [label=""]
+}
