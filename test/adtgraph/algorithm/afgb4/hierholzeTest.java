@@ -56,35 +56,5 @@ public class hierholzeTest {
         assertEquals(expResult, result);
         System.out.println(result);
     }
-
-    /**
-     * Test of setEdgeAsDone method, of class hierholze.
-     */
-//    @Test
-    public void testSetEdgeAsDone() throws Exception {
-        graph = Graph.importG("io/graph_02.graph");
-        graph.exportG("testkram.dot");
-        System.out.println("setEdgeAsDone");
-        Vertex source = null;
-        Vertex target = null;
-        hierholze instance = new hierholze();
-        instance.setEdgeAsDone(graph, source, target);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getEdgesNotDone method, of class hierholze.
-     */
-//    @Test
-    public void testGetEdgesNotDone() {
-        System.out.println("getEdgesNotDone");
-        hierholze instance = new hierholze();
-        ArrayList<Vertex> expResult = null;
-        ArrayList<Vertex> result = instance.getEdgesNotDone(graph);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }
