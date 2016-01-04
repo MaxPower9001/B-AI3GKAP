@@ -16,6 +16,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import static adtgraph.utils.Util.*;
+import java.util.Arrays;
 
 /**
  *
@@ -48,13 +49,12 @@ public class hierholzeTest {
      */
     @Test
     public void testGetEulerTour() throws Exception {
-        graph = Graph.importG("io/graph_02.graph");
+        graph = Graph.importG("io/graph_15.graph");
         graph.exportG("testkram.dot");
         System.out.println("getEulerTour");
         ArrayList<Vertex> expResult = null;
         ArrayList<Vertex> result = hierholze.getEulerTour(graph);
         assertEquals(expResult, result);
-        System.out.println(result);
     }
     
 }
