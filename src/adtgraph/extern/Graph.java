@@ -194,7 +194,7 @@ public final class Graph {
                     if (isGerichtet == false) {
                         graph.addEdge(Vertex.createV(graphOpts[1]), Vertex.createV(graphOpts[0]));
 //                        graph.setAtE(Vertex.createV(graphOpts[1]), Vertex.createV(graphOpts[0]), "max", Integer.parseInt(graphOpts[2]));
-                        graph.setAtE(Vertex.createV(graphOpts[0]), Vertex.createV(graphOpts[1]), "done", 0);
+                        graph.setAtE(Vertex.createV(graphOpts[1]), Vertex.createV(graphOpts[0]), "done", 0);
                     }
                 }
 

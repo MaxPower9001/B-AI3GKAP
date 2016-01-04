@@ -9,6 +9,10 @@ import java.io.Writer;
 import java.util.ArrayList;
 
 public class Util {
+    public static final String DONE = "done";
+    public static final String DEBUG = "debugmesenpai";
+    public static final String VERBOSE = "verbose";
+    public static final String NODEBUG = "nodebugplz";
 
     public static void outputToCSV(String filename, ArrayList<String> args) {
 

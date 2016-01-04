@@ -15,6 +15,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import static adtgraph.utils.Util.*;
+
 /**
  *
  * @author Rene
@@ -44,21 +46,21 @@ public class hierholzeTest {
     /**
      * Test of getEulerTour method, of class hierholze.
      */
-//    @Test
-    public void testGetEulerTour() {
+    @Test
+    public void testGetEulerTour() throws Exception {
+        graph = Graph.importG("io/graph_02.graph");
+        graph.exportG("testkram.dot");
         System.out.println("getEulerTour");
-        hierholze instance = new hierholze();
         ArrayList<Vertex> expResult = null;
-        ArrayList<Vertex> result = instance.getEulerTour(graph);
+        ArrayList<Vertex> result = hierholze.getEulerTour(graph);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println(result);
     }
 
     /**
      * Test of setEdgeAsDone method, of class hierholze.
      */
-    @Test
+//    @Test
     public void testSetEdgeAsDone() throws Exception {
         graph = Graph.importG("io/graph_02.graph");
         graph.exportG("testkram.dot");
@@ -67,37 +69,6 @@ public class hierholzeTest {
         Vertex target = null;
         hierholze instance = new hierholze();
         instance.setEdgeAsDone(graph, source, target);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getNotVisitedNeighbour method, of class hierholze.
-     */
-//    @Test
-    public void testGetNotVisitedNeighbour() {
-        System.out.println("getNotVisitedNeighbour");
-        Vertex vertex = null;
-        ArrayList<Vertex> visitedVertices = null;
-        hierholze instance = new hierholze();
-        Vertex expResult = null;
-        Vertex result = instance.getNotVisitedNeighbour(graph, vertex, visitedVertices);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getStartVertex method, of class hierholze.
-     */
-//    @Test
-    public void testGetStartVertex() {
-        System.out.println("getStartVertex");
-        ArrayList<Vertex> verticesToChooseFrom = null;
-        hierholze instance = new hierholze();
-        Vertex expResult = null;
-        Vertex result = instance.getStartVertex(graph, verticesToChooseFrom);
-        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
