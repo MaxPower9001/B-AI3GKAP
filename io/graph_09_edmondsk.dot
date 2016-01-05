@@ -1,0 +1,31 @@
+digraph graph_09_edmondsk
+{
+"Quelle"
+"X1"
+"X2"
+"X3"
+"X4"
+"Y1"
+"Y2"
+"Y3"
+"Y4"
+"Senke"
+"Quelle" -> "X1" [label="max=1  flow=1  "]
+"Quelle" -> "X2" [label="max=1  flow=1  "]
+"Quelle" -> "X3" [label="max=1  flow=1  "]
+"Quelle" -> "X4" [label="max=1  flow=1  "]
+"X1" -> "Y1" [label="max=1  flow=0  "]
+"X1" -> "Y2" [label="max=1  flow=0  "]
+"X1" -> "Y3" [label="max=1  flow=0  "]
+"X1" -> "Y4" [label="max=1  flow=1  "]
+"X2" -> "Y1" [label="max=1  flow=0  "]
+"X2" -> "Y2" [label="max=1  flow=0  "]
+"X2" -> "Y3" [label="max=1  flow=1  "]
+"X3" -> "Y1" [label="max=1  flow=0  "]
+"X3" -> "Y2" [label="max=1  flow=1  "]
+"X4" -> "Y1" [label="max=1  flow=1  "]
+"Y1" -> "Senke" [label="max=1  flow=1  "]
+"Y2" -> "Senke" [label="max=1  flow=1  "]
+"Y3" -> "Senke" [label="max=1  flow=1  "]
+"Y4" -> "Senke" [label="max=1  flow=1  "]
+}

@@ -1,0 +1,70 @@
+digraph graph_08_edmondsk
+{
+"Augsburg"
+"Muenchen"
+"Berlin"
+"Dresden"
+"Hannover"
+"Kassel"
+"Leipzig"
+"Bielefeld"
+"Dortmund"
+"Bremen"
+"Osnabrueck"
+"Frankfurt"
+"Koeln"
+"Nuernberg"
+"Mainz"
+"Mannheim"
+"Hamburg"
+"Kaiserslautern"
+"Karlsruhe"
+"Stuttgart"
+"Saarbruecken"
+"Luebeck"
+"Rostock"
+"Augsburg" -> "Muenchen" [label="max=81  flow=81  "]
+"Berlin" -> "Dresden" [label="max=214  flow=214  "]
+"Berlin" -> "Hannover" [label="max=258  flow=0  "]
+"Berlin" -> "Kassel" [label="max=367  flow=29  "]
+"Berlin" -> "Leipzig" [label="max=188  flow=0  "]
+"Dresden" -> "Nuernberg" [label="max=325  flow=243  "]
+"Hannover" -> "Kassel" [label="max=238  flow=0  "]
+"Hannover" -> "Leipzig" [label="max=261  flow=0  "]
+"Hannover" -> "Osnabrueck" [label="max=137  flow=0  "]
+"Kassel" -> "Dresden" [label="max=402  flow=29  "]
+"Kassel" -> "Frankfurt" [label="max=190  flow=0  "]
+"Kassel" -> "Koeln" [label="max=249  flow=0  "]
+"Leipzig" -> "Dresden" [label="max=116  flow=0  "]
+"Leipzig" -> "Frankfurt" [label="max=387  flow=0  "]
+"Bielefeld" -> "Dortmund" [label="max=116  flow=0  "]
+"Dortmund" -> "Kassel" [label="max=168  flow=0  "]
+"Dortmund" -> "Frankfurt" [label="max=223  flow=0  "]
+"Dortmund" -> "Koeln" [label="max=97  flow=0  "]
+"Bremen" -> "Hannover" [label="max=123  flow=0  "]
+"Bremen" -> "Dortmund" [label="max=237  flow=0  "]
+"Bremen" -> "Osnabrueck" [label="max=124  flow=0  "]
+"Osnabrueck" -> "Bielefeld" [label="max=53  flow=0  "]
+"Osnabrueck" -> "Dortmund" [label="max=123  flow=0  "]
+"Frankfurt" -> "Nuernberg" [label="max=235  flow=0  "]
+"Frankfurt" -> "Mainz" [label="max=43  flow=0  "]
+"Frankfurt" -> "Mannheim" [label="max=106  flow=0  "]
+"Koeln" -> "Mainz" [label="max=179  flow=0  "]
+"Koeln" -> "Saarbruecken" [label="max=283  flow=0  "]
+"Nuernberg" -> "Muenchen" [label="max=162  flow=162  "]
+"Nuernberg" -> "Karlsruhe" [label="max=253  flow=81  "]
+"Mainz" -> "Mannheim" [label="max=83  flow=0  "]
+"Mainz" -> "Kaiserslautern" [label="max=80  flow=0  "]
+"Mannheim" -> "Karlsruhe" [label="max=58  flow=0  "]
+"Hamburg" -> "Berlin" [label="max=289  flow=21  "]
+"Hamburg" -> "Hannover" [label="max=150  flow=0  "]
+"Hamburg" -> "Bremen" [label="max=123  flow=0  "]
+"Kaiserslautern" -> "Mannheim" [label="max=67  flow=0  "]
+"Kaiserslautern" -> "Karlsruhe" [label="max=96  flow=0  "]
+"Karlsruhe" -> "Stuttgart" [label="max=81  flow=81  "]
+"Stuttgart" -> "Augsburg" [label="max=149  flow=81  "]
+"Saarbruecken" -> "Kaiserslautern" [label="max=72  flow=0  "]
+"Luebeck" -> "Hamburg" [label="max=65  flow=21  "]
+"Rostock" -> "Berlin" [label="max=222  flow=222  "]
+"Rostock" -> "Luebeck" [label="max=125  flow=21  "]
+}
