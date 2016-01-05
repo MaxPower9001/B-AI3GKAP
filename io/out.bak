@@ -1,0 +1,820 @@
+digraph graph_14_fordf
+{
+"colord.service"
+"basic.target"
+"system.slice"
+"tmp.mount"
+"-.mount"
+"var.mount"
+"shutdown.target"
+"timers.target"
+"systemd-tmpfiles-clean.timer"
+"local-fs.target"
+"boot.mount"
+"home.mount"
+"var-lib-machines.mount"
+"systemd-remount-fs.service"
+"systemd-ask-password-wall.path"
+"org.cups.cupsd.service"
+"bluetooth.service"
+"sys-devices-pci0000:00-0000:00:02.0-drm-card0-card0x2deDPx2d1-intel_backlight.device"
+"systemd-backlight@backlight:intel_backlight.service"
+"local-fs-pre.target"
+"rtkit-daemon.service"
+"systemd-journald-dev-log.socket"
+"-.slice"
+"run-user-1000.mount"
+"umount.target"
+"rescue.service"
+"emergency.service"
+"graphical.target"
+"multi-user.target"
+"bluetooth.target"
+"org.freedesktop.timedate1.busname"
+"sysinit.target"
+"media-nas.mount"
+"network-online.target"
+"sys-module-fuse.device"
+"sys-fs-fuse-connections.mount"
+"org.freedesktop.resolve1.busname"
+"accounts-daemon.service"
+"nss-user-lookup.target"
+"dm-event.socket"
+"system-systemdx2dbacklight.slice"
+"lvm2-lvmetad.socket"
+"dev-disk-byx2duuid-028b1634x2dca87x2d4c9dx2dbcabx2d2bd69d397425.device"
+"sound.target"
+"sys-kernel-debug.mount"
+"auditd.service"
+"machine.slice"
+"init.scope"
+"systemd-tmpfiles-setup.service"
+"systemd-journal-flush.service"
+"systemd-journald.service"
+"udisks2.service"
+"cryptsetup.target"
+"upower.service"
+"systemd-sysusers.service"
+"dbus.socket"
+"sys-devices-pci0000:00-0000:00:1b.0-sound-card1.device"
+"dev-mqueue.mount"
+"org.freedesktop.hostname1.busname"
+"man-db.service"
+"systemd-ask-password-console.path"
+"systemd-ask-password-console.service"
+"systemd-journald-audit.socket"
+"slices.target"
+"systemd-networkd.service"
+"network.target"
+"org.freedesktop.network1.busname"
+"polkit.service"
+"swap.target"
+"ldconfig.service"
+"systemd-udevd.service"
+"systemd-udevd-kernel.socket"
+"systemd-udevd-control.socket"
+"session-c1.scope"
+"user-120.slice"
+"getty.target"
+"getty@tty1.service"
+"mkinitcpio-generate-shutdown-ramfs.service"
+"systemd-machined.service"
+"sockets.target"
+"systemd-journald.socket"
+"org.cups.cupsd.socket"
+"systemd-initctl.socket"
+"busnames.target"
+"org.freedesktop.import1.busname"
+"org.freedesktop.machine1.busname"
+"org.freedesktop.locale1.busname"
+"org.freedesktop.login1.busname"
+"org.freedesktop.systemd1.busname"
+"run-user-1000-gvfs.mount"
+"shadow.timer"
+"proc-sys-fs-binfmt_misc.mount"
+"NetworkManager.service"
+"mcelog.service"
+"system-getty.slice"
+"gdm.service"
+"systemd-tmpfiles-setup-dev.service"
+"shadow.service"
+"systemd-localed.service"
+"systemd-timesyncd.service"
+"time-sync.target"
+"sys-devices-pci0000:00-0000:00:14.0-usb2-2x2d4-2x2d4:1.0-bluetooth-hci0.device"
+"systemd-ask-password-wall.service"
+"session-c2.scope"
+"user-1000.slice"
+"NetworkManager-wait-online.service"
+"run-user-120-gvfs.mount"
+"systemd-logind.service"
+"user.slice"
+"run-media-kk-hybrid.mount"
+"systemd-random-seed.service"
+"sys-devices-virtual-misc-rfkill.device"
+"systemd-rfkill.socket"
+"alsa-restore.service"
+"systemd-sysctl.service"
+"systemd-hwdb-update.service"
+"remote-fs.target"
+"geoclue.service"
+"sys-devices-platform-thinkpad_acpi-sound-card29.device"
+"dev-sdb3.device"
+"alsa-state.service"
+"sys-devices-pci0000:00-0000:00:03.0-sound-card0.device"
+"systemd-update-utmp.service"
+"systemd-importd.service"
+"systemd-initctl.service"
+"network-pre.target"
+"run-user-120.mount"
+"snapper-timeline.timer"
+"kmod-static-nodes.service"
+"emergency.target"
+"alsa-store.service"
+"dev-disk-byx2duuid-e91fe2e5x2da472x2d4ab5x2d92f8x2d76024bc9a9df.device"
+"systemd-journal-catalog-update.service"
+"proc-sys-fs-binfmt_misc.automount"
+"user@1000.service"
+"rescue.target"
+"dm-event.service"
+"sys-kernel-config.mount"
+"paths.target"
+"snapper-cleanup.timer"
+"dev-hugepages.mount"
+"logrotate.service"
+"systemd-resolved.service"
+"systemd-binfmt.service"
+"tlp.service"
+"snapper-cleanup.service"
+"org.cups.cupsd.path"
+"systemd-modules-load.service"
+"snapper-timeline.service"
+"systemd-fsck-root.service"
+"systemd-machine-id-commit.service"
+"systemd-hostnamed.service"
+"systemd-firstboot.service"
+"systemd-vconsole-setup.service"
+"systemd-udev-trigger.service"
+"systemd-update-done.service"
+"logrotate.timer"
+"dbus.service"
+"systemd-timedated.service"
+"systemd-user-sessions.service"
+"lvm2-lvmetad.service"
+"systemd-tmpfiles-clean.service"
+"user@120.service"
+"teamviewerd.service"
+"systemd-rfkill.service"
+"syslog.socket"
+"wpa_supplicant.service"
+"man-db.timer"
+"remote-fs-pre.target"
+"system-systemdx2dfsck.slice"
+"sys-module-configfs.device"
+"systemd-fsck@dev-disk-byx2duuid-028b1634x2dca87x2d4c9dx2dbcabx2d2bd69d397425.service"
+"colord.service" -> "basic.target" [label="max=95  flow=0  "]
+"colord.service" -> "system.slice" [label="max=100  flow=0  "]
+"colord.service" -> "tmp.mount" [label="max=22  flow=0  "]
+"colord.service" -> "-.mount" [label="max=75  flow=0  "]
+"colord.service" -> "var.mount" [label="max=75  flow=0  "]
+"colord.service" -> "shutdown.target" [label="max=87  flow=0  "]
+"basic.target" -> "tmp.mount" [label="max=32  flow=0  "]
+"basic.target" -> "-.mount" [label="max=67  flow=0  "]
+"basic.target" -> "var.mount" [label="max=12  flow=0  "]
+"basic.target" -> "shutdown.target" [label="max=12  flow=0  "]
+"basic.target" -> "timers.target" [label="max=87  flow=0  "]
+"basic.target" -> "sysinit.target" [label="max=46  flow=0  "]
+"basic.target" -> "slices.target" [label="max=92  flow=0  "]
+"basic.target" -> "sockets.target" [label="max=97  flow=0  "]
+"basic.target" -> "alsa-restore.service" [label="max=77  flow=0  "]
+"basic.target" -> "alsa-state.service" [label="max=62  flow=0  "]
+"basic.target" -> "snapper-timeline.timer" [label="max=70  flow=0  "]
+"basic.target" -> "paths.target" [label="max=97  flow=0  "]
+"basic.target" -> "snapper-cleanup.timer" [label="max=68  flow=0  "]
+"system.slice" -> "-.slice" [label="max=66  flow=0  "]
+"tmp.mount" -> "system.slice" [label="max=59  flow=0  "]
+"tmp.mount" -> "-.mount" [label="max=49  flow=0  "]
+"tmp.mount" -> "umount.target" [label="max=34  flow=0  "]
+"-.mount" -> "system.slice" [label="max=85  flow=0  "]
+"var.mount" -> "system.slice" [label="max=92  flow=0  "]
+"var.mount" -> "-.mount" [label="max=13  flow=0  "]
+"var.mount" -> "umount.target" [label="max=53  flow=49  ",color=red,fontcolor=red]
+"shutdown.target" -> "colord.service" [label="max=93  flow=0  "]
+"shutdown.target" -> "basic.target" [label="max=10  flow=0  "]
+"shutdown.target" -> "timers.target" [label="max=47  flow=0  "]
+"shutdown.target" -> "systemd-tmpfiles-clean.timer" [label="max=57  flow=0  "]
+"shutdown.target" -> "local-fs.target" [label="max=84  flow=0  "]
+"shutdown.target" -> "systemd-remount-fs.service" [label="max=15  flow=0  "]
+"shutdown.target" -> "systemd-ask-password-wall.path" [label="max=60  flow=0  "]
+"shutdown.target" -> "org.cups.cupsd.service" [label="max=64  flow=0  "]
+"shutdown.target" -> "bluetooth.service" [label="max=58  flow=0  "]
+"shutdown.target" -> "systemd-backlight@backlight:intel_backlight.service" [label="max=6  flow=0  "]
+"shutdown.target" -> "local-fs-pre.target" [label="max=90  flow=0  "]
+"shutdown.target" -> "rtkit-daemon.service" [label="max=58  flow=0  "]
+"shutdown.target" -> "rescue.service" [label="max=33  flow=0  "]
+"shutdown.target" -> "emergency.service" [label="max=87  flow=0  "]
+"shutdown.target" -> "graphical.target" [label="max=99  flow=0  "]
+"shutdown.target" -> "multi-user.target" [label="max=97  flow=0  "]
+"shutdown.target" -> "bluetooth.target" [label="max=87  flow=0  "]
+"shutdown.target" -> "org.freedesktop.timedate1.busname" [label="max=92  flow=0  "]
+"shutdown.target" -> "sysinit.target" [label="max=19  flow=0  "]
+"shutdown.target" -> "network-online.target" [label="max=55  flow=0  "]
+"shutdown.target" -> "org.freedesktop.resolve1.busname" [label="max=91  flow=0  "]
+"shutdown.target" -> "accounts-daemon.service" [label="max=30  flow=0  "]
+"shutdown.target" -> "nss-user-lookup.target" [label="max=99  flow=0  "]
+"shutdown.target" -> "system-systemdx2dbacklight.slice" [label="max=23  flow=0  "]
+"shutdown.target" -> "sound.target" [label="max=45  flow=0  "]
+"shutdown.target" -> "auditd.service" [label="max=77  flow=0  "]
+"shutdown.target" -> "machine.slice" [label="max=69  flow=0  "]
+"shutdown.target" -> "systemd-tmpfiles-setup.service" [label="max=83  flow=0  "]
+"shutdown.target" -> "udisks2.service" [label="max=75  flow=0  "]
+"shutdown.target" -> "cryptsetup.target" [label="max=75  flow=0  "]
+"shutdown.target" -> "upower.service" [label="max=48  flow=0  "]
+"shutdown.target" -> "systemd-sysusers.service" [label="max=55  flow=0  "]
+"shutdown.target" -> "dbus.socket" [label="max=82  flow=0  "]
+"shutdown.target" -> "org.freedesktop.hostname1.busname" [label="max=87  flow=0  "]
+"shutdown.target" -> "man-db.service" [label="max=42  flow=0  "]
+"shutdown.target" -> "systemd-ask-password-console.path" [label="max=41  flow=0  "]
+"shutdown.target" -> "systemd-ask-password-console.service" [label="max=10  flow=0  "]
+"shutdown.target" -> "slices.target" [label="max=52  flow=0  "]
+"shutdown.target" -> "systemd-networkd.service" [label="max=92  flow=0  "]
+"shutdown.target" -> "network.target" [label="max=20  flow=0  "]
+"shutdown.target" -> "org.freedesktop.network1.busname" [label="max=15  flow=0  "]
+"shutdown.target" -> "polkit.service" [label="max=96  flow=0  "]
+"shutdown.target" -> "swap.target" [label="max=38  flow=0  "]
+"shutdown.target" -> "ldconfig.service" [label="max=24  flow=0  "]
+"shutdown.target" -> "session-c1.scope" [label="max=17  flow=0  "]
+"shutdown.target" -> "user-120.slice" [label="max=58  flow=0  "]
+"shutdown.target" -> "getty.target" [label="max=83  flow=0  "]
+"shutdown.target" -> "getty@tty1.service" [label="max=15  flow=0  "]
+"shutdown.target" -> "mkinitcpio-generate-shutdown-ramfs.service" [label="max=21  flow=0  "]
+"shutdown.target" -> "systemd-machined.service" [label="max=97  flow=0  "]
+"shutdown.target" -> "sockets.target" [label="max=85  flow=0  "]
+"shutdown.target" -> "org.cups.cupsd.socket" [label="max=53  flow=0  "]
+"shutdown.target" -> "busnames.target" [label="max=65  flow=0  "]
+"shutdown.target" -> "org.freedesktop.import1.busname" [label="max=64  flow=0  "]
+"shutdown.target" -> "org.freedesktop.machine1.busname" [label="max=9  flow=0  "]
+"shutdown.target" -> "org.freedesktop.locale1.busname" [label="max=28  flow=0  "]
+"shutdown.target" -> "org.freedesktop.login1.busname" [label="max=75  flow=0  "]
+"shutdown.target" -> "org.freedesktop.systemd1.busname" [label="max=37  flow=0  "]
+"shutdown.target" -> "shadow.timer" [label="max=43  flow=0  "]
+"shutdown.target" -> "NetworkManager.service" [label="max=34  flow=0  "]
+"shutdown.target" -> "mcelog.service" [label="max=96  flow=0  "]
+"shutdown.target" -> "system-getty.slice" [label="max=40  flow=0  "]
+"shutdown.target" -> "gdm.service" [label="max=66  flow=0  "]
+"shutdown.target" -> "systemd-tmpfiles-setup-dev.service" [label="max=44  flow=0  "]
+"shutdown.target" -> "shadow.service" [label="max=36  flow=0  "]
+"shutdown.target" -> "systemd-localed.service" [label="max=36  flow=0  "]
+"shutdown.target" -> "systemd-timesyncd.service" [label="max=20  flow=0  "]
+"shutdown.target" -> "time-sync.target" [label="max=61  flow=0  "]
+"shutdown.target" -> "systemd-ask-password-wall.service" [label="max=3  flow=0  "]
+"shutdown.target" -> "session-c2.scope" [label="max=44  flow=0  "]
+"shutdown.target" -> "user-1000.slice" [label="max=87  flow=0  "]
+"shutdown.target" -> "NetworkManager-wait-online.service" [label="max=94  flow=0  "]
+"shutdown.target" -> "systemd-logind.service" [label="max=85  flow=0  "]
+"shutdown.target" -> "user.slice" [label="max=41  flow=0  "]
+"shutdown.target" -> "systemd-random-seed.service" [label="max=1  flow=0  "]
+"shutdown.target" -> "systemd-rfkill.socket" [label="max=63  flow=0  "]
+"shutdown.target" -> "alsa-restore.service" [label="max=96  flow=0  "]
+"shutdown.target" -> "systemd-sysctl.service" [label="max=12  flow=0  "]
+"shutdown.target" -> "systemd-hwdb-update.service" [label="max=67  flow=0  "]
+"shutdown.target" -> "remote-fs.target" [label="max=16  flow=0  "]
+"shutdown.target" -> "geoclue.service" [label="max=42  flow=0  "]
+"shutdown.target" -> "alsa-state.service" [label="max=88  flow=0  "]
+"shutdown.target" -> "systemd-update-utmp.service" [label="max=32  flow=0  "]
+"shutdown.target" -> "systemd-importd.service" [label="max=97  flow=0  "]
+"shutdown.target" -> "network-pre.target" [label="max=73  flow=0  "]
+"shutdown.target" -> "snapper-timeline.timer" [label="max=1  flow=0  "]
+"shutdown.target" -> "emergency.target" [label="max=13  flow=0  "]
+"shutdown.target" -> "alsa-store.service" [label="max=27  flow=0  "]
+"shutdown.target" -> "systemd-journal-catalog-update.service" [label="max=28  flow=0  "]
+"shutdown.target" -> "user@1000.service" [label="max=95  flow=0  "]
+"shutdown.target" -> "rescue.target" [label="max=40  flow=0  "]
+"shutdown.target" -> "paths.target" [label="max=17  flow=0  "]
+"shutdown.target" -> "snapper-cleanup.timer" [label="max=10  flow=0  "]
+"shutdown.target" -> "logrotate.service" [label="max=24  flow=0  "]
+"shutdown.target" -> "systemd-resolved.service" [label="max=31  flow=0  "]
+"shutdown.target" -> "systemd-binfmt.service" [label="max=49  flow=0  "]
+"shutdown.target" -> "tlp.service" [label="max=31  flow=0  "]
+"shutdown.target" -> "snapper-cleanup.service" [label="max=75  flow=0  "]
+"shutdown.target" -> "org.cups.cupsd.path" [label="max=71  flow=0  "]
+"shutdown.target" -> "systemd-modules-load.service" [label="max=96  flow=0  "]
+"shutdown.target" -> "snapper-timeline.service" [label="max=17  flow=0  "]
+"shutdown.target" -> "systemd-machine-id-commit.service" [label="max=92  flow=0  "]
+"shutdown.target" -> "systemd-hostnamed.service" [label="max=95  flow=0  "]
+"shutdown.target" -> "systemd-firstboot.service" [label="max=22  flow=0  "]
+"shutdown.target" -> "systemd-vconsole-setup.service" [label="max=76  flow=0  "]
+"shutdown.target" -> "systemd-update-done.service" [label="max=7  flow=0  "]
+"shutdown.target" -> "logrotate.timer" [label="max=54  flow=0  "]
+"shutdown.target" -> "dbus.service" [label="max=28  flow=0  "]
+"shutdown.target" -> "systemd-timedated.service" [label="max=15  flow=0  "]
+"shutdown.target" -> "systemd-user-sessions.service" [label="max=60  flow=0  "]
+"shutdown.target" -> "lvm2-lvmetad.service" [label="max=97  flow=0  "]
+"shutdown.target" -> "systemd-tmpfiles-clean.service" [label="max=42  flow=0  "]
+"shutdown.target" -> "user@120.service" [label="max=21  flow=0  "]
+"shutdown.target" -> "teamviewerd.service" [label="max=10  flow=0  "]
+"shutdown.target" -> "systemd-rfkill.service" [label="max=68  flow=0  "]
+"shutdown.target" -> "syslog.socket" [label="max=64  flow=0  "]
+"shutdown.target" -> "wpa_supplicant.service" [label="max=67  flow=0  "]
+"shutdown.target" -> "man-db.timer" [label="max=62  flow=0  "]
+"shutdown.target" -> "remote-fs-pre.target" [label="max=31  flow=0  "]
+"shutdown.target" -> "system-systemdx2dfsck.slice" [label="max=98  flow=0  "]
+"timers.target" -> "shutdown.target" [label="max=24  flow=0  "]
+"timers.target" -> "systemd-tmpfiles-clean.timer" [label="max=20  flow=0  "]
+"systemd-tmpfiles-clean.timer" -> "shutdown.target" [label="max=40  flow=0  "]
+"systemd-tmpfiles-clean.timer" -> "sysinit.target" [label="max=63  flow=0  "]
+"local-fs.target" -> "tmp.mount" [label="max=20  flow=0  "]
+"local-fs.target" -> "-.mount" [label="max=49  flow=0  "]
+"local-fs.target" -> "var.mount" [label="max=12  flow=0  "]
+"local-fs.target" -> "shutdown.target" [label="max=84  flow=84  ",color=red,fontcolor=red]
+"local-fs.target" -> "boot.mount" [label="max=68  flow=0  "]
+"local-fs.target" -> "home.mount" [label="max=3  flow=0  "]
+"local-fs.target" -> "var-lib-machines.mount" [label="max=22  flow=0  "]
+"local-fs.target" -> "systemd-remount-fs.service" [label="max=39  flow=10  ",color=red,fontcolor=red]
+"boot.mount" -> "system.slice" [label="max=47  flow=0  "]
+"boot.mount" -> "-.mount" [label="max=88  flow=0  "]
+"boot.mount" -> "umount.target" [label="max=89  flow=0  "]
+"boot.mount" -> "systemd-fsck@dev-disk-byx2duuid-028b1634x2dca87x2d4c9dx2dbcabx2d2bd69d397425.service" [label="max=47  flow=30  ",color=red,fontcolor=red]
+"home.mount" -> "system.slice" [label="max=16  flow=0  "]
+"home.mount" -> "-.mount" [label="max=15  flow=0  "]
+"home.mount" -> "umount.target" [label="max=27  flow=0  "]
+"var-lib-machines.mount" -> "system.slice" [label="max=23  flow=0  "]
+"var-lib-machines.mount" -> "-.mount" [label="max=30  flow=0  "]
+"var-lib-machines.mount" -> "var.mount" [label="max=28  flow=0  "]
+"var-lib-machines.mount" -> "umount.target" [label="max=71  flow=0  "]
+"systemd-remount-fs.service" -> "system.slice" [label="max=8  flow=0  "]
+"systemd-remount-fs.service" -> "shutdown.target" [label="max=23  flow=10  ",color=red,fontcolor=red]
+"systemd-remount-fs.service" -> "local-fs-pre.target" [label="max=74  flow=0  "]
+"systemd-ask-password-wall.path" -> "-.mount" [label="max=83  flow=0  "]
+"systemd-ask-password-wall.path" -> "shutdown.target" [label="max=55  flow=0  "]
+"org.cups.cupsd.service" -> "basic.target" [label="max=13  flow=0  "]
+"org.cups.cupsd.service" -> "system.slice" [label="max=45  flow=0  "]
+"org.cups.cupsd.service" -> "shutdown.target" [label="max=7  flow=0  "]
+"bluetooth.service" -> "basic.target" [label="max=21  flow=0  "]
+"bluetooth.service" -> "system.slice" [label="max=86  flow=0  "]
+"bluetooth.service" -> "shutdown.target" [label="max=79  flow=0  "]
+"sys-devices-pci0000:00-0000:00:02.0-drm-card0-card0x2deDPx2d1-intel_backlight.device" -> "systemd-backlight@backlight:intel_backlight.service" [label="max=61  flow=0  "]
+"systemd-backlight@backlight:intel_backlight.service" -> "-.mount" [label="max=87  flow=0  "]
+"systemd-backlight@backlight:intel_backlight.service" -> "var.mount" [label="max=48  flow=0  "]
+"systemd-backlight@backlight:intel_backlight.service" -> "shutdown.target" [label="max=92  flow=0  "]
+"systemd-backlight@backlight:intel_backlight.service" -> "system-systemdx2dbacklight.slice" [label="max=15  flow=0  "]
+"local-fs-pre.target" -> "shutdown.target" [label="max=77  flow=0  "]
+"rtkit-daemon.service" -> "basic.target" [label="max=25  flow=0  "]
+"rtkit-daemon.service" -> "system.slice" [label="max=92  flow=0  "]
+"rtkit-daemon.service" -> "shutdown.target" [label="max=52  flow=0  "]
+"systemd-journald-dev-log.socket" -> "-.mount" [label="max=92  flow=0  "]
+"systemd-journald-dev-log.socket" -> "-.slice" [label="max=19  flow=0  "]
+"run-user-1000.mount" -> "system.slice" [label="max=5  flow=0  "]
+"run-user-1000.mount" -> "-.mount" [label="max=93  flow=0  "]
+"run-user-1000.mount" -> "umount.target" [label="max=98  flow=0  "]
+"umount.target" -> "tmp.mount" [label="max=98  flow=0  "]
+"umount.target" -> "var.mount" [label="max=16  flow=0  "]
+"umount.target" -> "boot.mount" [label="max=51  flow=30  ",color=red,fontcolor=red]
+"umount.target" -> "home.mount" [label="max=22  flow=0  "]
+"umount.target" -> "var-lib-machines.mount" [label="max=31  flow=0  "]
+"umount.target" -> "run-user-1000.mount" [label="max=72  flow=0  "]
+"umount.target" -> "media-nas.mount" [label="max=19  flow=19  ",color=red,fontcolor=red]
+"umount.target" -> "run-user-1000-gvfs.mount" [label="max=73  flow=0  "]
+"umount.target" -> "run-user-120-gvfs.mount" [label="max=85  flow=0  "]
+"umount.target" -> "run-media-kk-hybrid.mount" [label="max=18  flow=0  "]
+"umount.target" -> "run-user-120.mount" [label="max=58  flow=0  "]
+"rescue.service" -> "system.slice" [label="max=72  flow=0  "]
+"rescue.service" -> "-.mount" [label="max=56  flow=0  "]
+"rescue.service" -> "shutdown.target" [label="max=21  flow=5  ",color=red,fontcolor=red]
+"rescue.service" -> "emergency.service" [label="max=6  flow=0  "]
+"rescue.service" -> "graphical.target" [label="max=9  flow=0  "]
+"rescue.service" -> "multi-user.target" [label="max=91  flow=0  "]
+"emergency.service" -> "system.slice" [label="max=38  flow=0  "]
+"emergency.service" -> "-.mount" [label="max=30  flow=0  "]
+"emergency.service" -> "shutdown.target" [label="max=73  flow=73  ",color=red,fontcolor=red]
+"emergency.service" -> "rescue.service" [label="max=5  flow=5  ",color=red,fontcolor=red]
+"emergency.service" -> "sysinit.target" [label="max=32  flow=0  "]
+"graphical.target" -> "shutdown.target" [label="max=69  flow=0  "]
+"graphical.target" -> "rescue.service" [label="max=7  flow=0  "]
+"graphical.target" -> "multi-user.target" [label="max=21  flow=0  "]
+"graphical.target" -> "gdm.service" [label="max=95  flow=0  "]
+"graphical.target" -> "rescue.target" [label="max=5  flow=0  "]
+"multi-user.target" -> "basic.target" [label="max=1  flow=0  "]
+"multi-user.target" -> "shutdown.target" [label="max=67  flow=0  "]
+"multi-user.target" -> "systemd-ask-password-wall.path" [label="max=96  flow=0  "]
+"multi-user.target" -> "rescue.service" [label="max=41  flow=0  "]
+"multi-user.target" -> "getty.target" [label="max=72  flow=0  "]
+"multi-user.target" -> "shadow.timer" [label="max=43  flow=0  "]
+"multi-user.target" -> "NetworkManager.service" [label="max=85  flow=0  "]
+"multi-user.target" -> "mcelog.service" [label="max=20  flow=0  "]
+"multi-user.target" -> "systemd-logind.service" [label="max=67  flow=0  "]
+"multi-user.target" -> "remote-fs.target" [label="max=41  flow=0  "]
+"multi-user.target" -> "rescue.target" [label="max=85  flow=0  "]
+"multi-user.target" -> "tlp.service" [label="max=22  flow=0  "]
+"multi-user.target" -> "org.cups.cupsd.path" [label="max=22  flow=0  "]
+"multi-user.target" -> "logrotate.timer" [label="max=31  flow=0  "]
+"multi-user.target" -> "dbus.service" [label="max=8  flow=0  "]
+"multi-user.target" -> "systemd-user-sessions.service" [label="max=17  flow=0  "]
+"multi-user.target" -> "man-db.timer" [label="max=23  flow=0  "]
+"bluetooth.target" -> "shutdown.target" [label="max=25  flow=0  "]
+"org.freedesktop.timedate1.busname" -> "shutdown.target" [label="max=5  flow=0  "]
+"org.freedesktop.timedate1.busname" -> "sysinit.target" [label="max=25  flow=0  "]
+"sysinit.target" -> "shutdown.target" [label="max=48  flow=48  ",color=red,fontcolor=red]
+"sysinit.target" -> "local-fs.target" [label="max=94  flow=94  ",color=red,fontcolor=red]
+"sysinit.target" -> "emergency.service" [label="max=89  flow=78  ",color=red,fontcolor=red]
+"sysinit.target" -> "sys-fs-fuse-connections.mount" [label="max=96  flow=0  "]
+"sysinit.target" -> "lvm2-lvmetad.socket" [label="max=96  flow=0  "]
+"sysinit.target" -> "sys-kernel-debug.mount" [label="max=34  flow=0  "]
+"sysinit.target" -> "systemd-tmpfiles-setup.service" [label="max=46  flow=43  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-journal-flush.service" [label="max=67  flow=27  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-journald.service" [label="max=38  flow=0  "]
+"sysinit.target" -> "cryptsetup.target" [label="max=98  flow=74  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-sysusers.service" [label="max=95  flow=54  ",color=red,fontcolor=red]
+"sysinit.target" -> "dev-mqueue.mount" [label="max=52  flow=0  "]
+"sysinit.target" -> "systemd-ask-password-console.path" [label="max=18  flow=14  ",color=red,fontcolor=red]
+"sysinit.target" -> "swap.target" [label="max=53  flow=53  ",color=red,fontcolor=red]
+"sysinit.target" -> "ldconfig.service" [label="max=67  flow=46  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-udevd.service" [label="max=24  flow=0  "]
+"sysinit.target" -> "systemd-tmpfiles-setup-dev.service" [label="max=96  flow=37  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-timesyncd.service" [label="max=79  flow=79  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-random-seed.service" [label="max=81  flow=33  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-sysctl.service" [label="max=44  flow=44  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-hwdb-update.service" [label="max=23  flow=23  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-update-utmp.service" [label="max=27  flow=27  ",color=red,fontcolor=red]
+"sysinit.target" -> "kmod-static-nodes.service" [label="max=21  flow=0  "]
+"sysinit.target" -> "emergency.target" [label="max=100  flow=27  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-journal-catalog-update.service" [label="max=62  flow=35  ",color=red,fontcolor=red]
+"sysinit.target" -> "proc-sys-fs-binfmt_misc.automount" [label="max=28  flow=0  "]
+"sysinit.target" -> "sys-kernel-config.mount" [label="max=32  flow=0  "]
+"sysinit.target" -> "dev-hugepages.mount" [label="max=51  flow=0  "]
+"sysinit.target" -> "systemd-binfmt.service" [label="max=71  flow=20  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-modules-load.service" [label="max=88  flow=88  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-machine-id-commit.service" [label="max=97  flow=89  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-firstboot.service" [label="max=31  flow=31  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-vconsole-setup.service" [label="max=9  flow=9  ",color=red,fontcolor=red]
+"sysinit.target" -> "systemd-udev-trigger.service" [label="max=50  flow=0  "]
+"sysinit.target" -> "systemd-update-done.service" [label="max=26  flow=26  ",color=red,fontcolor=red]
+"media-nas.mount" -> "system.slice" [label="max=12  flow=0  "]
+"media-nas.mount" -> "-.mount" [label="max=69  flow=0  "]
+"media-nas.mount" -> "umount.target" [label="max=50  flow=0  "]
+"media-nas.mount" -> "network-online.target" [label="max=50  flow=19  ",color=red,fontcolor=red]
+"network-online.target" -> "shutdown.target" [label="max=82  flow=19  ",color=red,fontcolor=red]
+"network-online.target" -> "NetworkManager-wait-online.service" [label="max=43  flow=0  "]
+"sys-module-fuse.device" -> "sys-fs-fuse-connections.mount" [label="max=89  flow=0  "]
+"sys-fs-fuse-connections.mount" -> "system.slice" [label="max=29  flow=0  "]
+"sys-fs-fuse-connections.mount" -> "-.mount" [label="max=12  flow=0  "]
+"org.freedesktop.resolve1.busname" -> "shutdown.target" [label="max=28  flow=0  "]
+"org.freedesktop.resolve1.busname" -> "sysinit.target" [label="max=67  flow=0  "]
+"accounts-daemon.service" -> "basic.target" [label="max=82  flow=0  "]
+"accounts-daemon.service" -> "system.slice" [label="max=74  flow=0  "]
+"accounts-daemon.service" -> "shutdown.target" [label="max=4  flow=0  "]
+"accounts-daemon.service" -> "nss-user-lookup.target" [label="max=33  flow=0  "]
+"nss-user-lookup.target" -> "shutdown.target" [label="max=69  flow=0  "]
+"dm-event.socket" -> "-.mount" [label="max=24  flow=0  "]
+"dm-event.socket" -> "-.slice" [label="max=98  flow=0  "]
+"system-systemdx2dbacklight.slice" -> "system.slice" [label="max=10  flow=0  "]
+"system-systemdx2dbacklight.slice" -> "shutdown.target" [label="max=45  flow=0  "]
+"lvm2-lvmetad.socket" -> "-.mount" [label="max=44  flow=0  "]
+"lvm2-lvmetad.socket" -> "-.slice" [label="max=73  flow=0  "]
+"dev-disk-byx2duuid-028b1634x2dca87x2d4c9dx2dbcabx2d2bd69d397425.device" -> "boot.mount" [label="max=15  flow=0  "]
+"sound.target" -> "shutdown.target" [label="max=97  flow=0  "]
+"sys-kernel-debug.mount" -> "system.slice" [label="max=18  flow=0  "]
+"sys-kernel-debug.mount" -> "-.mount" [label="max=72  flow=0  "]
+"auditd.service" -> "system.slice" [label="max=49  flow=0  "]
+"auditd.service" -> "shutdown.target" [label="max=23  flow=0  "]
+"machine.slice" -> "shutdown.target" [label="max=39  flow=0  "]
+"machine.slice" -> "-.slice" [label="max=80  flow=0  "]
+"init.scope" -> "-.slice" [label="max=79  flow=0  "]
+"systemd-tmpfiles-setup.service" -> "system.slice" [label="max=36  flow=0  "]
+"systemd-tmpfiles-setup.service" -> "shutdown.target" [label="max=43  flow=43  ",color=red,fontcolor=red]
+"systemd-journal-flush.service" -> "system.slice" [label="max=24  flow=0  "]
+"systemd-journal-flush.service" -> "-.mount" [label="max=71  flow=0  "]
+"systemd-journal-flush.service" -> "var.mount" [label="max=90  flow=27  ",color=red,fontcolor=red]
+"systemd-journal-flush.service" -> "systemd-journald.service" [label="max=4  flow=0  "]
+"systemd-journald.service" -> "system.slice" [label="max=11  flow=0  "]
+"systemd-journald.service" -> "systemd-journald-dev-log.socket" [label="max=68  flow=0  "]
+"systemd-journald.service" -> "systemd-journald-audit.socket" [label="max=92  flow=0  "]
+"systemd-journald.service" -> "systemd-journald.socket" [label="max=88  flow=0  "]
+"udisks2.service" -> "basic.target" [label="max=93  flow=0  "]
+"udisks2.service" -> "system.slice" [label="max=91  flow=0  "]
+"udisks2.service" -> "shutdown.target" [label="max=98  flow=0  "]
+"cryptsetup.target" -> "shutdown.target" [label="max=74  flow=74  ",color=red,fontcolor=red]
+"upower.service" -> "basic.target" [label="max=96  flow=0  "]
+"upower.service" -> "system.slice" [label="max=30  flow=0  "]
+"upower.service" -> "shutdown.target" [label="max=9  flow=0  "]
+"systemd-sysusers.service" -> "system.slice" [label="max=26  flow=0  "]
+"systemd-sysusers.service" -> "shutdown.target" [label="max=54  flow=54  ",color=red,fontcolor=red]
+"dbus.socket" -> "-.mount" [label="max=100  flow=0  "]
+"dbus.socket" -> "shutdown.target" [label="max=18  flow=0  "]
+"dbus.socket" -> "-.slice" [label="max=95  flow=0  "]
+"dbus.socket" -> "sysinit.target" [label="max=73  flow=0  "]
+"sys-devices-pci0000:00-0000:00:1b.0-sound-card1.device" -> "sound.target" [label="max=45  flow=0  "]
+"dev-mqueue.mount" -> "system.slice" [label="max=44  flow=0  "]
+"dev-mqueue.mount" -> "-.mount" [label="max=32  flow=0  "]
+"org.freedesktop.hostname1.busname" -> "shutdown.target" [label="max=40  flow=0  "]
+"org.freedesktop.hostname1.busname" -> "sysinit.target" [label="max=61  flow=0  "]
+"man-db.service" -> "basic.target" [label="max=81  flow=0  "]
+"man-db.service" -> "system.slice" [label="max=88  flow=0  "]
+"man-db.service" -> "-.mount" [label="max=3  flow=0  "]
+"man-db.service" -> "var.mount" [label="max=32  flow=0  "]
+"man-db.service" -> "shutdown.target" [label="max=44  flow=0  "]
+"systemd-ask-password-console.path" -> "-.mount" [label="max=26  flow=0  "]
+"systemd-ask-password-console.path" -> "shutdown.target" [label="max=14  flow=14  ",color=red,fontcolor=red]
+"systemd-ask-password-console.service" -> "system.slice" [label="max=79  flow=0  "]
+"systemd-ask-password-console.service" -> "shutdown.target" [label="max=100  flow=0  "]
+"systemd-journald-audit.socket" -> "-.slice" [label="max=3  flow=0  "]
+"slices.target" -> "system.slice" [label="max=24  flow=0  "]
+"slices.target" -> "shutdown.target" [label="max=74  flow=0  "]
+"slices.target" -> "-.slice" [label="max=15  flow=0  "]
+"systemd-networkd.service" -> "system.slice" [label="max=39  flow=0  "]
+"systemd-networkd.service" -> "shutdown.target" [label="max=12  flow=0  "]
+"systemd-networkd.service" -> "network.target" [label="max=46  flow=0  "]
+"systemd-networkd.service" -> "org.freedesktop.network1.busname" [label="max=3  flow=0  "]
+"network.target" -> "shutdown.target" [label="max=59  flow=0  "]
+"org.freedesktop.network1.busname" -> "shutdown.target" [label="max=4  flow=0  "]
+"org.freedesktop.network1.busname" -> "sysinit.target" [label="max=84  flow=0  "]
+"polkit.service" -> "basic.target" [label="max=41  flow=0  "]
+"polkit.service" -> "system.slice" [label="max=33  flow=0  "]
+"polkit.service" -> "shutdown.target" [label="max=52  flow=0  "]
+"swap.target" -> "shutdown.target" [label="max=66  flow=53  ",color=red,fontcolor=red]
+"ldconfig.service" -> "system.slice" [label="max=18  flow=0  "]
+"ldconfig.service" -> "shutdown.target" [label="max=46  flow=46  ",color=red,fontcolor=red]
+"systemd-udevd.service" -> "system.slice" [label="max=71  flow=0  "]
+"systemd-udevd.service" -> "systemd-udevd-kernel.socket" [label="max=17  flow=0  "]
+"systemd-udevd.service" -> "systemd-udevd-control.socket" [label="max=96  flow=0  "]
+"systemd-udevd-kernel.socket" -> "-.slice" [label="max=33  flow=0  "]
+"systemd-udevd-control.socket" -> "-.mount" [label="max=5  flow=0  "]
+"systemd-udevd-control.socket" -> "-.slice" [label="max=86  flow=0  "]
+"session-c1.scope" -> "shutdown.target" [label="max=92  flow=0  "]
+"session-c1.scope" -> "user-120.slice" [label="max=15  flow=0  "]
+"user-120.slice" -> "shutdown.target" [label="max=66  flow=0  "]
+"user-120.slice" -> "user.slice" [label="max=2  flow=0  "]
+"getty.target" -> "shutdown.target" [label="max=8  flow=0  "]
+"getty.target" -> "getty@tty1.service" [label="max=59  flow=0  "]
+"getty@tty1.service" -> "basic.target" [label="max=86  flow=0  "]
+"getty@tty1.service" -> "shutdown.target" [label="max=44  flow=0  "]
+"getty@tty1.service" -> "system-getty.slice" [label="max=2  flow=0  "]
+"getty@tty1.service" -> "gdm.service" [label="max=37  flow=0  "]
+"mkinitcpio-generate-shutdown-ramfs.service" -> "system.slice" [label="max=39  flow=0  "]
+"systemd-machined.service" -> "basic.target" [label="max=50  flow=0  "]
+"systemd-machined.service" -> "system.slice" [label="max=42  flow=0  "]
+"systemd-machined.service" -> "shutdown.target" [label="max=7  flow=0  "]
+"systemd-machined.service" -> "machine.slice" [label="max=14  flow=0  "]
+"sockets.target" -> "shutdown.target" [label="max=97  flow=0  "]
+"sockets.target" -> "systemd-journald-dev-log.socket" [label="max=55  flow=0  "]
+"sockets.target" -> "dm-event.socket" [label="max=77  flow=0  "]
+"sockets.target" -> "dbus.socket" [label="max=39  flow=0  "]
+"sockets.target" -> "systemd-journald-audit.socket" [label="max=95  flow=0  "]
+"sockets.target" -> "systemd-udevd-kernel.socket" [label="max=90  flow=0  "]
+"sockets.target" -> "systemd-udevd-control.socket" [label="max=39  flow=0  "]
+"sockets.target" -> "systemd-journald.socket" [label="max=25  flow=0  "]
+"sockets.target" -> "org.cups.cupsd.socket" [label="max=94  flow=0  "]
+"sockets.target" -> "systemd-initctl.socket" [label="max=39  flow=0  "]
+"systemd-journald.socket" -> "-.mount" [label="max=1  flow=0  "]
+"systemd-journald.socket" -> "-.slice" [label="max=84  flow=0  "]
+"org.cups.cupsd.socket" -> "-.mount" [label="max=84  flow=0  "]
+"org.cups.cupsd.socket" -> "shutdown.target" [label="max=90  flow=0  "]
+"org.cups.cupsd.socket" -> "-.slice" [label="max=45  flow=0  "]
+"org.cups.cupsd.socket" -> "sysinit.target" [label="max=12  flow=0  "]
+"systemd-initctl.socket" -> "-.mount" [label="max=57  flow=0  "]
+"systemd-initctl.socket" -> "-.slice" [label="max=39  flow=0  "]
+"busnames.target" -> "shutdown.target" [label="max=75  flow=0  "]
+"busnames.target" -> "org.freedesktop.timedate1.busname" [label="max=79  flow=0  "]
+"busnames.target" -> "org.freedesktop.resolve1.busname" [label="max=61  flow=0  "]
+"busnames.target" -> "org.freedesktop.hostname1.busname" [label="max=27  flow=0  "]
+"busnames.target" -> "org.freedesktop.network1.busname" [label="max=3  flow=0  "]
+"busnames.target" -> "org.freedesktop.import1.busname" [label="max=20  flow=0  "]
+"busnames.target" -> "org.freedesktop.machine1.busname" [label="max=11  flow=0  "]
+"busnames.target" -> "org.freedesktop.locale1.busname" [label="max=77  flow=0  "]
+"busnames.target" -> "org.freedesktop.login1.busname" [label="max=78  flow=0  "]
+"busnames.target" -> "org.freedesktop.systemd1.busname" [label="max=48  flow=0  "]
+"org.freedesktop.import1.busname" -> "shutdown.target" [label="max=23  flow=0  "]
+"org.freedesktop.import1.busname" -> "sysinit.target" [label="max=61  flow=0  "]
+"org.freedesktop.machine1.busname" -> "shutdown.target" [label="max=11  flow=0  "]
+"org.freedesktop.machine1.busname" -> "sysinit.target" [label="max=95  flow=0  "]
+"org.freedesktop.locale1.busname" -> "shutdown.target" [label="max=61  flow=0  "]
+"org.freedesktop.locale1.busname" -> "sysinit.target" [label="max=79  flow=0  "]
+"org.freedesktop.login1.busname" -> "shutdown.target" [label="max=68  flow=0  "]
+"org.freedesktop.login1.busname" -> "sysinit.target" [label="max=39  flow=0  "]
+"org.freedesktop.systemd1.busname" -> "shutdown.target" [label="max=43  flow=0  "]
+"org.freedesktop.systemd1.busname" -> "sysinit.target" [label="max=15  flow=0  "]
+"run-user-1000-gvfs.mount" -> "system.slice" [label="max=93  flow=0  "]
+"run-user-1000-gvfs.mount" -> "-.mount" [label="max=50  flow=0  "]
+"run-user-1000-gvfs.mount" -> "umount.target" [label="max=34  flow=0  "]
+"shadow.timer" -> "-.mount" [label="max=73  flow=0  "]
+"shadow.timer" -> "var.mount" [label="max=100  flow=0  "]
+"shadow.timer" -> "shutdown.target" [label="max=71  flow=0  "]
+"shadow.timer" -> "sysinit.target" [label="max=13  flow=0  "]
+"proc-sys-fs-binfmt_misc.mount" -> "system.slice" [label="max=94  flow=0  "]
+"proc-sys-fs-binfmt_misc.mount" -> "-.mount" [label="max=46  flow=0  "]
+"NetworkManager.service" -> "basic.target" [label="max=33  flow=0  "]
+"NetworkManager.service" -> "system.slice" [label="max=40  flow=0  "]
+"NetworkManager.service" -> "shutdown.target" [label="max=54  flow=0  "]
+"NetworkManager.service" -> "network.target" [label="max=39  flow=0  "]
+"mcelog.service" -> "basic.target" [label="max=78  flow=0  "]
+"mcelog.service" -> "system.slice" [label="max=32  flow=0  "]
+"mcelog.service" -> "shutdown.target" [label="max=48  flow=0  "]
+"system-getty.slice" -> "system.slice" [label="max=25  flow=0  "]
+"system-getty.slice" -> "shutdown.target" [label="max=15  flow=0  "]
+"gdm.service" -> "basic.target" [label="max=25  flow=0  "]
+"gdm.service" -> "system.slice" [label="max=98  flow=0  "]
+"gdm.service" -> "shutdown.target" [label="max=17  flow=0  "]
+"gdm.service" -> "getty@tty1.service" [label="max=56  flow=0  "]
+"systemd-tmpfiles-setup-dev.service" -> "system.slice" [label="max=12  flow=0  "]
+"systemd-tmpfiles-setup-dev.service" -> "shutdown.target" [label="max=37  flow=37  ",color=red,fontcolor=red]
+"shadow.service" -> "basic.target" [label="max=39  flow=0  "]
+"shadow.service" -> "system.slice" [label="max=20  flow=0  "]
+"shadow.service" -> "shutdown.target" [label="max=46  flow=0  "]
+"systemd-localed.service" -> "basic.target" [label="max=19  flow=0  "]
+"systemd-localed.service" -> "system.slice" [label="max=98  flow=0  "]
+"systemd-localed.service" -> "tmp.mount" [label="max=23  flow=0  "]
+"systemd-localed.service" -> "-.mount" [label="max=93  flow=0  "]
+"systemd-localed.service" -> "var.mount" [label="max=4  flow=0  "]
+"systemd-localed.service" -> "shutdown.target" [label="max=54  flow=0  "]
+"systemd-timesyncd.service" -> "system.slice" [label="max=54  flow=0  "]
+"systemd-timesyncd.service" -> "tmp.mount" [label="max=66  flow=0  "]
+"systemd-timesyncd.service" -> "-.mount" [label="max=30  flow=0  "]
+"systemd-timesyncd.service" -> "var.mount" [label="max=26  flow=0  "]
+"systemd-timesyncd.service" -> "shutdown.target" [label="max=59  flow=59  ",color=red,fontcolor=red]
+"systemd-timesyncd.service" -> "time-sync.target" [label="max=24  flow=20  ",color=red,fontcolor=red]
+"time-sync.target" -> "shutdown.target" [label="max=46  flow=20  ",color=red,fontcolor=red]
+"sys-devices-pci0000:00-0000:00:14.0-usb2-2x2d4-2x2d4:1.0-bluetooth-hci0.device" -> "bluetooth.target" [label="max=76  flow=0  "]
+"systemd-ask-password-wall.service" -> "basic.target" [label="max=40  flow=0  "]
+"systemd-ask-password-wall.service" -> "system.slice" [label="max=91  flow=0  "]
+"systemd-ask-password-wall.service" -> "shutdown.target" [label="max=8  flow=0  "]
+"session-c2.scope" -> "shutdown.target" [label="max=89  flow=0  "]
+"session-c2.scope" -> "user-1000.slice" [label="max=61  flow=0  "]
+"user-1000.slice" -> "shutdown.target" [label="max=54  flow=0  "]
+"user-1000.slice" -> "user.slice" [label="max=83  flow=0  "]
+"NetworkManager-wait-online.service" -> "basic.target" [label="max=24  flow=0  "]
+"NetworkManager-wait-online.service" -> "system.slice" [label="max=40  flow=0  "]
+"NetworkManager-wait-online.service" -> "shutdown.target" [label="max=25  flow=0  "]
+"NetworkManager-wait-online.service" -> "network.target" [label="max=6  flow=0  "]
+"run-user-120-gvfs.mount" -> "system.slice" [label="max=69  flow=0  "]
+"run-user-120-gvfs.mount" -> "-.mount" [label="max=51  flow=0  "]
+"run-user-120-gvfs.mount" -> "umount.target" [label="max=81  flow=0  "]
+"systemd-logind.service" -> "basic.target" [label="max=88  flow=0  "]
+"systemd-logind.service" -> "system.slice" [label="max=97  flow=0  "]
+"systemd-logind.service" -> "shutdown.target" [label="max=32  flow=0  "]
+"systemd-logind.service" -> "dbus.socket" [label="max=18  flow=0  "]
+"systemd-logind.service" -> "user.slice" [label="max=31  flow=0  "]
+"user.slice" -> "shutdown.target" [label="max=16  flow=0  "]
+"user.slice" -> "-.slice" [label="max=6  flow=0  "]
+"run-media-kk-hybrid.mount" -> "system.slice" [label="max=24  flow=0  "]
+"run-media-kk-hybrid.mount" -> "-.mount" [label="max=40  flow=0  "]
+"run-media-kk-hybrid.mount" -> "umount.target" [label="max=85  flow=0  "]
+"systemd-random-seed.service" -> "system.slice" [label="max=93  flow=0  "]
+"systemd-random-seed.service" -> "-.mount" [label="max=82  flow=0  "]
+"systemd-random-seed.service" -> "var.mount" [label="max=81  flow=22  ",color=red,fontcolor=red]
+"systemd-random-seed.service" -> "shutdown.target" [label="max=11  flow=11  ",color=red,fontcolor=red]
+"sys-devices-virtual-misc-rfkill.device" -> "systemd-rfkill.socket" [label="max=49  flow=0  "]
+"systemd-rfkill.socket" -> "-.mount" [label="max=43  flow=0  "]
+"systemd-rfkill.socket" -> "shutdown.target" [label="max=75  flow=0  "]
+"systemd-rfkill.socket" -> "-.slice" [label="max=100  flow=0  "]
+"alsa-restore.service" -> "system.slice" [label="max=73  flow=0  "]
+"alsa-restore.service" -> "shutdown.target" [label="max=86  flow=0  "]
+"systemd-sysctl.service" -> "system.slice" [label="max=88  flow=0  "]
+"systemd-sysctl.service" -> "shutdown.target" [label="max=95  flow=44  ",color=red,fontcolor=red]
+"systemd-hwdb-update.service" -> "system.slice" [label="max=36  flow=0  "]
+"systemd-hwdb-update.service" -> "shutdown.target" [label="max=53  flow=23  ",color=red,fontcolor=red]
+"remote-fs.target" -> "shutdown.target" [label="max=81  flow=0  "]
+"remote-fs.target" -> "media-nas.mount" [label="max=55  flow=0  "]
+"geoclue.service" -> "basic.target" [label="max=4  flow=0  "]
+"geoclue.service" -> "system.slice" [label="max=44  flow=0  "]
+"geoclue.service" -> "shutdown.target" [label="max=32  flow=0  "]
+"sys-devices-platform-thinkpad_acpi-sound-card29.device" -> "sound.target" [label="max=43  flow=0  "]
+"dev-sdb3.device" -> "run-media-kk-hybrid.mount" [label="max=68  flow=0  "]
+"alsa-state.service" -> "system.slice" [label="max=42  flow=0  "]
+"alsa-state.service" -> "shutdown.target" [label="max=22  flow=0  "]
+"sys-devices-pci0000:00-0000:00:03.0-sound-card0.device" -> "sound.target" [label="max=48  flow=0  "]
+"systemd-update-utmp.service" -> "system.slice" [label="max=39  flow=0  "]
+"systemd-update-utmp.service" -> "-.mount" [label="max=35  flow=0  "]
+"systemd-update-utmp.service" -> "var.mount" [label="max=14  flow=0  "]
+"systemd-update-utmp.service" -> "shutdown.target" [label="max=41  flow=27  ",color=red,fontcolor=red]
+"systemd-importd.service" -> "basic.target" [label="max=95  flow=0  "]
+"systemd-importd.service" -> "system.slice" [label="max=64  flow=0  "]
+"systemd-importd.service" -> "shutdown.target" [label="max=96  flow=0  "]
+"systemd-initctl.service" -> "system.slice" [label="max=70  flow=0  "]
+"network-pre.target" -> "shutdown.target" [label="max=40  flow=0  "]
+"run-user-120.mount" -> "system.slice" [label="max=8  flow=0  "]
+"run-user-120.mount" -> "-.mount" [label="max=16  flow=0  "]
+"run-user-120.mount" -> "umount.target" [label="max=2  flow=0  "]
+"snapper-timeline.timer" -> "shutdown.target" [label="max=85  flow=0  "]
+"snapper-timeline.timer" -> "sysinit.target" [label="max=80  flow=0  "]
+"kmod-static-nodes.service" -> "system.slice" [label="max=88  flow=0  "]
+"emergency.target" -> "shutdown.target" [label="max=27  flow=27  ",color=red,fontcolor=red]
+"emergency.target" -> "emergency.service" [label="max=65  flow=0  "]
+"emergency.target" -> "sysinit.target" [label="max=51  flow=0  "]
+"alsa-store.service" -> "system.slice" [label="max=34  flow=0  "]
+"dev-disk-byx2duuid-e91fe2e5x2da472x2d4ab5x2d92f8x2d76024bc9a9df.device" -> "var.mount" [label="max=81  flow=0  "]
+"dev-disk-byx2duuid-e91fe2e5x2da472x2d4ab5x2d92f8x2d76024bc9a9df.device" -> "home.mount" [label="max=25  flow=0  "]
+"systemd-journal-catalog-update.service" -> "system.slice" [label="max=93  flow=0  "]
+"systemd-journal-catalog-update.service" -> "shutdown.target" [label="max=35  flow=35  ",color=red,fontcolor=red]
+"proc-sys-fs-binfmt_misc.automount" -> "-.mount" [label="max=54  flow=0  "]
+"user@1000.service" -> "basic.target" [label="max=96  flow=0  "]
+"user@1000.service" -> "shutdown.target" [label="max=58  flow=0  "]
+"user@1000.service" -> "user-1000.slice" [label="max=21  flow=0  "]
+"rescue.target" -> "shutdown.target" [label="max=61  flow=0  "]
+"rescue.target" -> "rescue.service" [label="max=18  flow=0  "]
+"rescue.target" -> "graphical.target" [label="max=98  flow=0  "]
+"rescue.target" -> "multi-user.target" [label="max=100  flow=0  "]
+"rescue.target" -> "sysinit.target" [label="max=26  flow=0  "]
+"dm-event.service" -> "system.slice" [label="max=48  flow=0  "]
+"dm-event.service" -> "dm-event.socket" [label="max=79  flow=0  "]
+"sys-kernel-config.mount" -> "system.slice" [label="max=90  flow=0  "]
+"sys-kernel-config.mount" -> "-.mount" [label="max=27  flow=0  "]
+"paths.target" -> "shutdown.target" [label="max=30  flow=0  "]
+"snapper-cleanup.timer" -> "shutdown.target" [label="max=43  flow=0  "]
+"snapper-cleanup.timer" -> "sysinit.target" [label="max=41  flow=0  "]
+"dev-hugepages.mount" -> "system.slice" [label="max=46  flow=0  "]
+"dev-hugepages.mount" -> "-.mount" [label="max=82  flow=0  "]
+"logrotate.service" -> "basic.target" [label="max=32  flow=0  "]
+"logrotate.service" -> "system.slice" [label="max=35  flow=0  "]
+"logrotate.service" -> "shutdown.target" [label="max=39  flow=0  "]
+"systemd-resolved.service" -> "basic.target" [label="max=81  flow=0  "]
+"systemd-resolved.service" -> "system.slice" [label="max=96  flow=0  "]
+"systemd-resolved.service" -> "shutdown.target" [label="max=80  flow=0  "]
+"systemd-resolved.service" -> "org.freedesktop.resolve1.busname" [label="max=69  flow=0  "]
+"systemd-binfmt.service" -> "system.slice" [label="max=1  flow=0  "]
+"systemd-binfmt.service" -> "shutdown.target" [label="max=20  flow=20  ",color=red,fontcolor=red]
+"tlp.service" -> "basic.target" [label="max=1  flow=0  "]
+"tlp.service" -> "system.slice" [label="max=39  flow=0  "]
+"tlp.service" -> "shutdown.target" [label="max=5  flow=0  "]
+"tlp.service" -> "bluetooth.service" [label="max=59  flow=0  "]
+"tlp.service" -> "NetworkManager.service" [label="max=41  flow=0  "]
+"snapper-cleanup.service" -> "basic.target" [label="max=68  flow=0  "]
+"snapper-cleanup.service" -> "system.slice" [label="max=54  flow=0  "]
+"snapper-cleanup.service" -> "shutdown.target" [label="max=32  flow=0  "]
+"org.cups.cupsd.path" -> "-.mount" [label="max=26  flow=0  "]
+"org.cups.cupsd.path" -> "var.mount" [label="max=65  flow=0  "]
+"org.cups.cupsd.path" -> "shutdown.target" [label="max=41  flow=0  "]
+"org.cups.cupsd.path" -> "sysinit.target" [label="max=21  flow=0  "]
+"systemd-modules-load.service" -> "system.slice" [label="max=24  flow=0  "]
+"systemd-modules-load.service" -> "shutdown.target" [label="max=95  flow=88  ",color=red,fontcolor=red]
+"snapper-timeline.service" -> "basic.target" [label="max=27  flow=0  "]
+"snapper-timeline.service" -> "system.slice" [label="max=51  flow=0  "]
+"snapper-timeline.service" -> "shutdown.target" [label="max=63  flow=0  "]
+"systemd-fsck-root.service" -> "system.slice" [label="max=78  flow=0  "]
+"systemd-machine-id-commit.service" -> "system.slice" [label="max=71  flow=0  "]
+"systemd-machine-id-commit.service" -> "shutdown.target" [label="max=89  flow=89  ",color=red,fontcolor=red]
+"systemd-hostnamed.service" -> "basic.target" [label="max=3  flow=0  "]
+"systemd-hostnamed.service" -> "system.slice" [label="max=27  flow=0  "]
+"systemd-hostnamed.service" -> "tmp.mount" [label="max=31  flow=0  "]
+"systemd-hostnamed.service" -> "-.mount" [label="max=61  flow=0  "]
+"systemd-hostnamed.service" -> "var.mount" [label="max=2  flow=0  "]
+"systemd-hostnamed.service" -> "shutdown.target" [label="max=86  flow=0  "]
+"systemd-firstboot.service" -> "system.slice" [label="max=6  flow=0  "]
+"systemd-firstboot.service" -> "shutdown.target" [label="max=36  flow=31  ",color=red,fontcolor=red]
+"systemd-vconsole-setup.service" -> "system.slice" [label="max=2  flow=0  "]
+"systemd-vconsole-setup.service" -> "shutdown.target" [label="max=49  flow=9  ",color=red,fontcolor=red]
+"systemd-udev-trigger.service" -> "system.slice" [label="max=17  flow=0  "]
+"systemd-udev-trigger.service" -> "systemd-udevd.service" [label="max=6  flow=0  "]
+"systemd-update-done.service" -> "system.slice" [label="max=75  flow=0  "]
+"systemd-update-done.service" -> "shutdown.target" [label="max=76  flow=26  ",color=red,fontcolor=red]
+"logrotate.timer" -> "-.mount" [label="max=32  flow=0  "]
+"logrotate.timer" -> "var.mount" [label="max=83  flow=0  "]
+"logrotate.timer" -> "shutdown.target" [label="max=81  flow=0  "]
+"logrotate.timer" -> "sysinit.target" [label="max=54  flow=0  "]
+"dbus.service" -> "basic.target" [label="max=97  flow=0  "]
+"dbus.service" -> "system.slice" [label="max=12  flow=0  "]
+"dbus.service" -> "shutdown.target" [label="max=4  flow=0  "]
+"dbus.service" -> "dbus.socket" [label="max=72  flow=0  "]
+"systemd-timedated.service" -> "basic.target" [label="max=44  flow=0  "]
+"systemd-timedated.service" -> "system.slice" [label="max=58  flow=0  "]
+"systemd-timedated.service" -> "tmp.mount" [label="max=64  flow=0  "]
+"systemd-timedated.service" -> "-.mount" [label="max=8  flow=0  "]
+"systemd-timedated.service" -> "var.mount" [label="max=48  flow=0  "]
+"systemd-timedated.service" -> "shutdown.target" [label="max=73  flow=0  "]
+"systemd-user-sessions.service" -> "basic.target" [label="max=19  flow=0  "]
+"systemd-user-sessions.service" -> "system.slice" [label="max=87  flow=0  "]
+"systemd-user-sessions.service" -> "shutdown.target" [label="max=5  flow=0  "]
+"lvm2-lvmetad.service" -> "system.slice" [label="max=54  flow=0  "]
+"lvm2-lvmetad.service" -> "shutdown.target" [label="max=60  flow=0  "]
+"lvm2-lvmetad.service" -> "lvm2-lvmetad.socket" [label="max=22  flow=0  "]
+"systemd-tmpfiles-clean.service" -> "system.slice" [label="max=76  flow=0  "]
+"systemd-tmpfiles-clean.service" -> "shutdown.target" [label="max=90  flow=0  "]
+"user@120.service" -> "basic.target" [label="max=87  flow=0  "]
+"user@120.service" -> "shutdown.target" [label="max=12  flow=0  "]
+"user@120.service" -> "user-120.slice" [label="max=36  flow=0  "]
+"teamviewerd.service" -> "basic.target" [label="max=62  flow=0  "]
+"teamviewerd.service" -> "system.slice" [label="max=89  flow=0  "]
+"teamviewerd.service" -> "shutdown.target" [label="max=7  flow=0  "]
+"teamviewerd.service" -> "network-online.target" [label="max=73  flow=0  "]
+"teamviewerd.service" -> "gdm.service" [label="max=8  flow=0  "]
+"teamviewerd.service" -> "NetworkManager-wait-online.service" [label="max=97  flow=0  "]
+"teamviewerd.service" -> "dbus.service" [label="max=73  flow=0  "]
+"systemd-rfkill.service" -> "system.slice" [label="max=10  flow=0  "]
+"systemd-rfkill.service" -> "-.mount" [label="max=50  flow=0  "]
+"systemd-rfkill.service" -> "var.mount" [label="max=20  flow=0  "]
+"systemd-rfkill.service" -> "shutdown.target" [label="max=97  flow=0  "]
+"syslog.socket" -> "-.mount" [label="max=78  flow=0  "]
+"syslog.socket" -> "shutdown.target" [label="max=4  flow=0  "]
+"syslog.socket" -> "-.slice" [label="max=40  flow=0  "]
+"wpa_supplicant.service" -> "basic.target" [label="max=75  flow=0  "]
+"wpa_supplicant.service" -> "system.slice" [label="max=68  flow=0  "]
+"wpa_supplicant.service" -> "shutdown.target" [label="max=11  flow=0  "]
+"man-db.timer" -> "-.mount" [label="max=100  flow=0  "]
+"man-db.timer" -> "var.mount" [label="max=94  flow=0  "]
+"man-db.timer" -> "shutdown.target" [label="max=46  flow=0  "]
+"man-db.timer" -> "sysinit.target" [label="max=16  flow=0  "]
+"remote-fs-pre.target" -> "shutdown.target" [label="max=66  flow=0  "]
+"system-systemdx2dfsck.slice" -> "system.slice" [label="max=93  flow=0  "]
+"system-systemdx2dfsck.slice" -> "shutdown.target" [label="max=77  flow=30  ",color=red,fontcolor=red]
+"sys-module-configfs.device" -> "sys-kernel-config.mount" [label="max=75  flow=0  "]
+"systemd-fsck@dev-disk-byx2duuid-028b1634x2dca87x2d4c9dx2dbcabx2d2bd69d397425.service" -> "system-systemdx2dfsck.slice" [label="max=30  flow=30  ",color=red,fontcolor=red]
+}
