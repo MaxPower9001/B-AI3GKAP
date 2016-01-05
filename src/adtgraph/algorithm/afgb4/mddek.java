@@ -9,6 +9,8 @@ import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
 import static adtgraph.utils.Util.COST;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  *
@@ -22,12 +24,13 @@ public class mddek {
     // Returns Vertex of d
     private static Integer calcMinDistance(Graph graph, Vertex vertex, ArrayList<Vertex> vertexSequence) {
         int minDistance = Integer.MAX_VALUE;
-        Vertex minVertex = null;
         for (int i = 0; i < vertexSequence.size(); i++) {
             Vertex tempTarget = vertexSequence.get(i);
-            int tempMinDistance = graph.getValE(vertex, tempTarget, COST);
+            Integer tempMinDistance = graph.getValE(vertex, tempTarget, COST);
+            if(tempMinDistance == null){
+                tempMinDistance = graph.getValE(tempTarget, vertex, COST);
+            }
             if(tempMinDistance < minDistance){
-                minVertex = tempTarget;
                 minDistance = tempMinDistance;
             }
         }
@@ -66,8 +69,8 @@ public class mddek {
     }
     
     public static ArrayList<Vertex> mddek(Graph graph) {
-        verticesToDo = graph.getVertices();
-        ArrayList<Vertex> vertexSequence = new ArrayList<Vertex>();
+        verticesToDo = (ArrayList<Vertex>) graph.getVertices().clone();
+        ArrayList<Vertex> vertexSequence = new ArrayList<>();
         vertexSequence.add(verticesToDo.get(0));
         vertexSequence.add(verticesToDo.get(0));
         verticesToDo.remove(0);
