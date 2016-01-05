@@ -72,12 +72,12 @@ public class mddek {
         return vertexSequence;
     }
     
-    public static ArrayList<Vertex> mddek(Graph graph) {
+    public static ArrayList<Vertex> mddek(Graph graph,int startposi) {
         verticesToDo = (ArrayList<Vertex>) graph.getVertices().clone();
         ArrayList<Vertex> vertexSequence = new ArrayList<>();
-        vertexSequence.add(verticesToDo.get(0));
-        vertexSequence.add(verticesToDo.get(0));
-        verticesToDo.remove(0);
+        vertexSequence.add(verticesToDo.get(startposi));
+        vertexSequence.add(verticesToDo.get(startposi));
+        verticesToDo.remove(startposi);
         
         while(!verticesToDo.isEmpty()) {
             Vertex tempNearestVertex = calcNearestVertex(graph,vertexSequence);
