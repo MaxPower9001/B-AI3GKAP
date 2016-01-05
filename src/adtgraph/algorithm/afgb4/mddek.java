@@ -64,7 +64,11 @@ public class mddek {
             }
         }
         vertexSequence.add(minPosition,vertex);
-        System.out.println("aktueller Pfad: " + vertexSequence + " mit Kosten " + minCost);
+        int costOfCurrentSequence = 0;
+        for(int i = 0; i < vertexSequence.size()-1; i++){
+            costOfCurrentSequence = costOfCurrentSequence + graph.getValE(vertexSequence.get(i), vertexSequence.get(i+1), COST);
+        }
+        System.out.println("aktueller Pfad: " + vertexSequence + " mit Kosten " + costOfCurrentSequence);
         return vertexSequence;
     }
     
