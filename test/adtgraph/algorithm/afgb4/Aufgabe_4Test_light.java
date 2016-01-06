@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  *
  * @author Rene
  */
-public class Aufgabe_4Test {
+public class Aufgabe_4Test_light {
     Util utils;
     Graph testgraph;
     long runtime;
@@ -32,7 +32,7 @@ public class Aufgabe_4Test {
     ArrayList<String> resultTests = new ArrayList<String>();
     ArrayList<Vertex> vertexlist = new ArrayList<>();
     
-    public Aufgabe_4Test() {
+    public Aufgabe_4Test_light() {
     }
     
     @BeforeClass
@@ -54,7 +54,7 @@ public class Aufgabe_4Test {
     @Test
     public void RuntimeTestGraph10alleStarteckenMddekRT() throws Exception {
         testgraph = Graph.importG("io/graph_10.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_10");
             resultTests.add("mddek");
@@ -65,17 +65,17 @@ public class Aufgabe_4Test {
             resultTests.add("");
             resultTests.add("");
             resultTests.add(runtime+"");
-            resultTests.add(returnValue[2]+"");
-            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
+            resultTests.add(returnValue[1]+"");
+            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[1])+"");
             utils.outputToCSV("io/graph_10.runtime",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
     @Test
     public void IOGraph10alleStarteckenMddekIO() throws Exception {
         testgraph = Graph.importG("io/graph_10.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_10");
             resultTests.add("mddek");
@@ -91,13 +91,13 @@ public class Aufgabe_4Test {
             resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
             utils.outputToCSV("io/graph_10.io",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }      
     
     @Test
     public void RuntimeTestGraph12alleStarteckenMddekRT() throws Exception {
         testgraph = Graph.importG("io/graph_12.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_12");
             resultTests.add("mddek");
@@ -108,17 +108,17 @@ public class Aufgabe_4Test {
             resultTests.add("");
             resultTests.add("");
             resultTests.add(runtime+"");
-            resultTests.add(returnValue[2]+"");
-            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
+            resultTests.add(returnValue[1]+"");
+            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[1])+"");
             utils.outputToCSV("io/graph_12.runtime",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
     @Test
     public void IOGraph12alleStarteckenMddekIO() throws Exception {
         testgraph = Graph.importG("io/graph_12.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_12");
             resultTests.add("mddek");
@@ -134,13 +134,13 @@ public class Aufgabe_4Test {
             resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
             utils.outputToCSV("io/graph_12.io",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
-    @Test
+//    @Test
     public void IOGraph11alleStarteckenMddekIO() throws Exception {
         testgraph = Graph.importG("io/graph_11.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_11");
             resultTests.add("mddek");
@@ -157,12 +157,12 @@ public class Aufgabe_4Test {
             utils.outputToCSV("io/graph_11.io",resultTests);
             resultTests = new ArrayList<String>();
         }
-    }
+    
     
     @Test
     public void RuntimeTestGraph15alleStarteckenMddekRT() throws Exception {
         testgraph = Graph.importG("io/graph_15.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_15");
             resultTests.add("mddek");
@@ -173,17 +173,17 @@ public class Aufgabe_4Test {
             resultTests.add("");
             resultTests.add("");
             resultTests.add(runtime+"");
-            resultTests.add(returnValue[2]+"");
-            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
+            resultTests.add(returnValue[1]+"");
+            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[1])+"");
             utils.outputToCSV("io/graph_15.runtime",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
     @Test
     public void IOGraph15alleStarteckenMddekIO() throws Exception {
         testgraph = Graph.importG("io/graph_15.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_15");
             resultTests.add("mddek");
@@ -199,13 +199,13 @@ public class Aufgabe_4Test {
             resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
             utils.outputToCSV("io/graph_15.io",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
-    @Test
+//    @Test
     public void RuntimeTestGraph11alleStarteckenMddekRT() throws Exception {
         testgraph = Graph.importG("io/graph_11.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_11");
             resultTests.add("mddek");
@@ -216,18 +216,18 @@ public class Aufgabe_4Test {
             resultTests.add("");
             resultTests.add("");
             resultTests.add(runtime+"");
-            resultTests.add(returnValue[2]+"");
-            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
+            resultTests.add(returnValue[1]+"");
+            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[1])+"");
             utils.outputToCSV("io/graph_11.runtime",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
     @Test
     public void RuntimeTestGraph02alleStarteckenHierholzeRT() throws Exception {
 
         testgraph = Graph.importG("io/graph_02.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_02");
             resultTests.add("hierholze");
@@ -238,17 +238,17 @@ public class Aufgabe_4Test {
             resultTests.add("");
             resultTests.add("");
             resultTests.add(runtime+"");
-            resultTests.add(returnValue[2]+"");
-            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
+            resultTests.add(returnValue[1]+"");
+            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[1])+"");
             utils.outputToCSV("io/graph_02.runtime",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
     @Test
     public void IOTestGraph02alleStarteckenHierholzeIO() throws Exception {
         testgraph = Graph.importG("io/graph_02.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_02");
             resultTests.add("hierholze");
@@ -265,14 +265,14 @@ public class Aufgabe_4Test {
             resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
             utils.outputToCSV("io/graph_02.io",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
       
     @Test
     public void RuntimeTestGraph10alleStarteckenHierholzeRT() throws Exception {
 
         testgraph = Graph.importG("io/graph_10.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_10");
             resultTests.add("hierholze");
@@ -283,17 +283,17 @@ public class Aufgabe_4Test {
             resultTests.add("");
             resultTests.add("");
             resultTests.add(runtime+"");
-            resultTests.add(returnValue[2]+"");
-            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
+            resultTests.add(returnValue[1]+"");
+            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[1])+"");
             utils.outputToCSV("io/graph_10.runtime",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
     @Test
     public void IOTestGraph10alleStarteckenHierholzeIO() throws Exception {
         testgraph = Graph.importG("io/graph_10.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_10");
             resultTests.add("hierholze");
@@ -310,14 +310,14 @@ public class Aufgabe_4Test {
             resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
             utils.outputToCSV("io/graph_10.io",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
-        @Test
+//        @Test
     public void RuntimeTestGraph11alleStarteckenHierholzeRT() throws Exception {
 
         testgraph = Graph.importG("io/graph_11.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_11");
             resultTests.add("hierholze");
@@ -328,17 +328,17 @@ public class Aufgabe_4Test {
             resultTests.add("");
             resultTests.add("");
             resultTests.add(runtime+"");
-            resultTests.add(returnValue[2]+"");
-            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
+            resultTests.add(returnValue[1]+"");
+            resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[1])+"");
             utils.outputToCSV("io/graph_11.runtime",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
     
-    @Test
+//    @Test
     public void IOTestGraph11alleStarteckenHierholzeIO() throws Exception {
         testgraph = Graph.importG("io/graph_11.graph");
-        for(startposi = 0; startposi < testgraph.getVertices().size() ; startposi++) {
+        startposi = 0;
             Object[] returnValue = new Object[3];
             resultTests.add("graph_11");
             resultTests.add("hierholze");
@@ -355,7 +355,7 @@ public class Aufgabe_4Test {
             resultTests.add(calcCostOfSequence(testgraph,(ArrayList<Vertex>)returnValue[2])+"");
             utils.outputToCSV("io/graph_11.io",resultTests);
             resultTests = new ArrayList<String>();
-        }
+        
     }
    
     
