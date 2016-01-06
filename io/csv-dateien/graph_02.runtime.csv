@@ -1,0 +1,24 @@
+Graphname,Algorithmus,Startecke,Anzahl der Ecken,IO Writes,IO Reads,Runtime in ms,Gefundener Weg,Kosten
+graph_02,hierholze,Augsburg,23,,,2,"[Augsburg, München, Nürnberg, Dresden, Berlin, Hamburg, Hannover, Berlin, Kassel, Dresden, Leipzig, Berlin, Rostock, Lübeck, Hamburg, Bremen, Hannover, Kassel, Dortmund, Bielefeld, Osnabrück, Hannover, Leipzig, Frankfurt, Mainz, Köln, Saarbrücken, Kaiserslautern, Mainz, Mannheim, Kaiserslautern, Karlsruhe, Mannheim, Frankfurt, Kassel, Köln, Dortmund, Osnabrück, Bremen, Dortmund, Frankfurt, Nürnberg, Karlsruhe, Stuttgart, Augsburg]",7598
+graph_02,hierholze,München,23,,,0,"[]",0
+graph_02,hierholze,Stuttgart,23,,,0,"[]",0
+graph_02,hierholze,Berlin,23,,,0,"[]",0
+graph_02,hierholze,Dresden,23,,,0,"[]",0
+graph_02,hierholze,Hamburg,23,,,0,"[]",0
+graph_02,hierholze,Hannover,23,,,0,"[]",0
+graph_02,hierholze,Kassel,23,,,0,"[]",0
+graph_02,hierholze,Leipzig,23,,,0,"[]",0
+graph_02,hierholze,Rostock,23,,,0,"[]",0
+graph_02,hierholze,Bielefeld,23,,,0,"[]",0
+graph_02,hierholze,Dortmund,23,,,0,"[]",0
+graph_02,hierholze,Osnabrück,23,,,0,"[]",0
+graph_02,hierholze,Bremen,23,,,0,"[]",0
+graph_02,hierholze,Frankfurt,23,,,0,"[]",0
+graph_02,hierholze,Köln,23,,,0,"[]",0
+graph_02,hierholze,Nürnberg,23,,,0,"[]",0
+graph_02,hierholze,Mainz,23,,,0,"[]",0
+graph_02,hierholze,Mannheim,23,,,0,"[]",0
+graph_02,hierholze,Lübeck,23,,,0,"[]",0
+graph_02,hierholze,Kaiserslautern,23,,,0,"[]",0
+graph_02,hierholze,Karlsruhe,23,,,0,"[]",0
+graph_02,hierholze,Saarbrücken,23,,,0,"[]",0

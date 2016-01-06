@@ -1,0 +1,7 @@
+Graphname,Algorithmus,Startecke,Anzahl der Ecken,IO Writes,IO Reads,Runtime in ms,Gefundener Weg,Kosten
+graph_12,mddek,go,6,,,0,"[go, s, b, gr, r, ge, go]",52
+graph_12,mddek,gr,6,,,0,"[gr, go, ge, r, s, b, gr]",45
+graph_12,mddek,b,6,,,0,"[b, gr, go, ge, r, s, b]",45
+graph_12,mddek,s,6,,,0,"[s, r, ge, go, gr, b, s]",45
+graph_12,mddek,ge,6,,,1,"[ge, r, s, b, gr, go, ge]",45
+graph_12,mddek,r,6,,,0,"[r, s, b, gr, go, ge, r]",45

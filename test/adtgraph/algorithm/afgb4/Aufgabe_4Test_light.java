@@ -254,7 +254,6 @@ public class Aufgabe_4Test_light {
             resultTests.add("hierholze");
             resultTests.add(testgraph.getVertices().get(startposi)+"");
             resultTests.add(testgraph.getVertices().size()+"");
-            resultTests.add("");
             returnValue = hierholzeIO.getEulerTour(testgraph,startposi);
             writes = (int) returnValue[0];
             reads = (int) returnValue[1];
@@ -299,7 +298,6 @@ public class Aufgabe_4Test_light {
             resultTests.add("hierholze");
             resultTests.add(testgraph.getVertices().get(startposi)+"");
             resultTests.add(testgraph.getVertices().size()+"");
-            resultTests.add("");
             returnValue = hierholzeIO.getEulerTour(testgraph,startposi);
             writes = (int) returnValue[0];
             reads = (int) returnValue[1];
@@ -344,7 +342,6 @@ public class Aufgabe_4Test_light {
             resultTests.add("hierholze");
             resultTests.add(testgraph.getVertices().get(startposi)+"");
             resultTests.add(testgraph.getVertices().size()+"");
-            resultTests.add("");
             returnValue = hierholzeIO.getEulerTour(testgraph,startposi);
             writes = (int) returnValue[0];
             reads = (int) returnValue[1];

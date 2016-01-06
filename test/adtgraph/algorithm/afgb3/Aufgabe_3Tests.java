@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package adtgraph.algorithm;
+package adtgraph.algorithm.afgb3;
 
 import adtgraph.algorithm.afgb3.Aufgabe_3;
 import adtgraph.extern.Graph;
