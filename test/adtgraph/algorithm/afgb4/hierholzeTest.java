@@ -53,7 +53,7 @@ public class hierholzeTest {
         graph.exportG("testkram.dot");
         System.out.println("getEulerTour");
         ArrayList<Vertex> expResult = null;
-        ArrayList<Vertex> result = hierholze.getEulerTour(graph);
+        ArrayList<Vertex> result = hierholze.getEulerTour(graph,VERBOSE,0);
         assertEquals(expResult, result);
     }
     

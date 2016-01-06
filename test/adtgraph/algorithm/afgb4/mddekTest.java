@@ -53,7 +53,7 @@ public class mddekTest {
 //        graph.exportG("testkram.dot");
         System.out.println("dichteste Ecke!!");
 //        ArrayList<Vertex> expResult = null;
-        ArrayList<Vertex> result = mddek.mddek(graph);
+        ArrayList<Vertex> result = mddek.mddek(graph,0);
 //        assertEquals(expResult, result);
     }
     

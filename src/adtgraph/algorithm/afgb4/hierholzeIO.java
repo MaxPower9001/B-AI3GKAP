@@ -30,10 +30,10 @@ public class hierholzeIO {
      *                  <li>Index 2 = Euler-Tour as <code>ArrayList[Vertex]</code></li>
      *                  </ul>
      */
-    public static Object[] getEulerTour(Graph graph) {
-        Object[] returnValue = new Object[2];
+    public static Object[] getEulerTour(Graph graph, int startposition) {
+        Object[] returnValue = new Object[3];
         
-        ArrayList<Vertex> eulerTour = getEulerTour(graph, NODEBUG);
+        ArrayList<Vertex> eulerTour = getEulerTour(graph, NODEBUG, startposition);
         
         returnValue[0] = writeAccess;
         returnValue[1] = readAccess;
@@ -50,12 +50,12 @@ public class hierholzeIO {
      * @param mode sets the debug level <code>[NODEBUG,DEBUG,VERBOSE]</code>
      * @return VertexList containing the euler tour
      */
-    private static ArrayList<Vertex> getEulerTour(Graph graph, String mode) {
+    private static ArrayList<Vertex> getEulerTour(Graph graph, String mode, int startposition) {
         hierholzeIO.mode = mode;
         ArrayList<Vertex> returnValue = new ArrayList<>();
 
         while (!getEdgesNotDone(graph).isEmpty()) {
-            Vertex startVertex = getEdgesNotDone(graph).get(0);
+            Vertex startVertex = getEdgesNotDone(graph).get(startposition);
             returnValue = mergeSubtours(returnValue, findSubTour(graph, startVertex));
         }
         return returnValue;
@@ -81,8 +81,7 @@ public class hierholzeIO {
      * @return contains all edges with attribute done == 0
      */
     private static ArrayList<Vertex> getEdgesNotDone(Graph graph) {
-
-        ArrayList<Vertex> returnValue = graph.getEdges();
+        ArrayList<Vertex> returnValue = (ArrayList<Vertex>) graph.getEdges().clone();
         readAccess++;
         for (int i = 0; i < returnValue.size(); i = i + 2) {
             Vertex source = returnValue.get(i);
@@ -108,7 +107,7 @@ public class hierholzeIO {
      */
     private static ArrayList<Vertex> getEdgesNotDone(Graph graph, Vertex vertex) {
 
-        ArrayList<Vertex> returnValue = graph.getIncident(vertex);
+        ArrayList<Vertex> returnValue = (ArrayList<Vertex>) graph.getIncident(vertex).clone();
         readAccess++;
         for (int i = 0; i < returnValue.size(); i = i + 2) {
             Vertex source = returnValue.get(i);

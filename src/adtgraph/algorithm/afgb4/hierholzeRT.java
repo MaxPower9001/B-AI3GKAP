@@ -26,11 +26,11 @@ public class hierholzeRT {
      *                  <li>Index 1 = Euler-Tour as <code>ArrayList[Vertex]</code></li>
      *                  </ul>
      */
-    public static Object[] getEulerTour(Graph graph) {
+    public static Object[] getEulerTour(Graph graph, int startposition) {
         Object[] returnValue = new Object[2];
         
         long currentTime = System.currentTimeMillis();
-        ArrayList<Vertex> eulerTour = hierholze.getEulerTour(graph, NODEBUG);
+        ArrayList<Vertex> eulerTour = hierholze.getEulerTour(graph, NODEBUG, startposition);
         currentTime = System.currentTimeMillis()-currentTime;
         
         returnValue[0] = currentTime;

@@ -1,5 +1,6 @@
 package adtgraph.algorithm.afgb4;
 
+import static adtgraph.algorithm.afgb4.mddek.verticesToDo;
 import adtgraph.extern.Graph;
 import adtgraph.extern.Vertex;
 import java.util.ArrayList;
@@ -16,14 +17,16 @@ public class hierholze {
      * <p>
      * @param graph graph to find an euler tour in
      * @param mode sets the debug level <code>[NODEBUG,DEBUG,VERBOSE]</code>
+     * @param startposition sets the starting position for the algorithm, 
+     * please be careful since it is an INTEGER! OOB guaranteed!
      * @return VertexList containing the euler tour
      */
-    public static ArrayList<Vertex> getEulerTour(Graph graph, String mode) {
+    public static ArrayList<Vertex> getEulerTour(Graph graph, String mode, int startposition) {
         hierholze.mode = mode;
         ArrayList<Vertex> returnValue = new ArrayList<>();
 
         while (!getEdgesNotDone(graph).isEmpty()) {
-            Vertex startVertex = getEdgesNotDone(graph).get(0);
+            Vertex startVertex = getEdgesNotDone(graph).get(startposition);
             returnValue = mergeSubtours(returnValue, findSubTour(graph, startVertex));
         }
         return returnValue;
@@ -36,8 +39,8 @@ public class hierholze {
      * @param graph graph to find an euler tour in
      * @return VertexList containing the euler tour
      */
-    public static ArrayList<Vertex> getEulerTour(Graph graph) {
-        return getEulerTour(graph, NODEBUG);
+    public static ArrayList<Vertex> getEulerTour(Graph graph, int startposition) {
+        return getEulerTour(graph, NODEBUG, startposition);
     }
 
     /**
@@ -51,26 +54,6 @@ public class hierholze {
         graph.setAtE(source, target, DONE, 1);
     }
 
-//===================================================================================================
-//
-//                          APPARENTLY NOT NEEDED - WAITING FOR CONFIRMATION
-//
-//===================================================================================================
-//    /**
-//     * gets a vertex to start, if no vertex available return <code>null</code>
-//     *
-//     * @param graph graph to get a vertex from
-//     * @param verticesToChooseFrom specifies the vertices to choose from
-//     * @return - vertex to start, or null if no vertex available
-//     */
-//    private static Vertex getStartVertex(Graph graph, ArrayList<Vertex> verticesToChooseFrom) {
-//        if (verticesToChooseFrom.isEmpty()) {
-//            return getEdgesNotDone(graph).get(0);
-//        } else {
-//            return getEdgesNotDone(graph, verticesToChooseFrom.get(0)).get(0);
-//        }
-//    }
-//===================================================================================================
     /**
      * pulls all edges from <code>graph</code> and removes every pair of
      * vertices representing the edge if the edge attribute done != 0
@@ -79,8 +62,9 @@ public class hierholze {
      * @return contains all edges with attribute done == 0
      */
     private static ArrayList<Vertex> getEdgesNotDone(Graph graph) {
-
-        ArrayList<Vertex> returnValue = graph.getEdges();
+        
+        
+        ArrayList<Vertex> returnValue = (ArrayList<Vertex>) graph.getEdges().clone();
         for (int i = 0; i < returnValue.size(); i = i + 2) {
             Vertex source = returnValue.get(i);
             Vertex target = returnValue.get(i + 1);
@@ -104,7 +88,7 @@ public class hierholze {
      */
     private static ArrayList<Vertex> getEdgesNotDone(Graph graph, Vertex vertex) {
 
-        ArrayList<Vertex> returnValue = graph.getIncident(vertex);
+        ArrayList<Vertex> returnValue = (ArrayList<Vertex>) graph.getIncident(vertex).clone();
         for (int i = 0; i < returnValue.size(); i = i + 2) {
             Vertex source = returnValue.get(i);
             Vertex target = returnValue.get(i + 1);
